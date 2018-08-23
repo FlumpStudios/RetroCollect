@@ -12,3 +12,7 @@ Frontend
 allow sorting to switch on a-z and z-a
 Currently there is a checkbox to switch to client, change to tab
 Crap load of styling
+
+Other
+=====
+Add to bitbucket

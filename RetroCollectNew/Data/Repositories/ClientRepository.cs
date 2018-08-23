@@ -8,7 +8,7 @@ using RetroCollectNew.Models.DataModel;
 
 namespace RetroCollectNew.Data.Repositories
 {
-    public class ClientRepository : IClientRepository
+    public class ClientRepository : IClientRepository, IDisposable
     {
 
         private readonly RetroCollectNewContext _clientContext;
@@ -18,34 +18,34 @@ namespace RetroCollectNew.Data.Repositories
             _clientContext = clientContext;
         }
 
-        public void DeleteClient(int clientId)
-        {
-            throw new NotImplementedException();
-        }
+        public IEnumerable<ClientListModel> GetClients() => _clientContext.ClientListModel.ToList();
+        public ClientListModel GetClientByID(int? gameId) => _clientContext.ClientListModel.SingleOrDefault(m => m.Id == gameId);
+        public void InsertClient(ClientListModel game) => _clientContext.Add(game);
+        public void UpdateClient(ClientListModel game) => _clientContext.Update(game);
+        public void DeleteClient(ClientListModel game) => _clientContext.ClientListModel.Remove(game);
+        public void Save() => _clientContext.SaveChanges();
 
-        public ClientListModel GetClientByID(int clientId)
-        {
-            throw new NotImplementedException();
-        }
+        #region IDisposable Support
+        private bool disposedValue = false; // To detect redundant calls
 
-        public IEnumerable<ClientListModel> GetClients()
-        {
-            throw new NotImplementedException();
-        }
 
-        public void InsertClient(ClientListModel client)
+        protected virtual void Dispose(bool disposing)
         {
-            throw new NotImplementedException();
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    _clientContext.Dispose();
+                }
+                disposedValue = true;
+            }
         }
-
-        public void Save()
+        
+        public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
-
-        public void UpdateClient(ClientListModel Client)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
     }
 }

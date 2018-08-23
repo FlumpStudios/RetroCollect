@@ -22,10 +22,7 @@ namespace RetroCollectNew.Data.Repositories
         public GameListModel GetGameByID(int? gameId) => _gameContext.GameListModel.SingleOrDefault(m => m.Id == gameId);
         public void InsertGame(GameListModel game) => _gameContext.Add(game);
         public void UpdateGame(GameListModel game) => _gameContext.Update(game);
-        public void DeleteGame(GameListModel game)
-        {
-            _gameContext.GameListModel.Remove(game);
-        }
+        public void DeleteGame(GameListModel game) => _gameContext.GameListModel.Remove(game);
 
         public void Save() => _gameContext.SaveChanges();
 

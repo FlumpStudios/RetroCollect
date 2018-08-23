@@ -13,8 +13,7 @@ namespace RetroCollectNew.Models.DataModel
 
         [MaxLength(50)]
         public string UserId { get; set; }
-
-        //TODO: This should really be a foreign key            
+        
         public int GameId { get; set; }
     }
 }

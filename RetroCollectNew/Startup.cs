@@ -39,6 +39,8 @@ namespace RetroCollectNew
 
             services.AddTransient<IClientRepository, ClientRepository>();
             services.AddTransient<IGameRepository, GameRepository>();
+            services.AddTransient<IClientRepository, ClientRepository>();
+
 
             services.AddMvc();
 

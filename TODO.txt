@@ -1,0 +1,5 @@
+Move client controller DB calls to client repo
+Move data folder into new project
+Move searching and sorting from index into own classes
+Create repo and business logic tests
+Add basic logging

@@ -1,0 +1,14 @@
+Architecture
+=============
+Move client controller DB calls to client repo
+Move data folder into new project
+Move searching and sorting from index into own classes
+Create repo and business logic tests
+Add basic logging
+Possibly create overflow methods to allow update and delete via an ID instead of object
+
+Frontend
+========
+allow sorting to switch on a-z and z-a
+Currently there is a checkbox to switch to client, change to tab
+Crap load of styling

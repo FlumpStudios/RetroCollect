@@ -6,16 +6,29 @@ using System.Threading.Tasks;
 
 namespace RetroCollectNew.Models.ViewModels
 {
+
+    /// <summary>
+    ///Immutable View Model for game list view
+    /// </summary>
     public class ListView
     {
-        public IEnumerable<GameListModel> GameListModel { get; set; }
+        public ListView(IEnumerable<GameListModel> gameListModel, bool isLoggedIn, IEnumerable<string> consoleList, bool reversedList, bool isAdmin)
+        {
+            GameListModel = gameListModel;
+            IsLoggedIn = isLoggedIn;
+            ConsoleList = consoleList;
+            ReversedList = reversedList;
+            IsAdmin = isAdmin;
+        }
 
-        public bool IsLoggedIn { get; set; }
+        public IEnumerable<GameListModel> GameListModel { get; }
 
-        public IEnumerable<string> ConsoleList { get; set; }
+        public bool IsLoggedIn { get;  }
 
-        public bool ReversedList { get; set; }
+        public IEnumerable<string> ConsoleList { get;  }
 
-        public bool IsAdmin { get; set; }
+        public bool ReversedList { get;}
+
+        public bool IsAdmin { get; }
     }
 }

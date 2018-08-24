@@ -25,4 +25,3 @@ E:\Dev\RetroCollectNew\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfoInputs.ca
 E:\Dev\RetroCollectNew\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfo.cs
 E:\Dev\RetroCollectNew\Tests\obj\Debug\netcoreapp2.0\Tests.dll
 E:\Dev\RetroCollectNew\Tests\obj\Debug\netcoreapp2.0\Tests.pdb
-E:\Dev\RetroCollectNew\Tests\obj\Debug\netcoreapp2.0\Tests.csprojResolveAssemblyReference.cache

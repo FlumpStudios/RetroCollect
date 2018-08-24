@@ -17,15 +17,13 @@ namespace RetroCollectNew.Controllers
             _unitOFWork = unitOFWork;            
         }
 
-        #region Views
-        public IActionResult Index()
-        {
-            return View();
-        }
-        #endregion
-
 
         #region Actions
+        /// <summary>
+        /// Create a new record in client DB
+        /// </summary>
+        /// <param name="ClientListModel"></param>
+        /// <returns></returns>
         [HttpPost]       
         public bool Create([Bind("GameId")] ClientListModel ClientListModel)
         {

@@ -14,6 +14,7 @@ using System.Linq.Expressions;
 using System;
 using RetroCollectNew.Business_Logic;
 
+
 namespace RetroCollectNew.Controllers
 {
     
@@ -27,62 +28,39 @@ namespace RetroCollectNew.Controllers
         {
             _unitOFWork = unitOFWork;
             _sortingManager = sortingManager;
-
-
         }
 
+
+        /// <summary>
+        /// Sort and filted games from DB and return with view
+        /// </summary>
+        /// <param name="gameListRequestModel"></param>
+        /// <returns></returns>
         #region views
         public IActionResult Index(GameListRequestModel gameListRequestModel)
         {
-            var gameList = _sortingManager.GetFilteredResults(gameListRequestModel); 
-            var availableConsoles = _unitOFWork.GameRepo.GetDistinct(x => x.Format);           
-        
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var gameList = _sortingManager.GetFilteredResults(gameListRequestModel);                                   
 
-            if (gameListRequestModel.ShowClientList)
-            {
-                var clientList = _unitOFWork.ClientRepo.Get();
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                //Check client DB against Game DB to see which games to return.
-                if (!string.IsNullOrEmpty(userId))
-                {
-                    gameList = (from s in gameList
-                                join c in clientList on s.Id equals c.GameId
-                                where c.GameId == s.Id && userId == c.UserId
-                                select s).ToList();
-                }
-            }            
-
-            ListView listView = new ListView()
-            {
-                GameListModel = gameList,
-                IsAdmin = User.IsInRole("Admin"),
-                IsLoggedIn = User.Identity.IsAuthenticated,
-                ConsoleList = availableConsoles,
-                ReversedList = gameListRequestModel.Switchsort
-            };
-
-            return View(listView);
-        }
-
-        private Func<IQueryable<GameListModel>, IOrderedQueryable<GameListModel>> SelectOrderBy(string sortOption, bool decend = false)
-        {
-            //TODO: Replace string compare with enum
-            switch (sortOption)
-            {
-                case "Name":
-                    if (decend) return x => x.OrderByDescending(y => y.Name);
-                    return x => x.OrderBy(y => y.Name);
-                case "Developer":
-                    if (decend) return x => x.OrderByDescending(y => y.Developer);
-                    return x => x.OrderBy(y => y.Developer);
-                case "Genre":
-                    if (decend) return x => x.OrderByDescending(y => y.Genre);
-                    return x => x.OrderBy(y => y.Genre);
-                default:
-                    return x => x.OrderBy(y => y.Name);
+            if (gameListRequestModel.ShowClientList && !string.IsNullOrEmpty(userId))
+            {               
+                    gameList = QueryHelper.InnerJoin(gameList, _unitOFWork.ClientRepo.Get(), userId);
             }
-        }
 
+            return View (new ListView(gameList,
+                User.Identity.IsAuthenticated,
+                _unitOFWork.GameRepo.GetDistinct(x => x.Format),
+                gameListRequestModel.Switchsort,
+                User.IsInRole("Admin")));            
+            }
+
+
+
+        /// <summary>
+        /// Get game by ID and return with Details view
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult Details(int? id)
         {
             if (id == null) return NotFound();
@@ -92,6 +70,11 @@ namespace RetroCollectNew.Controllers
             return View(gameListModel);
         }
 
+
+        /// <summary>
+        /// Return the create view
+        /// </summary>
+        /// <returns></returns>
         [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
@@ -99,7 +82,11 @@ namespace RetroCollectNew.Controllers
         }
 
 
-       
+        /// <summary>
+        /// Return the edit view with along with retrieved record
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Authorize(Roles = "Admin")]
         public IActionResult Edit(int? id)
         {
@@ -110,6 +97,11 @@ namespace RetroCollectNew.Controllers
         }
 
 
+        /// <summary>
+        /// Return the edit view with along with retrieved record
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Authorize(Roles = "Admin")]
         public IActionResult Delete(int? id)
         {
@@ -122,6 +114,12 @@ namespace RetroCollectNew.Controllers
         #endregion
 
 
+
+        /// <summary>
+        /// Create new game in game list DB
+        /// </summary>
+        /// <param name="gameListModel"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
@@ -134,9 +132,14 @@ namespace RetroCollectNew.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(gameListModel);
-        }         
+        }
 
-
+        /// <summary>
+        /// Edit game in game list DB
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="gameListModel"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
@@ -160,8 +163,13 @@ namespace RetroCollectNew.Controllers
             }
             return View(gameListModel);
         }
-  
 
+
+        /// <summary>
+        /// Delete game in game list DB
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -173,6 +181,12 @@ namespace RetroCollectNew.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        /// <summary>
+        /// Ensure game list model exists
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private bool GameListModelExists(int id) =>  _unitOFWork.GameRepo.Get().Any(e => e.Id == id);
     }
 }

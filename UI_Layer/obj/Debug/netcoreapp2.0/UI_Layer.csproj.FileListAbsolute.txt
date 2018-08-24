@@ -10,7 +10,6 @@ C:\Users\NerdHouse\source\repos\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0
 E:\Dev\RetroCollectNew\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.deps.json
 E:\Dev\RetroCollectNew\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.dll
 E:\Dev\RetroCollectNew\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.pdb
-E:\Dev\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csprojResolveAssemblyReference.cache
 E:\Dev\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csproj.CoreCompileInputs.cache
 E:\Dev\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfoInputs.cache
 E:\Dev\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfo.cs

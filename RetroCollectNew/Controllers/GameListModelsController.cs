@@ -1,46 +1,37 @@
 ﻿using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RetroCollectNew.Models;
 using RetroCollectNew.Models.DataModel;
 using Microsoft.AspNetCore.Authorization;
-using System.Collections;
 using RetroCollectNew.Models.ViewModels;
 using System.Security.Claims;
 using RetroCollectNew.Models.Requests;
 using System.Collections.Generic;
 using RetroCollectNew.Data.Repositories;
+using RetroCollectNew.Data.WorkUnits;
 
 namespace RetroCollectNew.Controllers
 {
     
     public class GameListModelsController : Controller
     {
-        private readonly RetroCollectNewContext _context;
-        private readonly IGameRepository _gameRepository;
-        private readonly IClientRepository _clientRepository;
-        
+        private readonly IUnitOFWork _unitOFWork;
 
-        public GameListModelsController(RetroCollectNewContext context,
-            IGameRepository gameRepository,
-            IClientRepository clientRepository)
+        public GameListModelsController(IUnitOFWork unitOFWork)            
         {
-            _gameRepository = gameRepository;
-            _clientRepository = clientRepository;
-            _context = context;
+            _unitOFWork = unitOFWork;  
         }
 
         #region views
         public IActionResult Index(GameListRequestModel gameListRequestModel)
         {
-            var gameList = _gameRepository.GetGames();
-            var clientList = _context.ClientListModel.ToList();
-            List<string> availableConsoles = null;
+            var gameList = _unitOFWork.GameRepo.Get();
+            var clientList = _unitOFWork.ClientRepo.Get();
 
             if (gameListRequestModel.ShowClientList)
             {
-                var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 //Check client DB against Game DB to see which games to return.
                 if (!string.IsNullOrEmpty(userId))
@@ -54,7 +45,8 @@ namespace RetroCollectNew.Controllers
                 //Get a list of available consoles in the game list for game options tabs
 
             }
-            availableConsoles = gameList.Select(m => m.Format).Distinct().ToList();
+            var availableConsoles = gameList.Select(m => m.Format).Distinct().ToList();
+            
             //filters and searching
             //TODO: Move into seperate class
             if (!string.IsNullOrEmpty(gameListRequestModel.SearchText)) gameList = gameList.Where(y => y.Name.ToUpper().Contains(gameListRequestModel.SearchText.ToUpper())).ToList();
@@ -67,7 +59,6 @@ namespace RetroCollectNew.Controllers
                 if (gameListRequestModel.SortingOptions == "Developer") gameList = gameList.OrderBy(h => h.Developer).ToList();
                 if (gameListRequestModel.SortingOptions == "Genre") gameList = gameList.OrderBy(h => h.Genre).ToList();
             }
-
 
 
             ListView listView = new ListView()
@@ -85,7 +76,7 @@ namespace RetroCollectNew.Controllers
         public IActionResult Details(int? id)
         {
             if (id == null) return NotFound();
-            var gameListModel = _gameRepository.GetGameByID(id);
+            var gameListModel = _unitOFWork.GameRepo.GetByID(id);
             if (gameListModel == null) return NotFound();
 
             return View(gameListModel);
@@ -103,7 +94,7 @@ namespace RetroCollectNew.Controllers
         public IActionResult Edit(int? id)
         {
             if (id == null) return NotFound();
-            var gameListModel = _gameRepository.GetGameByID(id);
+            var gameListModel = _unitOFWork.GameRepo.GetByID(id);
             if (gameListModel == null) return NotFound();
             return View(gameListModel);
         }
@@ -113,7 +104,7 @@ namespace RetroCollectNew.Controllers
         public IActionResult Delete(int? id)
         {
             if (id == null) return NotFound();
-            var gameListModel = _gameRepository.GetGameByID(id);
+            var gameListModel = _unitOFWork.GameRepo.GetByID(id);
             if (gameListModel == null) return NotFound();
 
             return View(gameListModel);
@@ -128,12 +119,13 @@ namespace RetroCollectNew.Controllers
         {
             if (ModelState.IsValid)
             {
-                _gameRepository.InsertGame(gameListModel);
-                _gameRepository.Save();
+                _unitOFWork.GameRepo.Insert(gameListModel);
+                _unitOFWork.Commit();
                 return RedirectToAction(nameof(Index));
             }
             return View(gameListModel);
         }         
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -146,19 +138,13 @@ namespace RetroCollectNew.Controllers
             {
                 try
                 {
-                    _gameRepository.UpdateGame(gameListModel);
-                    _gameRepository.Save();
+                    _unitOFWork.GameRepo.Update(gameListModel);
+                    _unitOFWork.Commit();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GameListModelExists(gameListModel.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    if (!GameListModelExists(gameListModel.Id)) return NotFound();                    
+                    else throw;                    
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -170,12 +156,13 @@ namespace RetroCollectNew.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
-        {            
-            _gameRepository.DeleteGame(_gameRepository.GetGameByID(id));
-            _gameRepository.Save();
+        {
+            _unitOFWork.GameRepo.Delete(id);
+            _unitOFWork.Commit();
+            
             return RedirectToAction(nameof(Index));
         }
 
-        private bool GameListModelExists(int id) => _gameRepository.GetGames().Any(e => e.Id == id);
+        private bool GameListModelExists(int id) =>  _unitOFWork.GameRepo.Get().Any(e => e.Id == id);
     }
 }

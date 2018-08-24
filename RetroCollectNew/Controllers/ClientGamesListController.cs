@@ -1,21 +1,20 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using RetroCollectNew.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using RetroCollectNew.Models.DataModel;
 using System.Security.Claims;
 using RetroCollectNew.Data.Repositories;
+using RetroCollectNew.Data.WorkUnits;
 
 namespace RetroCollectNew.Controllers
 {
     [Authorize]
     public class ClientGamesListController : Controller
     {
-        private readonly IClientRepository _clientRepository;
+        private readonly IUnitOFWork _unitOFWork;
 
-        public ClientGamesListController(IClientRepository clientRepository)
+        public ClientGamesListController(IUnitOFWork unitOFWork)
         {
-            _clientRepository = clientRepository;
+            _unitOFWork = unitOFWork;            
         }
 
 
@@ -34,8 +33,9 @@ namespace RetroCollectNew.Controllers
             if (ModelState.IsValid)
             {
                 ClientListModel.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                _clientRepository.InsertClient(ClientListModel);
-                _clientRepository.Save();
+                _unitOFWork.ClientRepo.Insert(ClientListModel);
+                _unitOFWork.Commit();
+            
                 return true;
             }            
             return false;

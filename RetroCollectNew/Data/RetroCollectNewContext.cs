@@ -14,6 +14,9 @@ namespace RetroCollectNew.Models
         {
         }
 
+        public RetroCollectNewContext()            {
+        }
+
         public DbSet<RetroCollectNew.Models.DataModel.GameListModel> GameListModel { get; set; }
 
         public DbSet<RetroCollectNew.Models.DataModel.ClientListModel> ClientListModel { get; set; }

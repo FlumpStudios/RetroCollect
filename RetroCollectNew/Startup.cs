@@ -13,6 +13,7 @@ using RetroCollectNew.Models;
 using RetroCollectNew.Services;
 using RetroCollectNew.Data.Repositories;
 using RetroCollectNew.Data.WorkUnits;
+using RetroCollectNew.Business_Logic;
 
 namespace RetroCollectNew
 {
@@ -42,7 +43,7 @@ namespace RetroCollectNew
             services.AddTransient<IGameRepository, GameRepository>();
             services.AddTransient<IClientRepository, ClientRepository>();
             services.AddTransient<IUnitOFWork, UnitOFWork>();
-
+            services.AddTransient<ISortingManager, SortingManager>();
             services.AddMvc();
 
             services.AddDbContext<RetroCollectNewContext>(options =>

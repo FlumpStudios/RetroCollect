@@ -10,6 +10,9 @@ using RetroCollectNew.Models.Requests;
 using System.Collections.Generic;
 using RetroCollectNew.Data.Repositories;
 using RetroCollectNew.Data.WorkUnits;
+using System.Linq.Expressions;
+using System;
+using RetroCollectNew.Business_Logic;
 
 namespace RetroCollectNew.Controllers
 {
@@ -18,21 +21,27 @@ namespace RetroCollectNew.Controllers
     {
         private readonly IUnitOFWork _unitOFWork;
 
-        public GameListModelsController(IUnitOFWork unitOFWork)            
+        private readonly ISortingManager _sortingManager;
+
+        public GameListModelsController(IUnitOFWork unitOFWork, ISortingManager sortingManager)            
         {
-            _unitOFWork = unitOFWork;  
+            _unitOFWork = unitOFWork;
+            _sortingManager = sortingManager;
+
+
         }
 
         #region views
         public IActionResult Index(GameListRequestModel gameListRequestModel)
         {
-            var gameList = _unitOFWork.GameRepo.Get();
-            var clientList = _unitOFWork.ClientRepo.Get();
+            var gameList = _sortingManager.GetFilteredResults(gameListRequestModel); 
+            var availableConsoles = _unitOFWork.GameRepo.GetDistinct(x => x.Format);           
+        
 
             if (gameListRequestModel.ShowClientList)
             {
+                var clientList = _unitOFWork.ClientRepo.Get();
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
                 //Check client DB against Game DB to see which games to return.
                 if (!string.IsNullOrEmpty(userId))
                 {
@@ -41,25 +50,7 @@ namespace RetroCollectNew.Controllers
                                 where c.GameId == s.Id && userId == c.UserId
                                 select s).ToList();
                 }
-
-                //Get a list of available consoles in the game list for game options tabs
-
-            }
-            var availableConsoles = gameList.Select(m => m.Format).Distinct().ToList();
-            
-            //filters and searching
-            //TODO: Move into seperate class
-            if (!string.IsNullOrEmpty(gameListRequestModel.SearchText)) gameList = gameList.Where(y => y.Name.ToUpper().Contains(gameListRequestModel.SearchText.ToUpper())).ToList();
-            if (!string.IsNullOrEmpty(gameListRequestModel.Format)) gameList = gameList.Where(t => t.Format.Equals(gameListRequestModel.Format)).ToList();
-
-            //TODO: Sort this shit out!
-            if (!string.IsNullOrEmpty(gameListRequestModel.SortingOptions))
-            {
-                if (gameListRequestModel.SortingOptions == "Name") gameList = gameListRequestModel.Switchsort ? gameList.OrderByDescending(h => h.Name).ToList() : gameList.OrderBy(h => h.Name).ToList();
-                if (gameListRequestModel.SortingOptions == "Developer") gameList = gameList.OrderBy(h => h.Developer).ToList();
-                if (gameListRequestModel.SortingOptions == "Genre") gameList = gameList.OrderBy(h => h.Genre).ToList();
-            }
-
+            }            
 
             ListView listView = new ListView()
             {
@@ -71,6 +62,25 @@ namespace RetroCollectNew.Controllers
             };
 
             return View(listView);
+        }
+
+        private Func<IQueryable<GameListModel>, IOrderedQueryable<GameListModel>> SelectOrderBy(string sortOption, bool decend = false)
+        {
+            //TODO: Replace string compare with enum
+            switch (sortOption)
+            {
+                case "Name":
+                    if (decend) return x => x.OrderByDescending(y => y.Name);
+                    return x => x.OrderBy(y => y.Name);
+                case "Developer":
+                    if (decend) return x => x.OrderByDescending(y => y.Developer);
+                    return x => x.OrderBy(y => y.Developer);
+                case "Genre":
+                    if (decend) return x => x.OrderByDescending(y => y.Genre);
+                    return x => x.OrderBy(y => y.Genre);
+                default:
+                    return x => x.OrderBy(y => y.Name);
+            }
         }
 
         public IActionResult Details(int? id)

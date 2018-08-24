@@ -21,3 +21,4 @@ E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.A
 E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.AssemblyInfo.cs
 E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.dll
 E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.pdb
+E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.csprojResolveAssemblyReference.cache

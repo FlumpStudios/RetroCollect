@@ -17,7 +17,6 @@ namespace RetroCollectNew.Controllers
             _unitOFWork = unitOFWork;            
         }
 
-
         #region Views
         public IActionResult Index()
         {

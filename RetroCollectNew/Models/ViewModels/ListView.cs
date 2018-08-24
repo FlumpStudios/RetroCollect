@@ -12,7 +12,7 @@ namespace RetroCollectNew.Models.ViewModels
 
         public bool IsLoggedIn { get; set; }
 
-        public List<string> ConsoleList { get; set; }
+        public IEnumerable<string> ConsoleList { get; set; }
 
         public bool ReversedList { get; set; }
 

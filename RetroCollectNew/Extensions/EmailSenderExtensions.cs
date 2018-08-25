@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using RetroCollectNew.Services;
+using ApplicationLayer.Services;
 
-namespace RetroCollectNew.Services
+namespace ApplicationLayer.Services
 {
     public static class EmailSenderExtensions
     {

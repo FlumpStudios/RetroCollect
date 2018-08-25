@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -8,14 +6,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RetroCollectNew.Data;
-using RetroCollectNew.Models;
-using RetroCollectNew.Services;
-using RetroCollectNew.Data.Repositories;
-using RetroCollectNew.Data.WorkUnits;
-using RetroCollectNew.Business_Logic;
+using ApplicationLayer.ApplicationData;
+using ApplicationLayer.Models;
+using ApplicationLayer.Services;
+using ApplicationLayer.ApplicationData.WorkUnits;
+using ApplicationLayer.Business_Logic;
+using DataAccess.EntityFramework.Repositories;
+using ModelData;
+using DataAccess.Repositories;
+using DataAccess.WorkUnits;
 
-namespace RetroCollectNew
+namespace ApplicationLayer
 {
     public class Startup
     {

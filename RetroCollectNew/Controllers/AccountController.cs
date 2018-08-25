@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using RetroCollectNew.Models;
-using RetroCollectNew.Models.AccountViewModels;
-using RetroCollectNew.Services;
+using ApplicationLayer.Models;
+using ApplicationLayer.Models.AccountViewModels;
+using ApplicationLayer.Services;
 
-namespace RetroCollectNew.Controllers
+namespace ApplicationLayer.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]

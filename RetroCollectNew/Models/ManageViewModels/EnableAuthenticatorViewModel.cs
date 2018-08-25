@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RetroCollectNew.Models.ManageViewModels
+namespace ApplicationLayer.Models.ManageViewModels
 {
     public class EnableAuthenticatorViewModel
     {

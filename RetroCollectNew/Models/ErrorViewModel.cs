@@ -1,6 +1,6 @@
 using System;
 
-namespace RetroCollectNew.Models
+namespace ApplicationLayer.Models
 {
     public class ErrorViewModel
     {

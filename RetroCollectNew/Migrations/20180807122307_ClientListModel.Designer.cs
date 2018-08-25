@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using RetroCollectNew.Models;
+using ModelData;
+using ApplicationLayer.Models;
 using System;
 
-namespace RetroCollectNew.Migrations
+namespace ApplicationLayer.Migrations
 {
     [DbContext(typeof(RetroCollectNewContext))]
     [Migration("20180807122307_ClientListModel")]
@@ -37,7 +38,7 @@ namespace RetroCollectNew.Migrations
                     b.ToTable("ClientListModel");
                 });
 
-            modelBuilder.Entity("RetroCollectNew.Models.DataModel.GameListModel", b =>
+            modelBuilder.Entity("ApplicationLayer.Models.DataModel.GameListModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();

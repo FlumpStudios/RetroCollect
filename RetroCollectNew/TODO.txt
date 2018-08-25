@@ -1,8 +1,9 @@
+
 Architecture
 =============
-Move data folder into new project
 Create repo and business logic tests
 Add basic logging
+Add swagger
 
 Frontend
 ========

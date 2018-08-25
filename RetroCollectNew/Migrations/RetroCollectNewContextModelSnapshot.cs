@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using RetroCollectNew.Models;
+using ModelData;
+using ApplicationLayer.Models;
 using System;
 
-namespace RetroCollectNew.Migrations
+namespace ApplicationLayer.Migrations
 {
     [DbContext(typeof(RetroCollectNewContext))]
     partial class RetroCollectNewContextModelSnapshot : ModelSnapshot

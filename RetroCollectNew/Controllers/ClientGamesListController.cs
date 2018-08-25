@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using RetroCollectNew.Models.DataModel;
 using System.Security.Claims;
-using RetroCollectNew.Data.Repositories;
-using RetroCollectNew.Data.WorkUnits;
+using ModelData;
+using DataAccess.WorkUnits;
 
-namespace RetroCollectNew.Controllers
+namespace ApplicationLayer.Controllers
 {
     [Authorize]
     public class ClientGamesListController : Controller

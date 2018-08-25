@@ -1,30 +1,24 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RetroCollectNew.Models;
-using RetroCollectNew.Models.DataModel;
 using Microsoft.AspNetCore.Authorization;
-using RetroCollectNew.Models.ViewModels;
+using ApplicationLayer.Models.Responses;
 using System.Security.Claims;
-using RetroCollectNew.Models.Requests;
-using System.Collections.Generic;
-using RetroCollectNew.Data.Repositories;
-using RetroCollectNew.Data.WorkUnits;
-using System.Linq.Expressions;
-using System;
-using RetroCollectNew.Business_Logic;
+using ApplicationLayer.Models.Requests;
+using ApplicationLayer.Business_Logic;
+using ModelData;
+using DataAccess.WorkUnits;
 
-
-namespace RetroCollectNew.Controllers
+namespace ApplicationLayer.Controllers
 {
     
-    public class GameListModelsController : Controller
+    public class GameListController : Controller
     {
         private readonly IUnitOFWork _unitOFWork;
 
         private readonly ISortingManager _sortingManager;
 
-        public GameListModelsController(IUnitOFWork unitOFWork, ISortingManager sortingManager)            
+        public GameListController(IUnitOFWork unitOFWork, ISortingManager sortingManager)            
         {
             _unitOFWork = unitOFWork;
             _sortingManager = sortingManager;
@@ -37,7 +31,7 @@ namespace RetroCollectNew.Controllers
         /// <param name="gameListRequestModel"></param>
         /// <returns></returns>
         #region views
-        public IActionResult Index(GameListRequestModel gameListRequestModel)
+        public IActionResult Index(GameListRequest gameListRequestModel)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var gameList = _sortingManager.GetFilteredResults(gameListRequestModel);                                   
@@ -47,7 +41,7 @@ namespace RetroCollectNew.Controllers
                     gameList = QueryHelper.InnerJoin(gameList, _unitOFWork.ClientRepo.Get(), userId);
             }
 
-            return View (new ListView(gameList,
+            return View (new GameListResponse(gameList,
                 User.Identity.IsAuthenticated,
                 _unitOFWork.GameRepo.GetDistinct(x => x.Format),
                 gameListRequestModel.Switchsort,

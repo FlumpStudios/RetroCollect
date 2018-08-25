@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace RetroCollectNew.Migrations
+namespace ApplicationLayer.Migrations
 {
     public partial class ClientListModel : Migration
     {

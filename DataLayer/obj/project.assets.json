@@ -196,6 +196,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "ModelData/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ModelData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelData.dll": {}
+        }
       }
     }
   },
@@ -656,11 +666,17 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "ModelData/1.0.0": {
+      "type": "project",
+      "path": "../ModelData/ModelData.csproj",
+      "msbuildProject": "../ModelData/ModelData.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "ModelData >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -673,9 +689,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Dev\\RetroCollectNew\\DataLayer\\DataLayer.csproj",
-      "projectName": "DataLayer",
-      "projectPath": "E:\\Dev\\RetroCollectNew\\DataLayer\\DataLayer.csproj",
+      "projectUniqueName": "E:\\Dev\\RetroCollectNew\\DataLayer\\DataAccess.csproj",
+      "projectName": "DataAccess",
+      "projectPath": "E:\\Dev\\RetroCollectNew\\DataLayer\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\FlumpStudios\\.nuget\\packages\\",
       "outputPath": "E:\\Dev\\RetroCollectNew\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
@@ -695,7 +711,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Dev\\RetroCollectNew\\ModelData\\ModelData.csproj": {
+              "projectPath": "E:\\Dev\\RetroCollectNew\\ModelData\\ModelData.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

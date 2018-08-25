@@ -5,14 +5,15 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using RetroCollectNew.Models;
+using ModelData;
+using ApplicationLayer.Models;
 using System;
 
-namespace RetroCollectNew.Migrations
+namespace ApplicationLayer.Migrations
 {
     [DbContext(typeof(RetroCollectNewContext))]
-    [Migration("20180703123141_GameListModels")]
-    partial class GameListModels
+    [Migration("20180703123141_GameListModel")]
+    partial class GameList
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

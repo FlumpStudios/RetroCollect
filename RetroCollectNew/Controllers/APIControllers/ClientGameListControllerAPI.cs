@@ -3,12 +3,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RetroCollectNew.Models;
-using RetroCollectNew.Models.DataModel;
+
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using ModelData;
 
-namespace RetroCollectNew.APIcontrollers.Controllers
+namespace ApplicationLayer.APIcontrollers.Controllers
 {
     [Authorize]
     [Produces("application/json")]

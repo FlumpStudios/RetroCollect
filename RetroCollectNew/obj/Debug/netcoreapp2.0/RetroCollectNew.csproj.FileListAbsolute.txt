@@ -15,10 +15,16 @@ E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\RetroCollectNew.r
 E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\RetroCollectNew.runtimeconfig.dev.json
 E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\RetroCollectNew.dll
 E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\RetroCollectNew.pdb
+E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\DataAccess.dll
+E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
+E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\ModelData.dll
+E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb
+E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\DataAccess.pdb
+E:\Dev\RetroCollectNew\RetroCollectNew\bin\Debug\netcoreapp2.0\ModelData.pdb
+E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.csprojResolveAssemblyReference.cache
 E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.csproj.CoreCompileInputs.cache
 E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.AssemblyInfoInputs.cache
 E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.AssemblyInfo.cs
 E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.dll
 E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.pdb
-E:\Dev\RetroCollectNew\RetroCollectNew\obj\Debug\netcoreapp2.0\RetroCollectNew.csprojResolveAssemblyReference.cache

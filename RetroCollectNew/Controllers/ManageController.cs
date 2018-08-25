@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using RetroCollectNew.Models;
-using RetroCollectNew.Models.ManageViewModels;
-using RetroCollectNew.Services;
+using ApplicationLayer.Models;
+using ApplicationLayer.Models.ManageViewModels;
+using ApplicationLayer.Services;
 
-namespace RetroCollectNew.Controllers
+namespace ApplicationLayer.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
@@ -495,7 +495,7 @@ namespace RetroCollectNew.Controllers
         {
             return string.Format(
                 AuthenicatorUriFormat,
-                _urlEncoder.Encode("RetroCollectNew"),
+                _urlEncoder.Encode("ApplicationLayer"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

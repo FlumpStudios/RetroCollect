@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace RetroCollectNew.Models.ManageViewModels
+namespace ApplicationLayer.Models.ManageViewModels
 {
     public class ExternalLoginsViewModel
     {

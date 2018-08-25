@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using RetroCollectNew.Models;
+using ApplicationLayer.Models;
 
-namespace RetroCollectNew.Controllers
+namespace ApplicationLayer.Controllers
 {
     public class HomeController : Controller
     {

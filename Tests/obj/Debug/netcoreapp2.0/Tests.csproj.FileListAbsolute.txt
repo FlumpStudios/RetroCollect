@@ -20,6 +20,7 @@ E:\Dev\RetroCollectNew\Tests\bin\Debug\netcoreapp2.0\Tests.runtimeconfig.json
 E:\Dev\RetroCollectNew\Tests\bin\Debug\netcoreapp2.0\Tests.runtimeconfig.dev.json
 E:\Dev\RetroCollectNew\Tests\bin\Debug\netcoreapp2.0\Tests.dll
 E:\Dev\RetroCollectNew\Tests\bin\Debug\netcoreapp2.0\Tests.pdb
+E:\Dev\RetroCollectNew\Tests\obj\Debug\netcoreapp2.0\Tests.csprojResolveAssemblyReference.cache
 E:\Dev\RetroCollectNew\Tests\obj\Debug\netcoreapp2.0\Tests.csproj.CoreCompileInputs.cache
 E:\Dev\RetroCollectNew\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfoInputs.cache
 E:\Dev\RetroCollectNew\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfo.cs

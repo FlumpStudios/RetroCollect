@@ -1,4 +1,4 @@
-﻿@using RetroCollectNew.Views.Manage
+﻿@using ApplicationLayer.Views.Manage
 @inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();

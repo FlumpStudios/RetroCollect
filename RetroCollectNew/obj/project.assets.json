@@ -5029,6 +5029,42 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
+      },
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "ModelData": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
+        }
+      },
+      "DataAccess.EntityFramework/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.EntityFramework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.EntityFramework.dll": {}
+        }
+      },
+      "ModelData/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ModelData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelData.dll": {}
+        }
       }
     }
   },
@@ -13105,10 +13141,27 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../DataLayer/DataAccess.csproj",
+      "msbuildProject": "../DataLayer/DataAccess.csproj"
+    },
+    "DataAccess.EntityFramework/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess.EntityFramework/DataAccess.EntityFramework.csproj",
+      "msbuildProject": "../DataAccess.EntityFramework/DataAccess.EntityFramework.csproj"
+    },
+    "ModelData/1.0.0": {
+      "type": "project",
+      "path": "../ModelData/ModelData.csproj",
+      "msbuildProject": "../ModelData/ModelData.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "DataAccess >= 1.0.0",
+      "DataAccess.EntityFramework >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
@@ -13125,9 +13178,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\Dev\\RetroCollectNew\\RetroCollectNew\\RetroCollectNew.csproj",
-      "projectName": "RetroCollectNew",
-      "projectPath": "E:\\Dev\\RetroCollectNew\\RetroCollectNew\\RetroCollectNew.csproj",
+      "projectUniqueName": "E:\\Dev\\RetroCollectNew\\RetroCollectNew\\ApplicationLayer.csproj",
+      "projectName": "ApplicationLayer",
+      "projectPath": "E:\\Dev\\RetroCollectNew\\RetroCollectNew\\ApplicationLayer.csproj",
       "packagesPath": "C:\\Users\\FlumpStudios\\.nuget\\packages\\",
       "outputPath": "E:\\Dev\\RetroCollectNew\\RetroCollectNew\\obj\\",
       "projectStyle": "PackageReference",
@@ -13147,7 +13200,14 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Dev\\RetroCollectNew\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj": {
+              "projectPath": "E:\\Dev\\RetroCollectNew\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj"
+            },
+            "E:\\Dev\\RetroCollectNew\\DataLayer\\DataAccess.csproj": {
+              "projectPath": "E:\\Dev\\RetroCollectNew\\DataLayer\\DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

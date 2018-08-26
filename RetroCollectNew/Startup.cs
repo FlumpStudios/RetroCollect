@@ -10,7 +10,7 @@ using ApplicationLayer.ApplicationData;
 using ApplicationLayer.Models;
 using ApplicationLayer.Services;
 using ApplicationLayer.ApplicationData.WorkUnits;
-using ApplicationLayer.Business_Logic;
+using ApplicationLayer.Business_Logic.Sorting;
 using DataAccess.EntityFramework.Repositories;
 using ModelData;
 using DataAccess.Repositories;

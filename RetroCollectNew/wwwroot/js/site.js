@@ -16,14 +16,22 @@ $(document).ready(function () {
 
     //Sorting
     $('.sorting-headers').click(function (data) {
-
+        
         var sortSwitch = $('#switchsort').val();
-        if (sortSwitch == 'true' || sortSwitch == true) sortSwitch = false;
-        else sortSwitch = true;
+
+        //Check if the current orderby option matches the one clicked, if it does match then reverse swtich sort.
+        //This is to allow switching between ascending and decending sorting.
+        if ($('#CurrentOrderBy').val() === this.id) {          
+            if (sortSwitch === 'true' || sortSwitch === true) sortSwitch = false;
+            else sortSwitch = true;
+        }
+        else
+        {
+            sortSwitch = false;
+        }
 
         $('#sortingOptions').val(this.id);
         $('#switchsort').val(sortSwitch);
-
         $('#game-form').submit();
     });
 

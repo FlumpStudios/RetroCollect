@@ -15,3 +15,4 @@ E:\Dev\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfoInp
 E:\Dev\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfo.cs
 E:\Dev\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.dll
 E:\Dev\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.pdb
+E:\Dev\RetroCollectNew\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csprojResolveAssemblyReference.cache

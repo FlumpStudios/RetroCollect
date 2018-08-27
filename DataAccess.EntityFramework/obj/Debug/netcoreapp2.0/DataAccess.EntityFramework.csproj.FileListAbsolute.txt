@@ -1,0 +1,15 @@
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.deps.json
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.dll
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.dll
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\ModelData.dll
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.pdb
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\ModelData.pdb
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.xml
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csprojResolveAssemblyReference.cache
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csproj.CoreCompileInputs.cache
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.AssemblyInfoInputs.cache
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.AssemblyInfo.cs
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
+E:\Dev\RetroCollectNew\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb

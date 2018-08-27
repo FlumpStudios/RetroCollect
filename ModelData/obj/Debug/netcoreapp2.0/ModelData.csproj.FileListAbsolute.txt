@@ -1,0 +1,10 @@
+E:\Dev\RetroCollectNew\ModelData\bin\Debug\netcoreapp2.0\ModelData.deps.json
+E:\Dev\RetroCollectNew\ModelData\bin\Debug\netcoreapp2.0\ModelData.dll
+E:\Dev\RetroCollectNew\ModelData\bin\Debug\netcoreapp2.0\ModelData.pdb
+E:\Dev\RetroCollectNew\ModelData\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.dll
+E:\Dev\RetroCollectNew\ModelData\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.xml
+E:\Dev\RetroCollectNew\ModelData\obj\Debug\netcoreapp2.0\ModelData.csproj.CoreCompileInputs.cache
+E:\Dev\RetroCollectNew\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfoInputs.cache
+E:\Dev\RetroCollectNew\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
+E:\Dev\RetroCollectNew\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
+E:\Dev\RetroCollectNew\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb

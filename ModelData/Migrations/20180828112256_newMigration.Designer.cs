@@ -6,28 +6,27 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using ModelData;
-using ApplicationLayer.Models;
 using System;
 
-namespace ApplicationLayer.Migrations
+namespace ModelData.Migrations
 {
     [DbContext(typeof(RetroCollectNewContext))]
-    partial class RetroCollectNewContextModelSnapshot : ModelSnapshot
+    [Migration("20180828112256_newMigration")]
+    partial class newMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("RetroCollectNew.Models.DataModel.ClientListModel", b =>
+            modelBuilder.Entity("ModelData.ClientListModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("GameId")
-                        .HasMaxLength(50);
+                    b.Property<int>("GameId");
 
                     b.Property<string>("UserId")
                         .HasMaxLength(50);
@@ -37,7 +36,7 @@ namespace ApplicationLayer.Migrations
                     b.ToTable("ClientListModel");
                 });
 
-            modelBuilder.Entity("RetroCollectNew.Models.DataModel.GameListModel", b =>
+            modelBuilder.Entity("ModelData.GameListModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();

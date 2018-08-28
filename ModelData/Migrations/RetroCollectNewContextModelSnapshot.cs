@@ -6,23 +6,36 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using ModelData;
-using ApplicationLayer.Models;
 using System;
 
-namespace ApplicationLayer.Migrations
+namespace ModelData.Migrations
 {
     [DbContext(typeof(RetroCollectNewContext))]
-    [Migration("20180703123141_GameListModel")]
-    partial class GameList
+    partial class RetroCollectNewContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("RetroCollectNew.Models.DataModel.GameListModel", b =>
+            modelBuilder.Entity("ModelData.ClientListModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("GameId");
+
+                    b.Property<string>("UserId")
+                        .HasMaxLength(50);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ClientListModel");
+                });
+
+            modelBuilder.Entity("ModelData.GameListModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -31,12 +44,14 @@ namespace ApplicationLayer.Migrations
                         .IsRequired()
                         .HasMaxLength(70);
 
+                    b.Property<string>("Format")
+                        .HasMaxLength(70);
+
                     b.Property<string>("Genre")
                         .IsRequired()
                         .HasMaxLength(70);
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(70);
 
                     b.Property<string>("Publisher")

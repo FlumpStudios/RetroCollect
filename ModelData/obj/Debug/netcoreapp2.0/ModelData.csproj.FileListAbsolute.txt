@@ -16,3 +16,11 @@ C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfoInpu
 C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
 C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
 C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb
+E:\Dev\retrocollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.deps.json
+E:\Dev\retrocollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.dll
+E:\Dev\retrocollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.pdb
+E:\Dev\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.csproj.CoreCompileInputs.cache
+E:\Dev\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfoInputs.cache
+E:\Dev\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
+E:\Dev\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
+E:\Dev\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb

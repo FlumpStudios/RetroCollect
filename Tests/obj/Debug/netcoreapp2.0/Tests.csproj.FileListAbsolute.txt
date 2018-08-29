@@ -39,3 +39,16 @@ C:\Dev\RetroCollect\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfoInputs.cache
 C:\Dev\RetroCollect\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfo.cs
 C:\Dev\RetroCollect\Tests\obj\Debug\netcoreapp2.0\Tests.dll
 C:\Dev\RetroCollect\Tests\obj\Debug\netcoreapp2.0\Tests.pdb
+E:\Dev\retrocollect\Tests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Dev\retrocollect\Tests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Dev\retrocollect\Tests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Dev\retrocollect\Tests\bin\Debug\netcoreapp2.0\Tests.deps.json
+E:\Dev\retrocollect\Tests\bin\Debug\netcoreapp2.0\Tests.runtimeconfig.json
+E:\Dev\retrocollect\Tests\bin\Debug\netcoreapp2.0\Tests.runtimeconfig.dev.json
+E:\Dev\retrocollect\Tests\bin\Debug\netcoreapp2.0\Tests.dll
+E:\Dev\retrocollect\Tests\bin\Debug\netcoreapp2.0\Tests.pdb
+E:\Dev\retrocollect\Tests\obj\Debug\netcoreapp2.0\Tests.csproj.CoreCompileInputs.cache
+E:\Dev\retrocollect\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfoInputs.cache
+E:\Dev\retrocollect\Tests\obj\Debug\netcoreapp2.0\Tests.AssemblyInfo.cs
+E:\Dev\retrocollect\Tests\obj\Debug\netcoreapp2.0\Tests.dll
+E:\Dev\retrocollect\Tests\obj\Debug\netcoreapp2.0\Tests.pdb

@@ -34,14 +34,16 @@ namespace ApplicationLayer.Business_Logic.Sorting
             return _unitOFWork.GameRepo.Get(
                  orderInstance.GetOrder(gameListRequestModel.Switchsort),
                  GetSearchExpression(gameListRequestModel.SearchText), 
-                 GetFormatExpression(gameListRequestModel.Format));
+                 GetFormatExpression(gameListRequestModel.Format)
+                 
+                 );
         }
 
 
         //TODO: Move into seperate classes
         private Expression<Func<GameListModel, bool>> GetSearchExpression(string searchText)
         {
-            Expression<Func<GameListModel, bool>> searchExpression = (x => x.Name == searchText || x.Developer == searchText);
+            Expression<Func<GameListModel, bool>> searchExpression = (x => x.Name.Contains(searchText) || x.Developer.Contains(searchText));
           
             return string.IsNullOrEmpty(searchText) ? null : searchExpression;
         }

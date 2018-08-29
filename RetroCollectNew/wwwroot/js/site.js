@@ -14,6 +14,27 @@ $(document).ready(function () {
     });
 
 
+
+    //Pagination
+    $('.pagination > li').click(
+        
+        function () {            
+            event.preventDefault()
+            $('#Page').val(this.innerText);
+            $('#game-form').submit();
+        });
+    
+
+    //Reset page to 1
+    $('.button_link').click(
+        function () {
+          
+         
+            $('#Page').val(1);          
+        
+        });
+
+
     //Sorting
     $('.sorting-headers').click(function (data) {
         
@@ -30,6 +51,7 @@ $(document).ready(function () {
             sortSwitch = false;
         }
 
+        $('#Page').val(1);
         $('#sortingOptions').val(this.id);
         $('#switchsort').val(sortSwitch);
         $('#game-form').submit();

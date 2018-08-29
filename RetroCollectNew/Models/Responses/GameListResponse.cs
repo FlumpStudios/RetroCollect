@@ -23,7 +23,6 @@ namespace ApplicationLayer.Models.Responses
             IsAdmin = isAdmin;
             ColumnNames = EnumerationsHelper.GetDescriptionList<GameListColumnNames>() as IEnumerable<string>;
             CurrentOrderBy = currentOrderBy;
-
         }
 
         public IEnumerable<GameListModel> GameListModel { get; }
@@ -37,5 +36,6 @@ namespace ApplicationLayer.Models.Responses
         public IEnumerable<string> ColumnNames { get; }
 
         public string CurrentOrderBy { get; }
+
     }
 }

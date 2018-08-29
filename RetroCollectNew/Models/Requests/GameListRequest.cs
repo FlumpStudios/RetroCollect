@@ -11,5 +11,8 @@
         public bool Switchsort { get; set; }
 
         public bool ShowClientList { get; set; }        
+
+        public int Page { get; set; }        
+
     }
 }

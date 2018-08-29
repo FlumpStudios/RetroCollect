@@ -7,7 +7,7 @@ Add swagger
 
 Frontend
 ========
-Pagination
+Add response into requset to ensure all the sorting is correct.
 Currently there is a checkbox to switch to client, change to tab
 Crap load of styling
 

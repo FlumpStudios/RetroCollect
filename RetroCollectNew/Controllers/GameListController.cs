@@ -9,6 +9,8 @@ using ApplicationLayer.Business_Logic.Sorting;
 using ModelData;
 using DataAccess.WorkUnits;
 using ApplicationLayer.Helpers;
+using X.PagedList;
+using Microsoft.Extensions.Configuration;
 
 namespace ApplicationLayer.Controllers
 {
@@ -19,10 +21,13 @@ namespace ApplicationLayer.Controllers
 
         private readonly ISortingManager _sortingManager;
 
-        public GameListController(IUnitOFWork unitOFWork, ISortingManager sortingManager)            
+        private readonly IConfiguration _configuration;
+
+        public GameListController(IUnitOFWork unitOFWork, ISortingManager sortingManager, IConfiguration configuration)            
         {
             _unitOFWork = unitOFWork;
             _sortingManager = sortingManager;
+            _configuration = configuration;
         }
 
 
@@ -34,16 +39,18 @@ namespace ApplicationLayer.Controllers
         #region views
         public IActionResult Index(GameListRequest gameListRequestModel)
         {
+            int resultsPerPage = _configuration.GetValue<int>("Paging:ResultsPerPage");
+
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var gameList = _sortingManager.GetFilteredResults(gameListRequestModel);                                   
 
             if (gameListRequestModel.ShowClientList && !string.IsNullOrEmpty(userId))
             {               
                     gameList = QueryHelper.InnerJoin(gameList, _unitOFWork.ClientRepo.Get(), userId);
-            }
+            }            
 
             gameListRequestModel.Switchsort = false;
-            GameListResponse response = new GameListResponse(gameList,
+            GameListResponse response = new GameListResponse(gameList.ToPagedList(gameListRequestModel.Page, resultsPerPage),
                 User.Identity.IsAuthenticated,
                 _unitOFWork.GameRepo.GetDistinct(x => x.Format),          
                 User.IsInRole("Admin"),

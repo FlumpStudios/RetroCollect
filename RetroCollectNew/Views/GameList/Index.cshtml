@@ -1,5 +1,8 @@
 ﻿@model ApplicationLayer.Models.Responses.GameListResponse
 
+
+@using X.PagedList;
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -16,9 +19,7 @@
         <a asp-action="Create">Create New</a>
     }
 
-    <!--Searching and filtering controls-->
-
-    <h1 id="foo"></h1>
+    <!--Searching and filtering controls-->  
 
     @using (Html.BeginForm("Index", "GameList", FormMethod.Get, new { id = "game-form" }))
     {
@@ -32,6 +33,7 @@
             <button class="button_link" name="format" value="@items">@items</button>        
             @Html.Hidden("sortingOptions", "Name");
             @Html.Hidden("switchsort", false);
+            @Html.Hidden("Page", 1)
            
         }
     }
@@ -94,6 +96,10 @@
 }
     </tbody>
 </table>
+<!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
+<div class="pagination">
+    @X.PagedList.Mvc.Core.HtmlHelper.PagedListPager(Html, (IPagedList)Model.GameListModel, page => Url.Action("Index", new { Page = page }), new X.PagedList.Mvc.Core.PagedListRenderOptions() { LiElementClasses = new List<string> { "Paging"} } )
+</div>
 
 <script>
 

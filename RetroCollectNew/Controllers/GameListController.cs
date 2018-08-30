@@ -47,14 +47,22 @@ namespace ApplicationLayer.Controllers
             if (gameListRequestModel.ShowClientList && !string.IsNullOrEmpty(userId))
             {               
                     gameList = QueryHelper.InnerJoin(gameList, _unitOFWork.ClientRepo.Get(), userId);
-            }            
+            }
+
+            var currentPage = gameListRequestModel.Page ?? 1;
+            var pagedResults = gameList.ToPagedList(currentPage, resultsPerPage);
+            
 
             gameListRequestModel.Switchsort = false;
-            GameListResponse response = new GameListResponse(gameList.ToPagedList(gameListRequestModel.Page, resultsPerPage),
+            GameListResponse response = new GameListResponse(pagedResults,
                 User.Identity.IsAuthenticated,
                 _unitOFWork.GameRepo.GetDistinct(x => x.Format),          
                 User.IsInRole("Admin"),
-                gameListRequestModel.SortingOptions);
+                gameListRequestModel.SortingOptions,
+                currentPage, pagedResults.PageCount,
+                gameListRequestModel.Format,
+                gameListRequestModel.SortingOptions, 
+                gameListRequestModel.ShowClientList);
 
             return View (response);
         }

@@ -12,7 +12,7 @@
 
         public bool ShowClientList { get; set; }        
 
-        public int Page { get; set; }        
+        public int? Page { get; set; }        
 
     }
 }

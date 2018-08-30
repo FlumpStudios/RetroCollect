@@ -15,7 +15,21 @@ namespace ApplicationLayer.Models.Responses
     /// </summary>
     public class GameListResponse
     {
-        public GameListResponse(IEnumerable<GameListModel> gameListModel, bool isLoggedIn, IEnumerable<string> consoleList, bool isAdmin, string currentOrderBy)
+        public GameListResponse(IEnumerable<GameListModel> gameListModel, 
+            bool isLoggedIn, 
+            IEnumerable<string> consoleList, 
+            bool isAdmin, 
+            string currentOrderBy, 
+            int? page, 
+            int lastPage,
+            string format,
+            string sortingOptions,       
+            bool showClientList
+
+
+
+
+            )
         {
             GameListModel = gameListModel;
             IsLoggedIn = isLoggedIn;
@@ -23,6 +37,12 @@ namespace ApplicationLayer.Models.Responses
             IsAdmin = isAdmin;
             ColumnNames = EnumerationsHelper.GetDescriptionList<GameListColumnNames>() as IEnumerable<string>;
             CurrentOrderBy = currentOrderBy;
+            Page = page;
+            LastPage = lastPage;
+            Format = format;
+            SortingOptions = sortingOptions;
+            ShowClientList = showClientList;
+
         }
 
         public IEnumerable<GameListModel> GameListModel { get; }
@@ -37,5 +57,14 @@ namespace ApplicationLayer.Models.Responses
 
         public string CurrentOrderBy { get; }
 
+        public int? Page { get; }
+
+        public int LastPage { get;}
+                
+        public string Format { get; }
+
+        public string SortingOptions { get;  }
+       
+        public bool ShowClientList { get;  }
     }
 }

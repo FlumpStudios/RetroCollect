@@ -12,6 +12,7 @@
 <p>
 
     @Html.HiddenFor(x => x.CurrentOrderBy)
+    @Html.HiddenFor(x => x.LastPage)
 
 
     @if (Model.IsLoggedIn)
@@ -24,17 +25,21 @@
     @using (Html.BeginForm("Index", "GameList", FormMethod.Get, new { id = "game-form" }))
     {
         @Html.TextBox("searchText")
-        @Html.CheckBox("showClientList", false)
+        @if (Model.IsLoggedIn)
+        { 
+            @Html.CheckBox("showClientList", false)
+        }
         <button type="submit">Search</button>
 
 
         @foreach (var items in Model.ConsoleList)
         {
-            <button class="button_link" name="format" value="@items">@items</button>        
-            @Html.Hidden("sortingOptions", "Name");
+            <button class="console-selection" id="@items" value="@items">@items</button>        
             @Html.Hidden("switchsort", false);
-            @Html.Hidden("Page", 1)
-           
+            @Html.HiddenFor(x => x.Page);
+            @Html.HiddenFor(x => x.SortingOptions);
+            @Html.HiddenFor(x => x.Format);
+
         }
     }
 
@@ -98,7 +103,7 @@
 </table>
 <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
 <div class="pagination">
-    @X.PagedList.Mvc.Core.HtmlHelper.PagedListPager(Html, (IPagedList)Model.GameListModel, page => Url.Action("Index", new { Page = page }), new X.PagedList.Mvc.Core.PagedListRenderOptions() { LiElementClasses = new List<string> { "Paging"} } )
+    @X.PagedList.Mvc.Core.HtmlHelper.PagedListPager(Html, (IPagedList)Model.GameListModel, page => Url.Action("Index", new { Page = Model.Page }), new X.PagedList.Mvc.Core.PagedListRenderOptions() { LiElementClasses = new List<string> { "Paging"} } )
 </div>
 
 <script>

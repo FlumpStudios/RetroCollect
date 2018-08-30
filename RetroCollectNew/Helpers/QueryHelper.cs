@@ -15,7 +15,7 @@ namespace ApplicationLayer.Helpers
         /// <param name="clientList"></param>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public static IEnumerable<GameListModel> InnerJoin(IEnumerable<GameListModel> gameList, 
+        public static IEnumerable<GameListModel> InnerJoinClientListWithGameList(IEnumerable<GameListModel> gameList, 
                       IEnumerable< ClientListModel> clientList, 
                       string userId)
         {

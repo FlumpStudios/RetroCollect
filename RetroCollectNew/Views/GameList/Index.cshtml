@@ -103,7 +103,7 @@
 </table>
 <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
 <div class="pagination">
-    @X.PagedList.Mvc.Core.HtmlHelper.PagedListPager(Html, (IPagedList)Model.GameListModel, page => Url.Action("Index", new { Page = Model.Page }), new X.PagedList.Mvc.Core.PagedListRenderOptions() { LiElementClasses = new List<string> { "Paging"} } )
+    @X.PagedList.Mvc.Core.HtmlHelper.PagedListPager(Html, (IPagedList)Model.GameListModel, page => Url.Action("Index", new { Page = Model.Page }))
 </div>
 
 <script>

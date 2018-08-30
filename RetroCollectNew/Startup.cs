@@ -15,6 +15,7 @@ using DataAccess.EntityFramework.Repositories;
 using ModelData;
 using DataAccess.Repositories;
 using DataAccess.WorkUnits;
+using ApplicationLayer.Business_Logic.Builders;
 
 namespace ApplicationLayer
 {
@@ -45,6 +46,7 @@ namespace ApplicationLayer
             services.AddTransient<IClientRepository, ClientRepository>();
             services.AddTransient<IUnitOFWork, UnitOFWork>();
             services.AddTransient<ISortingManager, SortingManager>();
+            services.AddTransient<IGameListResponseBuilder, GameListResponseBuilder>();
             services.AddMvc();
 
             services.AddDbContext<RetroCollectNewContext>(options =>

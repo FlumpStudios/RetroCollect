@@ -11,62 +11,40 @@ using DataAccess.WorkUnits;
 using ApplicationLayer.Helpers;
 using X.PagedList;
 using Microsoft.Extensions.Configuration;
+using ApplicationLayer.Business_Logic.Builders;
 
 namespace ApplicationLayer.Controllers
 {
     
     public class GameListController : Controller
     {
-        private readonly IUnitOFWork _unitOFWork;
+        private readonly IUnitOFWork _unitOFWork;     
 
-        private readonly ISortingManager _sortingManager;
+        private readonly IGameListResponseBuilder _gameListResponseBuilder;
 
-        private readonly IConfiguration _configuration;
-
-        public GameListController(IUnitOFWork unitOFWork, ISortingManager sortingManager, IConfiguration configuration)            
+        public GameListController(IUnitOFWork unitOFWork, IGameListResponseBuilder gameListResponseBuilder)            
         {
-            _unitOFWork = unitOFWork;
-            _sortingManager = sortingManager;
-            _configuration = configuration;
+            _unitOFWork = unitOFWork;        
+            _gameListResponseBuilder = gameListResponseBuilder;
         }
-
 
         /// <summary>
         /// Sort and filted games from DB and return with view
         /// </summary>
         /// <param name="gameListRequestModel"></param>
         /// <returns></returns>
-        #region views
+        #region Get Request
+        [HttpGet]
         public IActionResult Index(GameListRequest gameListRequestModel)
         {
-            int resultsPerPage = _configuration.GetValue<int>("Paging:ResultsPerPage");
-
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var gameList = _sortingManager.GetFilteredResults(gameListRequestModel);                                   
-
-            if (gameListRequestModel.ShowClientList && !string.IsNullOrEmpty(userId))
-            {               
-                    gameList = QueryHelper.InnerJoin(gameList, _unitOFWork.ClientRepo.Get(), userId);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
             }
-
-            var currentPage = gameListRequestModel.Page ?? 1;
-            var pagedResults = gameList.ToPagedList(currentPage, resultsPerPage);
-            
-
-            gameListRequestModel.Switchsort = false;
-            GameListResponse response = new GameListResponse(pagedResults,
-                User.Identity.IsAuthenticated,
-                _unitOFWork.GameRepo.GetDistinct(x => x.Format),          
-                User.IsInRole("Admin"),
-                gameListRequestModel.SortingOptions,
-                currentPage, pagedResults.PageCount,
-                gameListRequestModel.Format,
-                gameListRequestModel.SortingOptions, 
-                gameListRequestModel.ShowClientList);
+            GameListResponse response = _gameListResponseBuilder.GetResponse(gameListRequestModel, User);
 
             return View (response);
         }
-
 
 
         /// <summary>
@@ -74,6 +52,7 @@ namespace ApplicationLayer.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpGet]
         public IActionResult Details(int? id)
         {
             if (id == null) return NotFound();
@@ -88,6 +67,7 @@ namespace ApplicationLayer.Controllers
         /// Return the create view
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
@@ -100,12 +80,14 @@ namespace ApplicationLayer.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpGet]
         [Authorize(Roles = "Admin")]
         public IActionResult Edit(int? id)
         {
             if (id == null) return NotFound();
             var gameListModel = _unitOFWork.GameRepo.GetByID(id);
             if (gameListModel == null) return NotFound();
+
             return View(gameListModel);
         }
 
@@ -115,6 +97,7 @@ namespace ApplicationLayer.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpGet]
         [Authorize(Roles = "Admin")]
         public IActionResult Delete(int? id)
         {
@@ -127,7 +110,7 @@ namespace ApplicationLayer.Controllers
         #endregion
 
 
-
+        #region Post request
         /// <summary>
         /// Create new game in game list DB
         /// </summary>
@@ -203,4 +186,5 @@ namespace ApplicationLayer.Controllers
         /// <returns></returns>
         private bool GameListModelExists(int id) =>  _unitOFWork.GameRepo.Get().Any(e => e.Id == id);
     }
+    #endregion
 }

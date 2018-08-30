@@ -24,12 +24,7 @@ namespace ApplicationLayer.Models.Responses
             int lastPage,
             string format,
             string sortingOptions,       
-            bool showClientList
-
-
-
-
-            )
+            bool showClientList)
         {
             GameListModel = gameListModel;
             IsLoggedIn = isLoggedIn;

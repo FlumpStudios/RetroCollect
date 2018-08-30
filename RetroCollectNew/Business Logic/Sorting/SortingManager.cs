@@ -34,13 +34,11 @@ namespace ApplicationLayer.Business_Logic.Sorting
             return _unitOFWork.GameRepo.Get(
                  orderInstance.GetOrder(gameListRequestModel.Switchsort),
                  GetSearchExpression(gameListRequestModel.SearchText), 
-                 GetFormatExpression(gameListRequestModel.Format)
-                 
-                 );
+                 GetFormatExpression(gameListRequestModel.Format));
         }
 
 
-        //TODO: Move into seperate classes
+        //TODO: Possibly Move into seperate classes
         private Expression<Func<GameListModel, bool>> GetSearchExpression(string searchText)
         {
             Expression<Func<GameListModel, bool>> searchExpression = (x => x.Name.Contains(searchText) || x.Developer.Contains(searchText));
@@ -74,7 +72,7 @@ namespace ApplicationLayer.Business_Logic.Sorting
                 return new OrderByPublisher();
             }
 
-            //Set Name as defualt sort option
+            //Set Name as default sort option
             return new OrderByName();
         }
     }  

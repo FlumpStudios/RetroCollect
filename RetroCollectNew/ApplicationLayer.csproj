@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Compile Remove="ApplicationData\RetroCollectNewContext.cs" />
+    <Compile Remove="Helpers\ResponseBuilder.cs" />
   </ItemGroup>
 
  

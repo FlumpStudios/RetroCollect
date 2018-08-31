@@ -4,14 +4,24 @@
 $(document).ready(function () {
 
     //Add new game
-    $('.add-new-game').click(function () {addNewGame(this.id)});
+    $('.add-new-game').click(function () { addNewGame(this.id); });
 
     //Pagination
     $('.pagination > li').click(function () {paginationController(this.innerText) });
     
 
     //Sorting
-    $('.sorting-headers').click(function () { sotringHeaderController(this.id) });
+    $('.sorting-headers').click(function () { sotringHeaderController(this.id);});
+
+    //Select between all games and personal Collection
+    $('#show-all-games').click(function () {
+        $('#showClientList').val(false);
+        $('#game-form').submit();
+    });
+    $('#show-my-collection').click(function () {
+        $('#showClientList').val(true);
+        $('#game-form').submit();
+    });
 
 
     $('.console-selection').click(
@@ -27,15 +37,15 @@ $(document).ready(function () {
 
 function checkIfNumber(x)
 {
-    return (!isNaN(x))
+    return !isNaN(x);
 }
 
 function addNewGame(id) {
     var clientListModel = { gameId: id };
 
     $.post("/ClientGamesList/Create", clientListModel, function (data, status) {
-        if (status === "success") { alert("Game added to your library") }
-        else { alert("There was an error adding game to your library") };
+        if (status === "success") { alert("Game added to your library"); }
+        else { alert("There was an error adding game to your library"); }
     });
 };
 
@@ -66,7 +76,7 @@ function paginationController(pageSelection)
             if (checkIfNumber(pageSelection)) $('#Page').val(pageSelection);
             else {
                 console.log("Invalid pagination selections");
-                return
+                return;
             }
         }
         $('#game-form').submit();

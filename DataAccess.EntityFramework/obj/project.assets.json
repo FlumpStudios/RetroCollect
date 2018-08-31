@@ -1153,7 +1153,7 @@
       ]
     },
     "Microsoft.Extensions.Primitives/2.0.0": {
-      "sha512": "ukg53qNlqTrK38WA30b5qhw0GD7y3jdI9PHHASjdKyTcBHTevFM2o23tyk3pWCgAV27Bbkm+CPQ2zUe1ZOuYSA==",
+      "sha512": "Wx1uQQcGwV8oZP7yUvS3IGVoPAPVGSInxRxYaChDZGLjqu3FfnttpfKLrlwfAgbXBj8htjX7K40TKJeVHnixNg==",
       "type": "package",
       "path": "microsoft.extensions.primitives/2.0.0",
       "files": [
@@ -1164,7 +1164,7 @@
       ]
     },
     "Microsoft.NETCore.App/2.0.0": {
-      "sha512": "/mzXF+UtZef+VpzzN88EpvFq5U6z4rj54ZMq/J968H6pcvyLOmcupmTRpJ3CJm8ILoCGh9WI7qpDdiKtuzswrQ==",
+      "sha512": "jzXIL9VoNNC8OiUXKtPJFsAzfurjA6ugnDUN94p3lcosswegi6pyaXpw6ofRkTk2X2vCv9KsPrVpkV7JzV8psg==",
       "type": "package",
       "path": "microsoft.netcore.app/2.0.0",
       "files": [
@@ -1442,7 +1442,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetAppHost/2.0.0": {
-      "sha512": "L4GGkcI/Mxl8PKLRpFdGmLb5oI8sGIR05bDTGkzCoamAjdUl1Zhkov2swjEsZvKYT8kkdiz39LtwyGYuCJxm1A==",
+      "sha512": "+JgZWJhRwJ/AgOF7ItHEENHbYtZGDy92+zI3EdtqM7Zp36vRiWzvMC5Or3EyDK533Rlnn5N9ye7T239Qjnjw+Q==",
       "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.0.0",
       "files": [
@@ -1454,7 +1454,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostPolicy/2.0.0": {
-      "sha512": "rm7mMn0A93fwyAwVhbyOCcPuu2hZNL0A0dAur9sNG9pEkONPfCEQeF7m2mC8KpqZO0Ol6tpV5J0AF3HTXT3GXA==",
+      "sha512": "ye/Tv1ZjcqOsOmjTCemDd4knBrt+AqK7rgTcCXF4VVbth8BJf4Vt9pw/pO0ZPG99/SRxA8V1wGjH7e8M/WLnPw==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostpolicy/2.0.0",
       "files": [
@@ -1466,7 +1466,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostResolver/2.0.0": {
-      "sha512": "uBbjpeSrwsaTCADZCzRk+3aBzNnMqkC4zftJWBsL+Zk+8u+W+/lMb2thM5Y4hiVrv1YQg9t6dKldXzOKkY+pQw==",
+      "sha512": "5/5KHxIF+jO3PyuTcXNCpX5rU8TjyWfaoHrvt0wJYVW4HH1UdCA+hmCT80U0C/wWtU3zTwNx1nnzTq2gvBXaMA==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostresolver/2.0.0",
       "files": [
@@ -1478,7 +1478,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "sha512": "Q95bihBe8TYwWPVJ+F29NkZIZzbC5ZgMAz3DpKAUJ7qZZf9zOG+Sm74cFpnSS5odAlMHCKOe2K4Nb1bTP0jlxg==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
@@ -1544,7 +1544,7 @@
       ]
     },
     "NETStandard.Library/2.0.0": {
-      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+      "sha512": "s6gLgd5HU+gl0ITfjUBfPvqKLf5sU/WaBmES16k2zdzy75CnU6A52M2lggvpQ/Ym9SF3a5i5mbZBJQ4T5EQykA==",
       "type": "package",
       "path": "netstandard.library/2.0.0",
       "files": [
@@ -2992,7 +2992,7 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.4.0": {
-      "sha512": "9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
+      "sha512": "37gEV9BIE3uwJW51TW6DHRyfl/giLWSUp05Qcac/AbDpt/UtpIasi0MnUy1KWES7gdPcb4o0OQaDWeMViZkzIw==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.4.0",
       "files": [
@@ -3436,26 +3436,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FlumpStudios\\.nuget\\packages\\": {},
+    "C:\\Users\\paul.marrable\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "E:\\Dev\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj",
+      "projectUniqueName": "C:\\Dev\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj",
       "projectName": "DataAccess.EntityFramework",
-      "projectPath": "E:\\Dev\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj",
-      "packagesPath": "C:\\Users\\FlumpStudios\\.nuget\\packages\\",
-      "outputPath": "E:\\Dev\\retrocollect\\DataAccess.EntityFramework\\obj\\",
+      "projectPath": "C:\\Dev\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj",
+      "packagesPath": "C:\\Users\\paul.marrable\\.nuget\\packages\\",
+      "outputPath": "C:\\Dev\\RetroCollect\\DataAccess.EntityFramework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\FlumpStudios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\paul.marrable\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3468,8 +3465,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj": {
-              "projectPath": "E:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj"
+            "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj": {
+              "projectPath": "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj"
             }
           }
         }
@@ -3485,27 +3482,27 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers",
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0"
-          },
-          "Microsoft.EntityFrameworkCore.Design": {
-            "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
-            "target": "Package",
-            "version": "2.0.0"
           }
         },
         "imports": [

@@ -7,8 +7,6 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
 <p>
 
     @Html.HiddenFor(x => x.CurrentOrderBy)
@@ -20,22 +18,20 @@
         <a asp-action="Create">Create New</a>
     }
 
-    <!--Searching and filtering controls-->  
+    <!--Searching and filtering controls-->
 
     @using (Html.BeginForm("Index", "GameList", FormMethod.Get, new { id = "game-form" }))
     {
         @Html.TextBox("searchText")
-        @if (Model.IsLoggedIn)
-        { 
-            @Html.CheckBox("showClientList", false)
-        }
+            @Html.Hidden("showClientList", false);
+        
         <button type="submit">Search</button>
 
 
         @foreach (var items in Model.ConsoleList)
         {
-            <button class="console-selection" id="@items" value="@items">@items</button>        
-            @Html.Hidden("switchsort", false);
+            <button class="console-selection" id="@items" value="@items">@items</button>
+            @Html.HiddenFor(x => x.ShowClientList)
             @Html.HiddenFor(x => x.Page);
             @Html.HiddenFor(x => x.SortingOptions);
             @Html.HiddenFor(x => x.Format);
@@ -44,61 +40,75 @@
     }
 
 </p>
+
+<ul class="nav nav-tabs">
+    <li id="show-all-games" class="@(@Model.ShowClientList ? "" : "active")"><a data-toggle="tab" href="#home">All Games</a></li>
+    @if (Model.IsLoggedIn)
+    {
+        <li id="show-my-collection" class="@(@Model.ShowClientList ? "active" : "")" ><a data-toggle="tab" href="#menu1">Your Collection  </a></li>
+    }
+    </ul>
+
+<div class="tab-content">
+   <!--Put any tab text here if you want, didn't think we needed any at the time-->
+</div>
+
+
 <table class="table">
-    
+
     <thead>
         <tr>
-@foreach (var columnName in Model.ColumnNames)
-{ 
+            @foreach (var columnName in Model.ColumnNames)
+            {
                 <th id="@columnName" class="sorting-headers">
                     @columnName <i class="fa fa-sort-down"></i>
-                </th>}   
+                </th>}
             <th></th>
 
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.GameListModel)
-{
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Developer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Publisher)
-            </td>
-            <td>
-               @if (Model.IsLoggedIn)
-               {
-                 <text>     
-                    <i id="@item.Id" class="fa fa-plus add-new-game"></i>
-                 </text>    
-                }
-                
-            </td>
+        @foreach (var item in Model.GameListModel)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Developer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Publisher)
+                </td>
+                <td>
+                    @if (Model.IsLoggedIn)
+                    {
+                        <text>
+                            <i id="@item.Id" class="fa fa-plus add-new-game"></i>
+                        </text>
+                    }
 
-            <td>
+                </td>
 
-             <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                <td>
 
-             @if (Model.IsLoggedIn)
-             {
-                <text>
-                |
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </text>
-            }
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
 
-            </td>
-        </tr>
-}
+                    @if (Model.IsLoggedIn)
+                    {
+                        <text>
+                            |
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </text>
+                    }
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->

@@ -61,5 +61,6 @@ namespace ApplicationLayer.Models.Responses
         public string SortingOptions { get;  }
        
         public bool ShowClientList { get;  }
+
     }
 }

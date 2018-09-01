@@ -3,14 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using ApplicationLayer.Models.Responses;
-using System.Security.Claims;
 using ApplicationLayer.Models.Request;
-using ApplicationLayer.Business_Logic.Sorting;
 using ModelData;
 using DataAccess.WorkUnits;
-using ApplicationLayer.Helpers;
-using X.PagedList;
-using Microsoft.Extensions.Configuration;
 using ApplicationLayer.Business_Logic.Builders;
 
 namespace ApplicationLayer.Controllers

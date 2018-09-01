@@ -54,3 +54,12 @@ E:\Dev\retrocollect\Tests\obj\Debug\netcoreapp2.0\Tests.dll
 E:\Dev\retrocollect\Tests\obj\Debug\netcoreapp2.0\Tests.pdb
 E:\Dev\retrocollect\Tests\obj\Debug\netcoreapp2.0\Tests.csprojResolveAssemblyReference.cache
 C:\Dev\RetroCollect\Tests\obj\Debug\netcoreapp2.0\Tests.csprojAssemblyReference.cache
+C:\Dev\RetroCollect\Tests\bin\Debug\netcoreapp2.0\ApplicationLayer.dll
+C:\Dev\RetroCollect\Tests\bin\Debug\netcoreapp2.0\DataAccess.dll
+C:\Dev\RetroCollect\Tests\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
+C:\Dev\RetroCollect\Tests\bin\Debug\netcoreapp2.0\ModelData.dll
+C:\Dev\RetroCollect\Tests\bin\Debug\netcoreapp2.0\DataAccess.pdb
+C:\Dev\RetroCollect\Tests\bin\Debug\netcoreapp2.0\ApplicationLayer.pdb
+C:\Dev\RetroCollect\Tests\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb
+C:\Dev\RetroCollect\Tests\bin\Debug\netcoreapp2.0\ModelData.pdb
+C:\Dev\RetroCollect\Tests\obj\Debug\netcoreapp2.0\Tests.csproj.CopyComplete

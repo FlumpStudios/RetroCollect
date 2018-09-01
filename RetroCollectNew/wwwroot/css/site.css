@@ -50,3 +50,7 @@
 .sorting-headers {
     cursor:pointer;
 }
+
+.warning-text {
+    color:red;
+}

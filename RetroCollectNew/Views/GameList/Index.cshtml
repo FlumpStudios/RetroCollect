@@ -23,8 +23,8 @@
     @using (Html.BeginForm("Index", "GameList", FormMethod.Get, new { id = "game-form" }))
     {
         @Html.TextBox("searchText")
-            @Html.Hidden("showClientList", false);
-        
+        @Html.Hidden("showClientList", false);
+
         <button type="submit">Search</button>
 
 
@@ -45,12 +45,12 @@
     <li id="show-all-games" class="@(@Model.ShowClientList ? "" : "active")"><a data-toggle="tab" href="#home">All Games</a></li>
     @if (Model.IsLoggedIn)
     {
-        <li id="show-my-collection" class="@(@Model.ShowClientList ? "active" : "")" ><a data-toggle="tab" href="#menu1">Your Collection  </a></li>
+        <li id="show-my-collection" class="@(@Model.ShowClientList ? "active" : "")"><a data-toggle="tab" href="#menu1">Your Collection  </a></li>
     }
-    </ul>
+</ul>
 
 <div class="tab-content">
-   <!--Put any tab text here if you want, didn't think we needed any at the time-->
+    <!--Put any tab text here if you want, didn't think we needed any at the time-->
 </div>
 
 
@@ -111,6 +111,10 @@
         }
     </tbody>
 </table>
+@if (Model.GameListModel.Count() < 1)
+{
+    <text><div class="warning-text small">There's no items in your collection. Add games to you collection through the 'All Games' Tab.</div> </text>
+}
 <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
 <div class="pagination">
     @X.PagedList.Mvc.Core.HtmlHelper.PagedListPager(Html, (IPagedList)Model.GameListModel, page => Url.Action("Index", new { Page = Model.Page }))

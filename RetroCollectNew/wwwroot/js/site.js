@@ -1,5 +1,4 @@
-﻿
-//TODO: Move into seperate JS file
+﻿//TODO: Move into seperate JS file
 
 $(document).ready(function () {
 
@@ -7,7 +6,7 @@ $(document).ready(function () {
     $('.add-new-game').click(function () { addNewGame(this.id); });
 
     //Pagination
-    $('.pagination > li').click(function () {paginationController(this.innerText) });
+    $('.pagination > li').click(function () { paginationController(this.innerText); });
     
 
     //Sorting
@@ -15,10 +14,13 @@ $(document).ready(function () {
 
     //Select between all games and personal Collection
     $('#show-all-games').click(function () {
+        $('#Page').val(1);        
         $('#showClientList').val(false);
         $('#game-form').submit();
     });
+
     $('#show-my-collection').click(function () {
+        $('#Page').val(1);        
         $('#showClientList').val(true);
         $('#game-form').submit();
     });
@@ -29,14 +31,10 @@ $(document).ready(function () {
             $('#Format').val(this.id);
             $('#Page').val(1);        
         });
-
-
-
 });
 
 
-function checkIfNumber(x)
-{
+function checkIfNumber(x){
     return !isNaN(x);
 }
 
@@ -47,28 +45,28 @@ function addNewGame(id) {
         if (status === "success") { alert("Game added to your library"); }
         else { alert("There was an error adding game to your library"); }
     });
-};
+}
 
 function paginationController(pageSelection)
 {
         var currentPage = $('#Page').val();
 
-        event.preventDefault()
+        event.preventDefault();
 
-        if (pageSelection == ">") {
+        if (pageSelection === ">") {
             currentPage++;
             $('#Page').val(currentPage);
         }
 
-        else if (pageSelection == "<") {
+        else if (pageSelection === "<") {
             currentPage--;
             $('#Page').val(currentPage);
         }
-        else if (pageSelection == "<<") {
+        else if (pageSelection === "<<") {
             currentPage = 1;
             $('#Page').val(currentPage);
         }
-        else if (pageSelection == ">>") {
+        else if (pageSelection === ">>") {
             currentPage = $('#LastPage').val();
             $('#Page').val(currentPage);
         }

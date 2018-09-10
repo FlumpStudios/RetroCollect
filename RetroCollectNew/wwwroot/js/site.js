@@ -83,6 +83,7 @@ function paginationController(pageSelection)
 function sotringHeaderController(id) {
     var sortSwitch = $('#switchsort').val();
 
+   
     //Check if the current orderby option matches the one clicked, if it does match then reverse swtich sort.
     //This is to allow switching between ascending and decending sorting.
     if ($('#CurrentOrderBy').val() === id) {

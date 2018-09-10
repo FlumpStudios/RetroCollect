@@ -13,7 +13,7 @@
     @Html.HiddenFor(x => x.LastPage)
 
 
-    @if (Model.IsAdmin )
+    @if (Model.IsAdmin)
     {
         <a asp-action="Create">Create New</a>
     }
@@ -35,6 +35,7 @@
             @Html.HiddenFor(x => x.Page);
             @Html.HiddenFor(x => x.SortingOptions);
             @Html.HiddenFor(x => x.Format);
+            @Html.Hidden("switchsort", true);
 
         }
     }

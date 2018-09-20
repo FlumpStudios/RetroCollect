@@ -67,6 +67,9 @@ namespace ModelData.Migrations
                     b.Property<string>("ReleaseDateNA")
                         .HasMaxLength(70);
 
+                    b.Property<string>("ScreenShotURL")
+                        .HasMaxLength(100);
+
                     b.HasKey("Id");
 
                     b.ToTable("GameListModel");

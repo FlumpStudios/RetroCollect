@@ -22,7 +22,6 @@ public class GameListResponseBuilderTests
     public void TestInitialize()
     {
         this.mockRepository = new MockRepository(MockBehavior.Strict);
-
         this.mockSortingManager = this.mockRepository.Create<ISortingManager>();
         this.mockConfiguration = this.mockRepository.Create<IConfiguration>();
         this.mockUnitOFWork = this.mockRepository.Create<IUnitOFWork>();

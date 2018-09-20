@@ -7,20 +7,32 @@ using ApplicationLayer.Models.Request;
 using ModelData;
 using DataAccess.WorkUnits;
 using ApplicationLayer.Business_Logic.Builders;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
+using ApplicationLayer.Business_Logic.FileHandling;
+using ApplicationLayer.Enumerations;
 
 namespace ApplicationLayer.Controllers
-{
-    
+{    
     public class GameListController : Controller
     {
         private readonly IUnitOFWork _unitOFWork;     
 
         private readonly IGameListResponseBuilder _gameListResponseBuilder;
 
-        public GameListController(IUnitOFWork unitOFWork, IGameListResponseBuilder gameListResponseBuilder)            
+        private readonly IHostingEnvironment _hostingEnvironment;
+
+        private readonly IFileHandler _fileHandler;
+
+        public GameListController(IUnitOFWork unitOFWork, 
+            IGameListResponseBuilder gameListResponseBuilder, 
+            IHostingEnvironment hostingEnvironment,
+            IFileHandler fileHandler)            
         {
+            _hostingEnvironment = hostingEnvironment;
             _unitOFWork = unitOFWork;        
             _gameListResponseBuilder = gameListResponseBuilder;
+            _fileHandler = fileHandler;
         }
 
         /// <summary>
@@ -53,6 +65,7 @@ namespace ApplicationLayer.Controllers
             if (id == null) return NotFound();
             var gameListModel = _unitOFWork.GameRepo.GetByID(id);
             if (gameListModel == null) return NotFound();
+            gameListModel.ScreenShotURL = _fileHandler.LoadFiles(id.ToString());
 
             return View(gameListModel);
         }
@@ -81,6 +94,8 @@ namespace ApplicationLayer.Controllers
         {
             if (id == null) return NotFound();
             var gameListModel = _unitOFWork.GameRepo.GetByID(id);
+
+            gameListModel.ScreenShotURL = _fileHandler.LoadFiles(id.ToString());
             if (gameListModel == null) return NotFound();
 
             return View(gameListModel);
@@ -114,7 +129,7 @@ namespace ApplicationLayer.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public IActionResult Create([Bind("Id,Name,Developer,Genre,Publisher,ReleaseDateNA,ReleaseDateEU,ReleaseDateJP,Format")] GameListModel gameListModel)
+        public IActionResult Create([Bind("Id,Name,Developer,Genre,Publisher,ReleaseDateNA,ReleaseDateEU,ReleaseDateJP,Format, ScreenShot")] GameListModel gameListModel)
         {
             if (ModelState.IsValid)
             {
@@ -135,8 +150,14 @@ namespace ApplicationLayer.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public IActionResult Edit(int id, [Bind("Id,Name,Developer,Genre,Publisher,ReleaseDateNA,ReleaseDateEU,ReleaseDateJP, Format")] GameListModel gameListModel)
+        public IActionResult Edit(int id, [Bind("Id,Name,Developer,Genre,Publisher,ReleaseDateNA,ReleaseDateEU,ReleaseDateJP, Format, ScreenShot")] GameListModel gameListModel)
         {
+            //Save screenshots
+            if (gameListModel.ScreenShot.Count() > 0)
+            { 
+                _fileHandler.SaveFile(id.ToString(), gameListModel.ScreenShot);
+            }
+
             if (id != gameListModel.Id) return NotFound();            
 
             if (ModelState.IsValid)
@@ -151,9 +172,8 @@ namespace ApplicationLayer.Controllers
                     if (!GameListModelExists(gameListModel.Id)) return NotFound();                    
                     else throw;                    
                 }
-                return RedirectToAction(nameof(Index));
             }
-            return View(gameListModel);
+            return RedirectToAction(nameof(Edit) + "/" + id);
         }
 
 
@@ -171,6 +191,25 @@ namespace ApplicationLayer.Controllers
             _unitOFWork.Commit();
             
             return RedirectToAction(nameof(Index));
+        }
+
+        /// <summary>
+        /// Delete file
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [Authorize(Roles = "Admin")]        
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteFile(string fileLocation, int id)
+        {
+            switch (_fileHandler.DeleteFile(fileLocation))
+            {
+                case FileResponse.FileNotFound:
+                    return StatusCode(400, "Could not find file to delete");
+                case FileResponse.Exception:
+                    return StatusCode(500, "Could not delete file, please see logs for details.");            
+            }
+            return RedirectToAction(nameof(Edit) + "/" + id );
         }
 
 

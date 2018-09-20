@@ -17,4 +17,11 @@ namespace ApplicationLayer.Enumerations
         [Description("Publisher")]
         Publisher = 4
     }
+
+    public enum FileResponse
+    {        
+        Success,
+        FileNotFound,
+        Exception
+    }
 }

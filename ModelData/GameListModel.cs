@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ModelData
 {
     public class GameListModel
-    {
+    {         
         [Key]
         public int Id { get; set; }
         [MaxLength(70)]
@@ -37,6 +37,14 @@ namespace ModelData
         public string ReleaseDateEU { get; set; }
 
         [MaxLength(70)]
-        public string ReleaseDateJP { get; set; }    
+        public string ReleaseDateJP { get; set; }
+
+        [NotMapped]
+        public  IEnumerable<IFormFile> ScreenShot { get; set; }
+
+        [NotMapped]
+        public IEnumerable<string> ScreenShotURL { get; set; }
+
+   
     }
 }

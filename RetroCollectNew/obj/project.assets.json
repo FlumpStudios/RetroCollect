@@ -5121,6 +5121,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Http": "2.0.0",
           "Microsoft.EntityFrameworkCore": "2.0.0",
           "Microsoft.EntityFrameworkCore.Design": "2.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0"

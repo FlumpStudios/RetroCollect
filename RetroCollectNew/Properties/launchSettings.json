@@ -4,14 +4,14 @@
     "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:52618/",
-      "sslPort": 44374
+      "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "https://localhost:44374/",
+      "launchUrl": "http://localhost:52618/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -22,11 +22,11 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
+      "applicationUrl": "http://localhost:52619/",
       "UserSettings": {
         "UserEmail": "paul.marrable@iress.co.uk",
         "UserPassword": "Pacman_1981"
-      },
-      "applicationUrl": "http://localhost:52619/"
+      }
     }
   }
 }

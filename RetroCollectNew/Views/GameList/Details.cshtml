@@ -58,7 +58,27 @@
         <dd>
             @Html.DisplayFor(model => model.Format)
         </dd>
+
+
     </dl>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        @if (Model.ScreenShotURL != null)
+        {
+            @foreach (var X in Model.ScreenShotURL)
+            {
+                <div class="col-xs-4">
+                    <div class="thumbnail-section">      
+                        <a href="\@X"><img class="img-thumbnail" src="\@X" /></a>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |

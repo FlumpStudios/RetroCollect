@@ -16,6 +16,7 @@ using ModelData;
 using DataAccess.Repositories;
 using DataAccess.WorkUnits;
 using ApplicationLayer.Business_Logic.Builders;
+using ApplicationLayer.Business_Logic.FileHandling;
 
 namespace ApplicationLayer
 {
@@ -47,6 +48,8 @@ namespace ApplicationLayer
             services.AddTransient<IUnitOFWork, UnitOFWork>();
             services.AddTransient<ISortingManager, SortingManager>();
             services.AddTransient<IGameListResponseBuilder, GameListResponseBuilder>();
+            services.AddTransient<IFileHandler, FileHandler>();
+
             services.AddMvc();
 
             services.AddDbContext<RetroCollectNewContext>(options =>

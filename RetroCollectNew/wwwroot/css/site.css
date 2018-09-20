@@ -54,3 +54,25 @@
 .warning-text {
     color:red;
 }
+
+.img-thumbnail {
+    height:200px;
+    width:auto;
+}
+
+.thumbnail-section {
+    display:inline-block;
+}
+
+.thumbnail-delete {
+    position: absolute;
+    color: black;
+    text-shadow: 2px 2px 8px #FF0000;
+    background-color: white !important;
+    opacity: 1;
+    margin: 5px;
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}

@@ -3421,11 +3421,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj",
+      "projectPath": "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\paul.marrable\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\RetroCollect\\DataLayer\\obj\\",
+      "outputPath": "C:\\Dev\\retrocollect\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3444,8 +3444,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Dev\\RetroCollect\\ModelData\\ModelData.csproj": {
-              "projectPath": "C:\\Dev\\RetroCollect\\ModelData\\ModelData.csproj"
+            "C:\\Dev\\retrocollect\\ModelData\\ModelData.csproj": {
+              "projectPath": "C:\\Dev\\retrocollect\\ModelData\\ModelData.csproj"
             }
           }
         }

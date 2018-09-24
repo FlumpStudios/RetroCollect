@@ -13806,11 +13806,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\RetroCollect\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Dev\\retrocollect\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Dev\\RetroCollect\\Tests\\Tests.csproj",
+      "projectPath": "C:\\Dev\\retrocollect\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\paul.marrable\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\RetroCollect\\Tests\\obj\\",
+      "outputPath": "C:\\Dev\\retrocollect\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13829,11 +13829,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj": {
-              "projectPath": "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj"
+            "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj": {
+              "projectPath": "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj"
             },
-            "C:\\Dev\\RetroCollect\\RetroCollectNew\\ApplicationLayer.csproj": {
-              "projectPath": "C:\\Dev\\RetroCollect\\RetroCollectNew\\ApplicationLayer.csproj"
+            "C:\\Dev\\retrocollect\\RetroCollectNew\\ApplicationLayer.csproj": {
+              "projectPath": "C:\\Dev\\retrocollect\\RetroCollectNew\\ApplicationLayer.csproj"
             }
           }
         }

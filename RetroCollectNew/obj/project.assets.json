@@ -13306,11 +13306,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\RetroCollect\\RetroCollectNew\\ApplicationLayer.csproj",
+      "projectUniqueName": "C:\\Dev\\retrocollect\\RetroCollectNew\\ApplicationLayer.csproj",
       "projectName": "ApplicationLayer",
-      "projectPath": "C:\\Dev\\RetroCollect\\RetroCollectNew\\ApplicationLayer.csproj",
+      "projectPath": "C:\\Dev\\retrocollect\\RetroCollectNew\\ApplicationLayer.csproj",
       "packagesPath": "C:\\Users\\paul.marrable\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\RetroCollect\\RetroCollectNew\\obj\\",
+      "outputPath": "C:\\Dev\\retrocollect\\RetroCollectNew\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13329,11 +13329,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Dev\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj": {
-              "projectPath": "C:\\Dev\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj"
+            "C:\\Dev\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj": {
+              "projectPath": "C:\\Dev\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj"
             },
-            "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj": {
-              "projectPath": "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj"
+            "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj": {
+              "projectPath": "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj"
             }
           }
         }

@@ -1,0 +1,397 @@
+/* Website template by freewebsitetemplates.com */
+body {
+	background: url(../images/bg-body.jpg) repeat left top;
+	color: #515151;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin: 0;
+	min-width: 960px;
+	padding: 0;
+}
+a {
+	outline: none;
+}
+img {
+	border: 0;
+}
+p a {
+	color: #515151;
+}
+#body div div div div div div#sidebar ul li a {
+	color: #515151;
+	text-decoration: none;
+}
+#body div div div div div div#sidebar ul li a:hover {
+	text-decoration: underline;
+}
+p a:hover {
+	color: #252323;
+}
+#header {
+	background: url(../images/pinklight.png) repeat-x left top;
+	width: 100%;
+}
+#header div:first-child {
+	border: none;
+	height: 160px;
+	z-index: 2;
+}
+#header div:first-child div#logo {
+	background: none;
+	border: none;
+	display: block;
+	left: 400px;
+	padding: 0;
+	position: absolute;
+	top: 25px;
+	width: 172px;
+	z-index: 1000;
+}
+#header div:first-child div#logo a img {
+	display: block;
+}
+#header div:first-child ul {
+	height: 43px;
+	list-style: none;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	top: 90px;
+	width: 960px;
+}
+#header div:first-child ul li {
+	display: inline-block;
+}
+#header div:first-child ul li.home {
+	left: 56px;
+	position: absolute;
+	top: 0;
+}
+#header div:first-child ul li.products {
+	left: 194px;
+	position: absolute;
+	top: 0;
+}
+#header div:first-child ul li.about {
+	left: 680px;
+	position: absolute;
+	top: 0;
+}
+#header div:first-child ul li.blog {
+	left: 830px;
+	position: absolute;
+	top: 0;
+}
+#header div:first-child ul li a {
+	display: block;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-weight: bold;
+	height: 43px;
+	letter-spacing: 1px;
+	line-height: 33px;
+	padding: 0 0 0 13px;	
+	text-decoration: none;
+	text-transform: uppercase;
+	text-shadow: 0px -2px 0px #4f0428;
+}
+#header div:first-child ul li.current a {
+	background: url(../images/bg-menu-left.png) no-repeat left top;
+	color: #FFFFFF;
+}
+#header div:first-child ul li.current a span {
+	background: url(../images/bg-menu-right.png) no-repeat right top;
+	display: block;
+	height: 43px;
+	padding: 0 15px 0 5px;
+	text-align: center;
+}
+#header div {
+	height: auto; 
+	margin: 0 auto;
+	position: relative;
+	width: 960px;
+	z-index: 1;
+}
+#header div div#figure {
+	background: url(../images/livemusic.png) no-repeat;
+	height: 410px;
+	position: relative;
+}
+#header div div#figure div {
+	background: none;
+	position: absolute;
+	right: 80px;
+	text-align: center;
+	top: 143px;
+	width: 400px;
+}
+#header div div#figure div h1 {
+	color: #00dfdc;
+	display: block;
+	font-size: 75px;
+	font-weight: normal;
+	margin: 0;
+	text-transform: capitalize;
+}
+#header div div#figure div h2 {
+	color: #c4c4c4;
+	display: block;
+	font-size: 19px;
+	font-weight: normal;
+	line-height: 41px;
+	margin: 0;
+	text-transform: uppercase;
+}
+#header div span#background {
+	background: url(../images/bg-blue.png) no-repeat center top;
+	display: block;
+	height: 101px;
+}
+#body {
+	margin: -40px 0 0;
+}
+#body p {
+	margin: 0;
+}
+#body div {
+	background:  url(../images/bg-content2.png) repeat-x left top;
+	border-bottom: 2px solid #86104a;
+	padding: 0;
+	width: 100%;
+}
+#body div div {
+	background: url(../images/bg-content.png) no-repeat center top;
+	border: 0;
+	padding: 104px 0 0;
+	width: 100%;
+}
+#body div div div {
+	background: url(../images/bg-content3.jpg) repeat left 108px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+#body div div div div {
+	margin: 0 auto;
+	min-height: 300px;
+	padding: 0 0 40px;
+	width: 960px;
+}
+#body div div div div h1 {
+	color: #0a5382;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 38px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+#body div div div div h4 {
+	color: #3f3f3f;
+	font-weight: normal;
+	margin: 0 0 50px;
+	text-align: center;
+}
+#body div div div div ul {
+	list-style: none;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	text-align: center;
+}
+#body div div div div ul li {
+	float: left;
+	margin: 0 75px 0 77px;
+	padding: 0 0 68px;
+	width: 166px;
+}
+#body div div div div ul li a img {
+	display: block;
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+#body div div div div ul li a img:hover {
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+#body div div div div ul li h2 {
+	font-size: 16px;
+	font-weight: normal;
+	margin: 0;
+}
+#body div div div div ul li h2 a {
+	background: url(../images/bg-prodname.png) repeat-x;
+	color: #FFF;
+	display: block;
+	height: 57px;
+	letter-spacing: 0.05em;
+	line-height: 51px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#body div div div div ul li h2 a:hover {
+	background: url(../images/bg-prodname-hover.png) repeat-x;
+}
+#body div div div div div {
+	background: none;
+	overflow: hidden;
+	padding: 0 40px 56px;
+	width: 880px;
+}
+#body div div div div div h3 {
+	color: #056f76;
+	font-size: 16px;
+	line-height: 30px;
+	margin: 0;
+	text-transform: uppercase;
+}
+#body div div div div div p {
+	line-height: 30px;
+	margin: 0 0 30px;
+	text-align: justify;
+}
+#body div div div div div div#article {
+	background: none;
+	float: left;
+	padding: 0;
+	width: 610px;
+}
+#body div div div div div div#article h2 {
+	font-size: 16px;
+	line-height: 30px;
+	margin: 0;
+}
+#body div div div div div div#article h2 a {
+	color: #056f76;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#body div div div div div div#article h2 a:hover {
+	color: #2b4b4d;
+}
+#body div div div div div div#sidebar {
+	background: none;
+	float: right;
+	padding: 0;
+	width: 235px;
+}
+#body div div div div div div#sidebar h4 {
+	color: #056f76;
+	font-weight: bold;
+	line-height: 30px;
+	margin: 0;
+	text-align: left;
+	text-transform: uppercase;
+}
+#body div div div div div div#sidebar ul {
+	list-style: disc;
+	margin: 0 0 30px;
+	padding: 0 0 0 15px;
+	text-align: left;
+}
+#body div div div div div div#sidebar ul li {
+	float: none;
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+	width: auto;
+}
+#footer {
+	min-height: 413px;
+}
+#footer div {
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 28px 0 0;
+	width: 940px;
+}
+#footer div div:first-child {
+	background: url(../images/footer-separator.png) no-repeat right top;
+	float: left;
+	padding: 0 90px 0 20px;
+	width: 660px;
+}
+#footer div div:first-child p {
+	color: #f0b7d2;
+	line-height: 30px;
+	margin: 0;
+	text-align: justify;
+}
+#footer div div p a {
+	color: #f0b7d2;
+}
+#footer div div h3 {
+	color: #FFFFFF;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0 0 30px;
+	padding: 50px 0 0;
+	text-shadow: 0 1px #820048;
+	text-transform: uppercase;
+}
+#footer div div {
+	float: right;
+	min-height: 299px;
+	padding: 0;
+	width: 160px;
+}
+#footer div div ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#footer div div ul li {
+	display: block;
+	margin: 20px 0 0;
+}
+#footer div div ul li a {
+	color: #f0b7d2;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	text-decoration: none;
+	text-indent: 40px;
+	text-transform: lowercase;
+}
+#footer div div ul li a:hover, #footer div div p a:hover {
+	color: #FFFFFF;
+}
+#footer div div ul li:first-child {
+	margin: 0;
+}
+#footer div div ul li a#googleplus {
+	background: url(../images/icons.png) no-repeat 3px -104px;
+}
+#footer div div ul li a#googleplus:hover {
+	background: url(../images/icons.png) no-repeat 3px -126px;
+}
+#footer div div ul li a#twitter {
+	background: url(../images/icons.png) no-repeat 0 -54px;
+	height: 20px;
+	line-height: 20px;
+}
+#footer div div ul li a#twitter:hover {
+	background: url(../images/icons.png) no-repeat 0 -74px;
+}
+#footer div div ul li a#facebook {
+	background: url(../images/icons.png) no-repeat 8px 0;
+}
+#footer div div ul li a#facebook:hover {
+	background: url(../images/icons.png) no-repeat 8px -22px;
+}
+#footer p.footnote {
+	background: #991456;
+	border-radius: 5px;
+	color: #c14381;
+	height: 30px;
+	font-size: 12px;
+	line-height: 30px;
+	margin: 30px auto 0;
+	text-align: center;
+	width: 260px;
+}

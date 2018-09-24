@@ -3643,11 +3643,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj",
+      "projectUniqueName": "C:\\Dev\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj",
       "projectName": "DataAccess.EntityFramework",
-      "projectPath": "C:\\Dev\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj",
+      "projectPath": "C:\\Dev\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj",
       "packagesPath": "C:\\Users\\paul.marrable\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\RetroCollect\\DataAccess.EntityFramework\\obj\\",
+      "outputPath": "C:\\Dev\\retrocollect\\DataAccess.EntityFramework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3666,8 +3666,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj": {
-              "projectPath": "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj"
+            "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj": {
+              "projectPath": "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj"
             }
           }
         }

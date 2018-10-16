@@ -227,3 +227,8 @@ footer .mdl-logo a {
 .footer-container {
   margin: 0 auto;
 }
+
+.extra-space {
+    display:block;
+    height:50px;
+}

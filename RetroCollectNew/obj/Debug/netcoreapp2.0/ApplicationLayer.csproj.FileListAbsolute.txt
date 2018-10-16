@@ -47,9 +47,9 @@ C:\Dev\RetroCollect\RetroCollectNew\bin\Debug\netcoreapp2.0\DataAccess.pdb
 C:\Dev\RetroCollect\RetroCollectNew\bin\Debug\netcoreapp2.0\ModelData.pdb
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.csprojAssemblyReference.cache
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.csproj.CoreCompileInputs.cache
-C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.AssemblyInfoInputs.cache
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.AssemblyInfo.cs
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.csproj.CopyComplete
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.dll
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.pdb
+C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

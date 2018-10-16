@@ -492,6 +492,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "NLog/4.5.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      },
       "Remotion.Linq/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -998,7 +1007,8 @@
           "Microsoft.AspNetCore.Http": "2.0.0",
           "Microsoft.EntityFrameworkCore": "2.0.0",
           "Microsoft.EntityFrameworkCore.Design": "2.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
+          "NLog": "4.5.10"
         },
         "compile": {
           "bin/placeholder/ModelData.dll": {}
@@ -1814,6 +1824,38 @@
         "lib/netstandard1.0/_._",
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "NLog/4.5.10": {
+      "sha512": "IXZEFeDj/R3OL6bCcLNVFVFlBxp4zey9X2RdmISG+P9hp0uivIgkN6nBqCIE6yF0dRrUBye84uaD7emNVmqAnQ==",
+      "type": "package",
+      "path": "nlog/4.5.10",
+      "files": [
+        ".signature.p7s",
+        "lib/monoandroid44/NLog.dll",
+        "lib/monoandroid44/NLog.xml",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net40-client/NLog.dll",
+        "lib/net40-client/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "lib/sl4/NLog.dll",
+        "lib/sl4/NLog.xml",
+        "lib/sl5/NLog.dll",
+        "lib/sl5/NLog.xml",
+        "lib/wp8/NLog.dll",
+        "lib/wp8/NLog.xml",
+        "lib/xamarinios10/NLog.dll",
+        "lib/xamarinios10/NLog.xml",
+        "nlog.4.5.10.nupkg.sha512",
+        "nlog.nuspec"
       ]
     },
     "Remotion.Linq/2.1.1": {
@@ -3612,7 +3654,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
-      "ModelData >= 1.0.0"
+      "ModelData >= 1.0.0",
+      "NLog >= 4.5.10"
     ]
   },
   "packageFolders": {
@@ -3622,11 +3665,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Dev\\retrocollect\\DataLayer\\DataAccess.csproj",
+      "projectPath": "C:\\Dev\\RetroCollect\\DataLayer\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\paul.marrable\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\retrocollect\\DataLayer\\obj\\",
+      "outputPath": "C:\\Dev\\RetroCollect\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3645,8 +3688,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Dev\\retrocollect\\ModelData\\ModelData.csproj": {
-              "projectPath": "C:\\Dev\\retrocollect\\ModelData\\ModelData.csproj"
+            "C:\\Dev\\RetroCollect\\ModelData\\ModelData.csproj": {
+              "projectPath": "C:\\Dev\\RetroCollect\\ModelData\\ModelData.csproj"
             }
           }
         }
@@ -3683,6 +3726,10 @@
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "NLog": {
+            "target": "Package",
+            "version": "[4.5.10, )"
           }
         },
         "imports": [

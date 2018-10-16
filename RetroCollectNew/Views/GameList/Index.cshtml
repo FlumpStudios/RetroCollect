@@ -16,11 +16,8 @@
     </div>
     <div id="body" style="background-color:pink">
         <div>
-
             <div>
-
                 @model ApplicationLayer.Models.Responses.GameListResponse
-
 
                 @using X.PagedList;
 
@@ -48,6 +45,7 @@
 
                         <button type="submit">Search</button>
 
+                        <button class="console-selection" id="all" value="all">All</button>
 
                         @foreach (var items in Model.ConsoleList)
                         {
@@ -108,9 +106,19 @@
                                 <td>
                                     @if (Model.IsLoggedIn)
                                     {
-                                        <text>
-                                            <i id="@item.Id" class="fa fa-plus add-new-game"></i>
-                                        </text>
+                                        if (Model.ShowClientList)
+                                        {
+                                            <text>
+                                                <i id="@item.Id" class="fa fa-minus delete-game"></i>
+                                            </text>
+                                        }
+                                        else
+                                        {
+                                            <text>
+                                                <i id="@item.Id" class="fa fa-plus add-new-game"></i>
+                                            </text>
+                                        }
+
                                     }
 
                                 </td>
@@ -136,10 +144,6 @@
 
                 <div>
                     <div>
-
-
-
-
                         @if (Model.GameListModel.Count() < 1)
                         {
                             <text><div class="warning-text small">There's no items in your collection. Add games to you collection through the 'All Games' Tab.</div> </text>

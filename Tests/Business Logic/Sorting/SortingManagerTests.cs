@@ -1,8 +1,12 @@
 using ApplicationLayer.Business_Logic.Sorting;
 using ApplicationLayer.Models.Request;
+using ApplicationLayer.Models.Responses;
 using DataAccess.WorkUnits;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ModelData;
 using Moq;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Tests.Business.Logic.Sorting
 {
@@ -16,9 +20,11 @@ public class SortingManagerTests
     [TestInitialize]
     public void TestInitialize()
     {
-        this.mockRepository = new MockRepository(MockBehavior.Strict);
+        mockRepository = new MockRepository(MockBehavior.Default);
 
-        this.mockUnitOFWork = this.mockRepository.Create<IUnitOFWork>();
+        mockUnitOFWork = mockRepository.Create<IUnitOFWork>();
+
+            mockUnitOFWork.Setup(x => x.GameRepo.Get(null, null, null)).Returns(new List<GameListModel>());
     }
 
     [TestCleanup]
@@ -38,7 +44,7 @@ public class SortingManagerTests
     {
         // Arrange
         var unitUnderTest = CreateManager();
-            GameListRequest gameListRequestModel = new GameListRequest();
+        GameListRequest gameListRequestModel = new GameListRequest() { Format = "Jaguar",Page = 1,SearchText=null,ShowClientList = false,SortingOptions=null,Switchsort= false};
 
         // Act
         var result = unitUnderTest.GetFilteredResults(

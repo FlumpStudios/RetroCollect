@@ -25,3 +25,4 @@ C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfoInpu
 C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
 C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
 C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb
+C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.csprojAssemblyReference.cache

@@ -1,0 +1,96 @@
+﻿@model ModelData.GameListModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>GameListModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Developer" class="control-label"></label>
+                <input asp-for="Developer" class="form-control" />
+                <span asp-validation-for="Developer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publisher" class="control-label"></label>
+                <input asp-for="Publisher" class="form-control" />
+                <span asp-validation-for="Publisher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDateNA" class="control-label"></label>
+                <input asp-for="ReleaseDateNA" class="form-control" />
+                <span asp-validation-for="ReleaseDateNA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDateEU" class="control-label"></label>
+                <input asp-for="ReleaseDateEU" class="form-control" />
+                <span asp-validation-for="ReleaseDateEU" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReleaseDateJP" class="control-label"></label>
+                <input asp-for="ReleaseDateJP" class="form-control" />
+                <span asp-validation-for="ReleaseDateJP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Format" class="control-label"></label>
+                <input asp-for="Format" class="form-control" />
+                <span asp-validation-for="Format" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScreenShot" class="control-label"></label>
+                <input asp-for="ScreenShot" class="form-control" multiple />
+                <span asp-validation-for="ScreenShot" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+@using (Html.BeginForm("DeleteFile", "GameList", FormMethod.Post))
+{
+    <div class="container">
+        <div class="row">
+            @if (Model.ScreenShotURL != null)
+            { 
+                @foreach (var X in Model.ScreenShotURL)
+                {
+                    <div class="col-xs-4">
+                        <div class="thumbnail-section">
+                            <button type="submit" class="close thumbnail-delete" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <a href="\@X"><img class="img-thumbnail" src="\@X" /></a>
+                            @Html.Hidden("fileLocation", "\\" + @X)
+                            @Html.Hidden("id", Model.Id)
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

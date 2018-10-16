@@ -1,0 +1,17 @@
+C:\Users\NerdHouse\source\repos\RetroCollectNew\DataLayer\bin\Debug\netcoreapp2.0\DataLayer.deps.json
+C:\Users\NerdHouse\source\repos\RetroCollectNew\DataLayer\bin\Debug\netcoreapp2.0\DataLayer.dll
+C:\Users\NerdHouse\source\repos\RetroCollectNew\DataLayer\bin\Debug\netcoreapp2.0\DataLayer.pdb
+C:\Users\NerdHouse\source\repos\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\NerdHouse\source\repos\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\NerdHouse\source\repos\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\NerdHouse\source\repos\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.AssemblyInfo.cs
+C:\Users\NerdHouse\source\repos\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.dll
+C:\Users\NerdHouse\source\repos\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.pdb
+E:\Dev\RetroCollectNew\DataLayer\bin\Debug\netcoreapp2.0\DataLayer.deps.json
+E:\Dev\RetroCollectNew\DataLayer\bin\Debug\netcoreapp2.0\DataLayer.dll
+E:\Dev\RetroCollectNew\DataLayer\bin\Debug\netcoreapp2.0\DataLayer.pdb
+E:\Dev\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.csproj.CoreCompileInputs.cache
+E:\Dev\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.AssemblyInfoInputs.cache
+E:\Dev\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.AssemblyInfo.cs
+E:\Dev\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.dll
+E:\Dev\RetroCollectNew\DataLayer\obj\Debug\netcoreapp2.0\DataLayer.pdb

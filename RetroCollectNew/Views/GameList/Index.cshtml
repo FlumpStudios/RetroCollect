@@ -1,197 +1,203 @@
-﻿<!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Blog - Gadget Shop Website Template</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-    <div id="header">
-        <div>
-            <div id="logo">
-                <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+﻿
+    @{
+        ViewData["Title"] = "Games games games";
+    }
+
+    <!DOCTYPE html>
+    <html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Material Portfolio Template Demo</title>
+        <meta name="description" content="Demo of Material design portfolio template by TemplateFlip.com." />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body id="top">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <a href="contact.html" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i class="material-icons">mail</i></a>
+
+            <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link" href="index.html">Home</a><a class="mdl-navigation__link" href="portfolio.html">Portfolio</a><a class="mdl-navigation__link" href="about.html">About</a><a class="mdl-navigation__link" href="contact.html">Contact</a>
+                </nav>
             </div>
-        </div>
-    </div>
-    <div id="body" style="background-color:pink">
-        <div>
+            <main class="mdl-layout__content">
+                <div class="site-content">
+                    <div class="container">
 
-            <div>
+                        <div class="full-games-list row">
+                            <div>                            
 
-                @model ApplicationLayer.Models.Responses.GameListResponse
-
-
-                @using X.PagedList;
-
-                @{
-                    ViewData["Title"] = "Index";
-                }
-
-                <p>
-
-                    @Html.HiddenFor(x => x.CurrentOrderBy)
-                    @Html.HiddenFor(x => x.LastPage)
+                                <div>
+                                        <br />
+                                        <br />
+                                        @model ApplicationLayer.Models.Responses.GameListResponse
 
 
-                    @if (Model.IsAdmin)
-                    {
-                        <a asp-action="Create">Create New</a>
-                    }
+                                        @using X.PagedList;
 
-                    <!--Searching and filtering controls-->
+                                        @{
+                                            ViewData["Title"] = "Index";
+                                        }
 
-                    @using (Html.BeginForm("Index", "GameList", FormMethod.Get, new { id = "game-form" }))
-                    {
-                        @Html.TextBox("searchText")
-                        @Html.Hidden("showClientList", false);
+                                        <p>
 
-                        <button type="submit">Search</button>
+                                            @Html.HiddenFor(x => x.CurrentOrderBy)
+                                            @Html.HiddenFor(x => x.LastPage)
 
 
-                        @foreach (var items in Model.ConsoleList)
-                        {
-                            <button class="console-selection" id="@items" value="@items">@items</button>
-                            @Html.HiddenFor(x => x.ShowClientList)
-                            @Html.HiddenFor(x => x.Page);
-                            @Html.HiddenFor(x => x.SortingOptions);
-                            @Html.HiddenFor(x => x.Format);
-                            @Html.Hidden("switchsort", true);
+                                            @if (Model.IsAdmin)
+                                            {
+                                                <a asp-action="Create">Create New</a>
+                                            }
 
-                        }
-                    }
+                                            <!--Searching and filtering controls-->
+                                            </div>
+                                            @using (Html.BeginForm("Index", "GameList", FormMethod.Get, new { id = "game-form" }))
+                                            {
+                                                <div class="col-sm-8">
+                                                    @Html.TextBox("searchText", null, new { @class = "form-control" })
+                                                    @Html.Hidden("showClientList", false)
+                                                </div>
+                                                <button type="submit" class="btn btn-primary col-sm-4 fa fa-search"></button>
+                                                    
+                                                    <br />
+                                                    <br />
+                                                <div class="col-sm-12">
+                                                    @foreach (var items in Model.ConsoleList)
+                                                    {
+                                                        @if (!string.IsNullOrEmpty(items))
+                                                        {
+                                                            <button class="console-selection btn btn-info" id="@items" value="@items">@items</button>
+                                                            @Html.HiddenFor(x => x.ShowClientList)
+                                                            @Html.HiddenFor(x => x.Page)
+                                                            @Html.HiddenFor(x => x.SortingOptions)
+                                                            @Html.HiddenFor(x => x.Format)
+                                                            @Html.Hidden("switchsort", true)
+                                                        }
+                                                    }
+                                                </div>
+                                                <br />
+                                                <br />
+                                            }
 
-                </p>
+                                            </p>
+                                <div class="col-sm-12">
+                                    <ul class="nav nav-tabs">
+                                        <li id="show-all-games" class="@(@Model.ShowClientList ? "" : "active")"><a data-toggle="tab" href="#home">All Games</a></li>
+                                        @if (Model.IsLoggedIn)
+                                        {
+                                            <li id="show-my-collection" class="@(@Model.ShowClientList ? "active" : "")"><a data-toggle="tab" href="#menu1">Your Collection  </a></li>
+                                        }
+                                    </ul>
 
-                <ul class="nav nav-tabs">
-                    <li id="show-all-games" class="@(@Model.ShowClientList ? "" : "active")"><a data-toggle="tab" href="#home">All Games</a></li>
-                    @if (Model.IsLoggedIn)
-                    {
-                        <li id="show-my-collection" class="@(@Model.ShowClientList ? "active" : "")"><a data-toggle="tab" href="#menu1">Your Collection  </a></li>
-                    }
-                </ul>
-
-                <div class="tab-content">
-                    <!--Put any tab text here if you want, didn't think we needed any at the time-->
-                </div>
-
-
-                <table class="table">
-
-                    <thead>
-                        <tr>
-                            @foreach (var columnName in Model.ColumnNames)
-                            {
-                                <th id="@columnName" class="sorting-headers">
-                                    @columnName <i class="fa fa-sort-down"></i>
-                                </th>}
-                            <th></th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.GameListModel)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Name)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Developer)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Genre)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Publisher)
-                                </td>
-                                <td>
-                                    @if (Model.IsLoggedIn)
-                                    {
-                                        <text>
-                                            <i id="@item.Id" class="fa fa-plus add-new-game"></i>
-                                        </text>
-                                    }
-
-                                </td>
-
-                                <td>
-
-                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-
-                                    @if (Model.IsAdmin)
-                                    {
-                                        <text>
-                                            |
-                                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                                        </text>
-                                    }
-
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-
-                <div>
-                    <div>
+                                    <div class="tab-content">
+                                        <!--Put any tab text here if you want, didn't think we needed any at the time-->
+                                    </div>
 
 
+                                    <table class="table table-striped table-hove table-bordered">
+
+                                        <thead>
+                                            <tr>
+                                                @foreach (var columnName in Model.ColumnNames)
+                                                {
+                                                    <th id="@columnName" class="sorting-headers">
+                                                        @columnName <i class="fa fa-sort-down"></i>
+                                                    </th>}
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.GameListModel)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Developer)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Genre)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Publisher)
+                                                    </td>
+                                                    <td>
+                                                        @if (Model.IsLoggedIn)
+                                                        {
+                                                            <text>
+                                                            <i id="@item.Id" class="fa fa-plus add-new-game"></i>
+                                                            </text>
+                                                        }
+
+                                                    </td>
+
+                                                    <td>
+
+                                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+
+                                                        @if (Model.IsAdmin)
+                                                        {
+                                                            <text>
+                                                            |
+                                                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                                            </text>
+                                                        }
+
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
 
 
-                        @if (Model.GameListModel.Count() < 1)
-                        {
-                            <text><div class="warning-text small">There's no items in your collection. Add games to you collection through the 'All Games' Tab.</div> </text>
-                        }
-                        <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
 
-                        <div class="pagination">
-                            @X.PagedList.Mvc.Core.HtmlHelper.PagedListPager(Html, (IPagedList)Model.GameListModel, page => Url.Action("Index", new { Page = Model.Page }))
+
+                                    <div>
+                                        <div>
+
+
+
+
+                                            @if (Model.GameListModel.Count() < 1)
+                                            {
+                                                <text><div class="warning-text small">There's no items in your collection. Add games to you collection through the 'All Games' Tab.</div> </text>
+                                            }
+                                            <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
+
+                                            <div class="pagination">
+                                                @X.PagedList.Mvc.Core.HtmlHelper.PagedListPager(Html, (IPagedList)Model.GameListModel, page => Url.Action("Index", new { Page = Model.Page }))
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+
+                                            <script>
+
+                                            </script>
+
+
+                                        </div>
+                                
+
+
+
+
+
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-
-                <script>
-
-                </script>
-
-
-            </div>
-
-
-
-
-        </div>
-    </div>
-    <div id="footer">
-        <div>
-            <div>
-                <h3>Blog</h3>
-                <p>
-                    This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you&#39;re free to use this website template without linking back to us. If you&#39;re having problems editing this website template, then don&#39;t hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forum</a>.
-                </p>
-            </div>
-            <div>
-                <h3>Get Social</h3>
-                <ul>
-                    <li>
-                        <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" id="googleplus">Google&#43;</a>
-                    </li>
-                    <li>
-                        <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
-                    </li>
-                    <li>
-                        <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" id="facebook">Facebook</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <p class="footnote">
-            &copy; Copyright 2012. All rights reserved.
-        </p>
-    </div>
-</body>
+    </body>
 </html>
 

@@ -39,6 +39,22 @@ namespace ApplicationLayer
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+ 
+            services.AddAuthentication().AddTwitter(twitterOptions =>
+            {
+                twitterOptions.ConsumerKey = Configuration["Authentication:Twitter:ConsumerKey"];
+                twitterOptions.ConsumerSecret = Configuration["Authentication:Twitter:ConsumerSecret"];
+            }).AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            }).AddLinkedIn(options =>
+            {
+                options.ClientId = Configuration["Authentication:LinkedIn:AppId"];
+                options.ClientSecret = Configuration["Authentication:LinkedIn:AppSecret"];
+            });
+            
+
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
@@ -136,7 +152,7 @@ namespace ApplicationLayer
                 {
                     //here we tie the new user to the "Admin" role
                     await UserManager.AddToRoleAsync(poweruser, "Admin");
-                    }
+                }
             }
         }
     }

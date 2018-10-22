@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "AspNet.Security.OAuth.LinkedIn/2.0.0-rc2-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.OAuth": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AspNet.Security.OAuth.LinkedIn.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AspNet.Security.OAuth.LinkedIn.dll": {}
+        }
+      },
       "Castle.Core/4.3.1": {
         "type": "package",
         "dependencies": {
@@ -5274,6 +5286,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
+          "AspNet.Security.OAuth.LinkedIn": "2.0.0-rc2-final",
           "DataAccess": "1.0.0",
           "DataAccess.EntityFramework": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.0",
@@ -5346,6 +5359,17 @@
     }
   },
   "libraries": {
+    "AspNet.Security.OAuth.LinkedIn/2.0.0-rc2-final": {
+      "sha512": "po9jAyDAIuMxxpL/xlt2hLN/mJDVutmhsW9Syy/39C9TVSPfyn5tMKdKH0OJQwrc6GeuMf5j6GAYYwYN8UGPdw==",
+      "type": "package",
+      "path": "aspnet.security.oauth.linkedin/2.0.0-rc2-final",
+      "files": [
+        "aspnet.security.oauth.linkedin.2.0.0-rc2-final.nupkg.sha512",
+        "aspnet.security.oauth.linkedin.nuspec",
+        "lib/netstandard2.0/AspNet.Security.OAuth.LinkedIn.dll",
+        "lib/netstandard2.0/AspNet.Security.OAuth.LinkedIn.xml"
+      ]
+    },
     "Castle.Core/4.3.1": {
       "sha512": "8Y/eTr6GTElAGV7eAmJuhfLhGdFpNvaNrQ9UQYDScziLmX+/BLGM+9eQr0IcdNDcPN0ADmbtwT6MgecGKy4obw==",
       "type": "package",

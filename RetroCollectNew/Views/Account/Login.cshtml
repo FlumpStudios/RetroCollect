@@ -2,24 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Material Portfolio Template Demo</title>
-    <meta name="description" content="Demo of Material design portfolio template by TemplateFlip.com." />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+
     <link href="css/main.css" rel="stylesheet">
-</head>
+
 <div class="extra-space"></div>
 <div class="mdl-layout__drawer mdl-layout--small-screen-only">
     <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
         <a class="mdl-navigation__link" href="index.html">Home</a><a class="mdl-navigation__link" href="portfolio.html">Portfolio</a><a class="mdl-navigation__link" href="about.html">About</a><a class="mdl-navigation__link" href="contact.html">Contact</a>
     </nav>
 </div>
-<div class="container">
+<div class="container loginpage">
     <div>
 
             @using System.Collections.Generic
@@ -40,7 +32,7 @@
                 <div class="col-md-6">
                     <section>
                         <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
-                            <h4>Use a local account to log in.</h4>
+                      
                             <hr />
                             <div asp-validation-summary="All" class="text-danger"></div>
                             <div class="form-group">
@@ -66,10 +58,9 @@
                             </div>
                             <div class="form-group">
                                 <p>
-                                    <a asp-action="ForgotPassword">Forgot your password?</a>
-                                </p>
-                                <p>
-                                    <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
+                                    <a style="padding-right:10px; padding-left:10px;">Forgot your password? </a>
+                             
+                                   <a style="padding-left:10px" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
                                 </p>
                             </div>
                         </form>
@@ -97,7 +88,7 @@
                                         <p>
                                             @foreach (var provider in loginProviders)
                                             {
-                                                <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.Name</button>
+                                                <button type="submit" style="font-size:30px; !important" class="socialmedia fa fa-@provider.Name.ToLower() fa-lg  btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"></button>
                                             }
                                         </p>
                                     </div>

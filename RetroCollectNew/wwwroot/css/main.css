@@ -2,8 +2,12 @@ img {
   max-width: 100%;
 }
 
+.loginpage {
+    background-color: #E4E4E4;
+}
+
 .site-header {
-  position: relative;
+    position: relative;
 }
 
 .site-header .mdl-layout__header-row {

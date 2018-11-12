@@ -50,10 +50,12 @@ function addNewGame(id) {
         type: 'POST',
         data: clientListModel,
         success: function (result) {
-            alert(result);
+       
+            $.notify(result,"success");
+
            
-        }, error: function (e) {
-            alert(e.responseText);
+        }, error: function (e) {         
+            $.notify(e.responseText,"error");
         }
     });
 }
@@ -63,17 +65,15 @@ function deleteGame(id) {
     $.ajax({
         url: '/ClientGamesList/Delete/' + id,
         type: 'DELETE',
-        success: function (result) {           
-            console.log(result);
-            alert("Game has been successfully removed from your library");
+        success: function (result) {  
             document.location.reload();
         }, error: function (e) {
-            console.log(e);
-            alert("There has been an error deleting the title from your library, please contact administration for help.");
+            Console.log(e);
+           $.notify("There has been an error deleting the title from your library, please contact administration for help.", "error");
+
         }
     });
 }
-
 
 function paginationController(pageSelection)
 {

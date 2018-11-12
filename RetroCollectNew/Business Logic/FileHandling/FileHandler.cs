@@ -5,12 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace ApplicationLayer.Business_Logic.FileHandling
 {   
     public class FileHandler : IFileHandler
     {
+        private static readonly NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+
         private readonly IHostingEnvironment _hostingEnvironment;
 
         public FileHandler(IHostingEnvironment hostingEnvironment)
@@ -22,22 +24,30 @@ namespace ApplicationLayer.Business_Logic.FileHandling
         {
             var uploads = Path.Combine(_hostingEnvironment.WebRootPath, folder);
 
-            foreach (var file in files)
+            try
             {
-                if (file.Length > 0)
+                foreach (var file in files)
                 {
-                    //Check if folder exists, if it dones't make one.
-                    string fileName = Path.GetFileName(file.FileName);
-                    bool exists = Directory.Exists(uploads);                 
-                    if (!exists) Directory.CreateDirectory(uploads);
-
-                    var filePath = Path.Combine(uploads, fileName);
-                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    if (file.Length > 0)
                     {
-                        file.CopyTo(fileStream);
+                        //Check if folder exists, if it dones't make one.
+                        string fileName = Path.GetFileName(file.FileName);
+                        bool exists = Directory.Exists(uploads);
+                        if (!exists) Directory.CreateDirectory(uploads);
+
+                        var filePath = Path.Combine(uploads, fileName);
+                        using (var fileStream = new FileStream(filePath, FileMode.Create))
+                        {
+                            file.CopyTo(fileStream);
+                        }
                     }
                 }
             }
+            catch (Exception e)
+            {
+                _logger.Error(e, "Error saving image file");
+            }
+            
         }
 
         public IEnumerable<string> LoadFiles(string folderName)
@@ -46,9 +56,18 @@ namespace ApplicationLayer.Business_Logic.FileHandling
             if (!Directory.Exists(uploads)) return null;
 
             List<string> filesInFolder = new List<string>();
-            foreach (string s in Directory.GetFiles(uploads).Select(Path.GetFileName))
+
+            try
+            { 
+                foreach (string s in Directory.GetFiles(uploads).Select(Path.GetFileName))
+                {
+                    filesInFolder.Add(Path.Combine(folderName,s));
+                }
+            }
+            catch(Exception e)
             {
-                filesInFolder.Add(Path.Combine(folderName,s));
+                _logger.Error(e, "Error loading image files");
+
             }
             return filesInFolder;
         }
@@ -63,7 +82,7 @@ namespace ApplicationLayer.Business_Logic.FileHandling
             }
             catch (Exception e)
             {
-                //TODO: Log exception
+                _logger.Error(e, "Error Deleting image file");
                 return FileResponse.Exception;               
             }
             return FileResponse.Success;

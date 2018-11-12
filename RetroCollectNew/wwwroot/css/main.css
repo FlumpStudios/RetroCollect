@@ -236,3 +236,39 @@ footer .mdl-logo a {
     display:block;
     height:50px;
 }
+
+/*********************/
+/*Add remove icon CSS*/
+/*********************/
+
+.add-remove-icon {
+    cursor: pointer;
+    transition: 0.3s;
+    font-size:14px;
+    text-align:center;
+    
+}
+    
+    .add-remove-icon:hover {
+        transition: 0.25s;
+        -webkit-transition: 0.25s;
+        -moz-transition: 0.25s;
+        -ms-transition: 0.25s;
+        -o-transition: 0.25s;
+
+        -webkit-transform: rotate(180deg) scale(1.5);
+        -moz-transform: rotate(180deg) scale(1.5);
+        -o-transform: rotate(180deg) scale(1.5);
+        -ms-transform: rotate(180deg) scale(1.5);
+        transform: rotate(180deg) scale(1.5);
+    }
+
+       
+.delete-game {
+    color:red;
+}
+
+.add-new-game {
+    color:green;
+}
+

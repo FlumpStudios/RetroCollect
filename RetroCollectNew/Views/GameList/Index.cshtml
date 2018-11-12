@@ -16,9 +16,9 @@
     <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
-<body id="top">
+<body id="top">  
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <a href="contact.html" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i class="material-icons">mail</i></a>
+        <a asp-area="" asp-controller="Home" asp-action="Contact" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i class="material-icons">mail</i></a>
 
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
@@ -112,7 +112,10 @@
                                                     @columnName <i class="fa fa-sort-down"></i>
                                                 </th>}
                                             <th></th>
-
+                                            @if (Model.IsLoggedIn)
+                                            {
+                                                <th></th>
+                                            }
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -131,25 +134,25 @@
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.Publisher)
                                                 </td>
-                                                <td>
-                                                    @if (Model.IsLoggedIn)
-                                                    {
-                                                        if (Model.ShowClientList)
+
+                                                @if (Model.IsLoggedIn)
+                                                {
+                                                    <td class="text-center">
+                                                        @if (Model.ShowClientList)
                                                         {
                                                             <text>
-                                                                <i id="@item.Id" class="fa fa-minus delete-game"></i>
+                                                                <i id="@item.Id" class="fa fa-minus add-remove-icon delete-game"></i>
                                                             </text>
                                                         }
                                                         else
                                                         {
                                                             <text>
-                                                                <i id="@item.Id" class="fa fa-plus add-new-game"></i>
+                                                                <i id="@item.Id" class="fa fa-plus add-remove-icon add-new-game"></i>
                                                             </text>
                                                         }
+                                                    </td>
+                                                }
 
-                                                    }
-
-                                                </td>
 
                                                 <td>
 
@@ -187,7 +190,9 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+        </main>
+</div>
 </body>
 </html>
 

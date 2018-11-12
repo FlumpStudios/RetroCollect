@@ -15,6 +15,8 @@ namespace ApplicationLayer.Business_Logic.Sorting
 {
     public class SortingManager : ISortingManager
     {
+
+        private static readonly NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
         private readonly IUnitOFWork _unitOFWork;
 
         public SortingManager(IUnitOFWork unitOFWork)
@@ -41,16 +43,31 @@ namespace ApplicationLayer.Business_Logic.Sorting
         //TODO: Possibly Move into seperate classes
         private Expression<Func<GameListModel, bool>> GetSearchExpression(string searchText)
         {
-            Expression<Func<GameListModel, bool>> searchExpression = (x => x.Name.Contains(searchText) || x.Developer.Contains(searchText));
-          
+            Expression<Func<GameListModel, bool>> searchExpression = null;
+
+            try
+            {
+                searchExpression = (x => x.Name.Contains(searchText) || x.Developer.Contains(searchText));
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e,"Could not create search expression");
+            }
             return string.IsNullOrEmpty(searchText) ? null : searchExpression;
         }
 
 
         private Expression<Func<GameListModel, bool>> GetFormatExpression(string format)
         {
-            Expression<Func<GameListModel, bool>> formatExpression = (x => x.Format == format);
-            
+            Expression<Func<GameListModel, bool>> formatExpression = null;
+            try
+            {
+                formatExpression = (x => x.Format == format);
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e, "Error creating format Expression");
+            }
             return string.IsNullOrEmpty(format) ? null : formatExpression;
         }
 

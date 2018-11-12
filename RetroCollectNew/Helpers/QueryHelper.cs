@@ -2,12 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ApplicationLayer.Helpers
 {
+
     public static class QueryHelper
     {
+
+        private static readonly NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+        
         /// <summary>
         /// Inner join client list of game ids with gamelist, to return a list of games in client DB
         /// </summary>
@@ -19,10 +22,21 @@ namespace ApplicationLayer.Helpers
                       IEnumerable< ClientListModel> clientList, 
                       string userId)
         {
-            return    (from s in gameList
-                       join c in clientList on s.Id equals c.GameId
-                       where c.GameId == s.Id && userId == c.UserId
-                       select s).ToList();
+            IEnumerable<GameListModel> query = null;
+
+            try
+            {
+                query = (from s in gameList
+                                                    join c in clientList on s.Id equals c.GameId
+                                                    where c.GameId == s.Id && userId == c.UserId
+                                                    select s).ToList();
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e, "Error joining Client list with game list");
+            }
+        
+            return query;
         }
     }
 }

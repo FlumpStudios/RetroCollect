@@ -10,7 +10,9 @@ using X.PagedList;
 namespace ApplicationLayer.Business_Logic.Builders
 {
     public class GameListResponseBuilder : IGameListResponseBuilder
-    {      
+    {
+        private static readonly NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+
         private readonly ISortingManager _sortingManager;
 
         private readonly IConfiguration _configuration;

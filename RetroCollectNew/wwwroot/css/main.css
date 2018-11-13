@@ -268,3 +268,53 @@ footer .mdl-logo a {
 .add-new-game {
     color: green;
 }
+
+/* ------------------------------------------------------------------- 
+ * ## responsive video container
+ * ------------------------------------------------------------------- */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+    .video-container iframe,
+    .video-container object,
+    .video-container embed,
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+           
+    }
+
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;   
+    height: 0;
+    pointer-events: none;
+}
+
+    .videoWrapper iframe {
+        margin-top: 22px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0px 14px;
+    }
+
+
+@media only screen and (min-width: 1200px) {
+    .videoWrapper iframe {
+        height: 500px;
+    }
+    .videoWrapper {
+        padding-bottom: 42.25% !important;
+    }
+}

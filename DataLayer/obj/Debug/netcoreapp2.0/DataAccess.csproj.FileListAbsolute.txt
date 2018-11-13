@@ -46,3 +46,14 @@ C:\Dev\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfo.cs
 C:\Dev\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.csproj.CopyComplete
 C:\Dev\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.dll
 C:\Dev\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.pdb
+C:\retrocollect2\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\DataAccess.deps.json
+C:\retrocollect2\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\DataAccess.dll
+C:\retrocollect2\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\DataAccess.pdb
+C:\retrocollect2\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\ModelData.dll
+C:\retrocollect2\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\ModelData.pdb
+C:\retrocollect2\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.csprojResolveAssemblyReference.cache
+C:\retrocollect2\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\retrocollect2\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfoInputs.cache
+C:\retrocollect2\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfo.cs
+C:\retrocollect2\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.dll
+C:\retrocollect2\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.pdb

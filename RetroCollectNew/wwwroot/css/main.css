@@ -107,8 +107,7 @@ img {
 
 .welcome-card > .mdl-card__title {
   color: #fff;
-  height: 290px;
-  background: url("../images/cover.jpg") center/cover;
+  height: 70px;
 }
 
 .event-card {
@@ -244,18 +243,16 @@ footer .mdl-logo a {
 .add-remove-icon {
     cursor: pointer;
     transition: 0.3s;
-    font-size:14px;
-    text-align:center;
-    
+    font-size: 14px;
+    text-align: center;
 }
-    
+
     .add-remove-icon:hover {
         transition: 0.25s;
         -webkit-transition: 0.25s;
         -moz-transition: 0.25s;
         -ms-transition: 0.25s;
         -o-transition: 0.25s;
-
         -webkit-transform: rotate(180deg) scale(1.5);
         -moz-transform: rotate(180deg) scale(1.5);
         -o-transform: rotate(180deg) scale(1.5);
@@ -263,12 +260,11 @@ footer .mdl-logo a {
         transform: rotate(180deg) scale(1.5);
     }
 
-       
+
 .delete-game {
-    color:red;
+    color: red;
 }
 
 .add-new-game {
-    color:green;
+    color: green;
 }
-

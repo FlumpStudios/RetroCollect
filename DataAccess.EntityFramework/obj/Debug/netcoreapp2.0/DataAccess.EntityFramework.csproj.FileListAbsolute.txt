@@ -54,3 +54,16 @@ C:\Dev\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAcces
 C:\Dev\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csproj.CopyComplete
 C:\Dev\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
 C:\Dev\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.deps.json
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.dll
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\ModelData.dll
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.pdb
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\ModelData.pdb
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csprojResolveAssemblyReference.cache
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csproj.CoreCompileInputs.cache
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.AssemblyInfoInputs.cache
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.AssemblyInfo.cs
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
+C:\retrocollect2\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb

@@ -307,6 +307,7 @@ footer .mdl-logo a {
         width: 100%;
         height: 100%;
         padding: 0px 14px;
+        opacity: 0.75;
     }
 
 
@@ -317,4 +318,14 @@ footer .mdl-logo a {
     .videoWrapper {
         padding-bottom: 42.25% !important;
     }
+}
+
+.navbar {
+    height: 84px;
+   
+}
+.navbar-nav {
+    height: 84px;
+    float: right;
+    margin: 21px;
 }

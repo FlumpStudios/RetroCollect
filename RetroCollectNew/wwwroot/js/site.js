@@ -1,25 +1,31 @@
-﻿$(document).ready(function () {
+﻿/*********************
+ **  Event Methods  **
+ *********************/
+$(document).ready(function () {
 
-    //Add new game
-    $('.add-new-game').click(function () { addNewGame(this.id); });
+    $('.add-new-game').click(function () {
+        handleAddNewGame(this.id);
+    });
+    $('.delete-game').click(function () {
+        handleDeleteGame(this.id);
+    });
+    $('.pagination > li').click(function () {
+        handlePagination(this.innerText);
+    });
+    $('.sorting-headers').click(function () {
+        handleSorting(this.id);
+    });
 
-    $('.delete-game').click(function () { deleteGame(this.id); });
 
-    //Pagination
-    $('.pagination > li').click(function () { paginationController(this.innerText); });    
-
-    //Sorting
-    $('.sorting-headers').click(function () { SortingHeaderController(this.id);});
-
-    //Select between all games and personal Collection
+    //Select display between all games and personal Collection
     $('#show-all-games').click(function () {
-        $('#Page').val(1);        
+        $('#Page').val(1);
         $('#showClientList').val(false);
         $('#game-form').submit();
     });
 
     $('#show-my-collection').click(function () {
-        $('#Page').val(1);        
+        $('#Page').val(1);
         $('#showClientList').val(true);
         $('#game-form').submit();
     });
@@ -32,97 +38,97 @@
             else $('#Format').val(this.id);
 
             //Reset paging to page 1
-            $('#Page').val(1);        
-        }); 
+            $('#Page').val(1);
+        });
 });
 
 
-function checkIfNumber(x){
-    return !isNaN(x);
-}
 
+/*********************
+ ** Event Handlers  **
+ *********************/
 
-function addNewGame(id) {
-    var clientListModel = { gameId: id };
+function handleAddNewGame(id) {
+    var clientListModel = {
+        gameId: id
+    };
 
     $.ajax({
         url: '/ClientGamesList/Create',
         type: 'POST',
         data: clientListModel,
         success: function (result) {
-       
-            $.notify(result,"success");
-
-           
-        }, error: function (e) {         
-            $.notify(e.responseText,"error");
+            $.notify(result, "success");
+        },
+        error: function (e) {
+            $.notify(e.responseText, "error");
         }
     });
 }
 
-
-function deleteGame(id) {
+function handleDeleteGame(id) {
     $.ajax({
         url: '/ClientGamesList/Delete/' + id,
         type: 'DELETE',
-        success: function (result) {  
+        success: function (result) {
             document.location.reload();
-        }, error: function (e) {
-            Console.log(e);
-           $.notify("There has been an error deleting the title from your library, please contact administration for help.", "error");
-
+        },
+        error: function (e) {
+            $.notify("There has been an error deleting the title from your library, please contact administration for help.", "error");
         }
     });
 }
 
-function paginationController(pageSelection)
-{
-        var currentPage = $('#Page').val();
+function handlePagination(pageSelection) {
+    var currentPage = $('#Page').val();
 
-        event.preventDefault();
+    event.preventDefault();
 
-        if (pageSelection === ">") {
-            currentPage++;
-            $('#Page').val(currentPage);
-        }
-
-        else if (pageSelection === "<") {
-            currentPage--;
-            $('#Page').val(currentPage);
-        }
-        else if (pageSelection === "<<") {
-            currentPage = 1;
-            $('#Page').val(currentPage);
-        }
-        else if (pageSelection === ">>") {
-            currentPage = $('#LastPage').val();
-            $('#Page').val(currentPage);
-        }
+    if (pageSelection === ">") {
+        currentPage++;
+        $('#Page').val(currentPage);
+    } else if (pageSelection === "<") {
+        currentPage--;
+        $('#Page').val(currentPage);
+    } else if (pageSelection === "<<") {
+        currentPage = 1;
+        $('#Page').val(currentPage);
+    } else if (pageSelection === ">>") {
+        currentPage = $('#LastPage').val();
+        $('#Page').val(currentPage);
+    } else {
+        if (checkIfNumber(pageSelection)) $('#Page').val(pageSelection);
         else {
-            if (checkIfNumber(pageSelection)) $('#Page').val(pageSelection);
-            else {
-                console.log("Invalid pagination selections");
-                return;
-            }
+            $.notify("Invalid pagination selections", "error");
+            return;
         }
-        $('#game-form').submit();
+    }
+    $('#game-form').submit();
 }
 
-function SortingHeaderController(id) {
+function handleSorting(id) {
     var sortSwitch = $('#switchsort').val();
 
-   
     //Check if the current orderby option matches the one clicked, if it does match then reverse swtich sort.
     //This is to allow switching between ascending and decending sorting.
     if ($('#CurrentOrderBy').val() === id) {
         if (sortSwitch === 'true' || sortSwitch === true) sortSwitch = false;
         else sortSwitch = true;
-    }
-    else {
+    } else {
         sortSwitch = false;
     }
 
     $('#SortingOptions').val(id);
     $('#switchsort').val(sortSwitch);
     $('#game-form').submit();
+}
+
+
+
+/***********************
+ **  Helper Functions **
+ ***********************/
+
+function checkIfNumber(x) {
+    return !isNaN(x);
 }

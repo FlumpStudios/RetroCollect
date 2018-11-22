@@ -20,22 +20,22 @@
         <a class="mdl-navigation__link" href="index.html">Home</a><a class="mdl-navigation__link" href="portfolio.html">Portfolio</a><a class="mdl-navigation__link" href="about.html">About</a><a class="mdl-navigation__link" href="contact.html">Contact</a>
     </nav>
 </div>
-<div class="container">
+<div class="container" style="padding-top:3%;">
     <div class="videoWrapper section--center mdl-grid site-max-width">
         <!-- Copy & Pasted from YouTube -->
         <iframe class="trailer" src="https://www.youtube.com/embed/r5FjMBYKo7A?rel=0&amp;controls=0&amp;showinfo=0&amp;mute=1&amp;autoplay=1&amp;loop=1&amp;playlist=DaKhkTYu5UM" frameborder="0" allowfullscreen=""></iframe>
     </div>
 
     <section class="section--center mdl-grid site-max-width" style="position:relative">
-        <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white  mdl-shadow--4dp">
-            <i class="material-icons">play_circle_filled</i>
+        <header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--3-col-tablet mdl-cell--5-col-phone mdl-color--teal-100 mdl-color-text--white  mdl-shadow--4dp">
+            <iframe class="intro-vid" src="https://www.youtube.com/embed/ctEBXB5FalA?rel=0&amp;controls=1&amp;showinfo=0&amp;mute=0&amp;autoplay=0&amp;loop=1&amp;playlist=ctEBXB5FalA" frameborder="0" allowfullscreen=""></iframe>
         </header>
-        <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone  mdl-shadow--4dp">
+        <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--5-col-tablet mdl-cell--3-col-phone  mdl-shadow--4dp">
             <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">Introduction</h2>
+                <h2 class="mdl-card__title-text">Sega</h2>
             </div>
             <div class="mdl-card__supporting-text">
-                Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+                The history of Sega, a Japanese multinational video game developer and publisher, began with the founding of Nihon Goraku Bussan in 1960 to take over the distribution activities of Service Games of Japan. After acquiring Rosen Enterprises in 1965, the company became known as Sega Enterprises, Ltd.
             </div>
             <div class="mdl-card__actions  mdl-card--border">
                 <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">Watch Intro</a>
@@ -78,9 +78,10 @@
         </div>
     </section>
     <section class="section--center mdl-grid site-max-width homepage-portfolio">
-        <a class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="portfolio.html">View Portfolio</a>
+        <a class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--accent" 
+        @Html.ActionLink("Game List", "Index", "GameList"); </a>
     </section>
-    <div class="homepage-footer">
+    <div class="homepage-footer section--center mdl-grid site-max-width">
         <section class="mdl-grid site-max-width">
             <div class="mdl-cell mdl-card mdl-cell--8-col mdl-cell--4-col-tablet  mdl-shadow--4dp portfolio-card">
                 <div class="mdl-card__title">

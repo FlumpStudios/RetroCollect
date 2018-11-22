@@ -322,10 +322,17 @@ footer .mdl-logo a {
 
 .navbar {
     height: 84px;
-   
+    background-color: #263356;
+    text-decoration-color: white;
 }
 .navbar-nav {
     height: 84px;
     float: right;
     margin: 21px;
+
 }
+.intro-vid {
+ height:100%;
+}
+
+

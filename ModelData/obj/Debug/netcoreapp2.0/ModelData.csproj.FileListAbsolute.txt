@@ -25,15 +25,6 @@ C:\Dev\retrocollect\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.Ass
 C:\Dev\retrocollect\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
 C:\Dev\retrocollect\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
 C:\Dev\retrocollect\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb
-C:\Dev\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.deps.json
-C:\Dev\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.dll
-C:\Dev\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.pdb
-C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.csprojAssemblyReference.cache
-C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.csproj.CoreCompileInputs.cache
-C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfoInputs.cache
-C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
-C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
-C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb
 C:\retrocollect2\retrocollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.deps.json
 C:\retrocollect2\retrocollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.dll
 C:\retrocollect2\retrocollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.pdb
@@ -43,3 +34,11 @@ C:\retrocollect2\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.Assemb
 C:\retrocollect2\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
 C:\retrocollect2\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
 C:\retrocollect2\retrocollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb
+C:\Dev\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.deps.json
+C:\Dev\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.dll
+C:\Dev\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.pdb
+C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.csproj.CoreCompileInputs.cache
+C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfoInputs.cache
+C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
+C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
+C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb

@@ -57,7 +57,7 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Format)
-        </dd>
+        </dd>   
         <dt>
 
         </dt>
@@ -70,8 +70,15 @@
         <dd>
             <a target="_blank" href='@string.Format("http://www.ebay.co.uk/sch/?_nkw={0}%20{1}&LH_Auction=1", Model.Name, Model.Format)'>View on eBay</a>
         </dd>
+        <dt>
 
-
+        </dt>
+        <dd>
+            @{
+                var gameName = Model.Name.Replace(" ", "-").ToLower();
+             }
+            <a target="_blank" href='@string.Format("https://www.igdb.com/games/{0}", gameName)'>Find out more about @Model.Name on IGDB</a>
+        </dd>
     </dl>
 </div>
 

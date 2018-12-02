@@ -1,8 +1,13 @@
 ﻿/*********************
  **  Event Methods  **
  *********************/
-$(document).ready(function () {
 
+//$("#gameDescription").ready(function () {
+//    alert('');
+//    getGameDescription("resident-evil");
+//});
+
+$(document).ready(function () {
     $('.add-new-game').click(function () {
         handleAddNewGame(this.id);
     });
@@ -78,6 +83,24 @@ function handleDeleteGame(id) {
         }
     });
 }
+
+function getGameDescription(gameName) {
+    $.ajax({
+        headers: {
+            "user-key": "e71b082e22dee3f92e0ccd22c7b2fc4c",
+            Accept: "application/json"
+        },
+        url: 'https://api-endpoint.igdb.com/games/' + gameName,
+        type: 'get',
+        success: function (result) {
+            console.log(result)
+        },
+        error: function (e) {
+            $.notify("There has been an error retriving description.", "error");
+        }
+    });
+}
+
 
 function handlePagination(pageSelection) {
     var currentPage = $('#Page').val();

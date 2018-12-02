@@ -2,6 +2,15 @@ img {
   max-width: 100%;
 }
 
+body {
+    background-image: url("/images/arcade-img.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto';
+    color: #666;
+}
+
+
 .loginpage {
     background-color: #E4E4E4;
 }
@@ -236,6 +245,12 @@ footer .mdl-logo a {
     height:50px;
 }
 
+.extra-space-small {
+    display: block;
+    height: 25px;
+}
+
+
 /*********************/
 /*Add remove icon CSS*/
 /*********************/
@@ -311,6 +326,7 @@ footer .mdl-logo a {
     }
 
 
+
 @media only screen and (min-width: 1200px) {
     .videoWrapper iframe {
         height: 500px;
@@ -320,6 +336,18 @@ footer .mdl-logo a {
     }
 }
 
+/*Small vid on front page*/
+.intro-vid {
+    height: 100%;
+}
+
+.dl-horizontal {
+    color: white;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## Navbar
+ * ------------------------------------------------------------------- */
 .navbar {
     height: 84px;
     background-color: #263356;
@@ -331,12 +359,64 @@ footer .mdl-logo a {
     margin: 21px;
 
 }
-.intro-vid {
- height:100%;
+
+
+
+.loginpage {
+    background: #e1e7f2;
+    font-family: Calibri;
+    border-radius: 15px;
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.5);
+    width: 70%;
+    margin-top: 50px;
+    opacity: 0.95;
+   
 }
 
-.dl-horizontal {
+
+/* ------------------------------------------------------------------- 
+ * ## Social media
+ * ------------------------------------------------------------------- */
+
+.socialmedia {
+    width:50px;
     color:white;
 }
+.fa-twitter {
+    background: #1DA1F2;
+}
+
+.fa-facebook {
+    background: #4867AA;
+}
+
+.fa-linkedin {
+    background: #0077B5;
+}
 
 
+.red-fade {
+    color: red;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.88)));
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## Footer
+ * ------------------------------------------------------------------- */
+
+footer {
+    background: #263356;  
+}
+
+.footer-copyright {
+    background: #1A233B;
+}
+
+
+.flex-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between
+}

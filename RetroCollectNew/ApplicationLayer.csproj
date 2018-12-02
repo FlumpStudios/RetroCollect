@@ -12,6 +12,10 @@
     <Compile Remove="Helpers\ResponseBuilder.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\css\site.css" />
+  </ItemGroup>
+
  
 
 

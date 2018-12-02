@@ -2,17 +2,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Material Portfolio Template Demo</title>
-    <meta name="description" content="Demo of Material design portfolio template by TemplateFlip.com." />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-</head>
 <a asp-area="" asp-controller="Home" asp-action="Contact" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i class="material-icons">mail</i></a>
 <div class="extra-space"></div>
 <div class="mdl-layout__drawer mdl-layout--small-screen-only">
@@ -28,7 +17,7 @@
 
     <section class="section--center mdl-grid site-max-width" style="position:relative">
         <header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--3-col-tablet mdl-cell--5-col-phone mdl-color--teal-100 mdl-color-text--white  mdl-shadow--4dp">
-            <iframe class="intro-vid" src="https://www.youtube.com/embed/ctEBXB5FalA?rel=0&amp;controls=1&amp;showinfo=0&amp;mute=0&amp;autoplay=0&amp;loop=1&amp;playlist=ctEBXB5FalA" frameborder="0" allowfullscreen=""></iframe>
+            <iframe id="intro-video"class="intro-vid" src="https://www.youtube.com/embed/ctEBXB5FalA?rel=0&amp;controls=1&amp;showinfo=0&amp;mute=0&amp;autoplay=0&amp;loop=1&amp;playlist=ctEBXB5FalA" frameborder="0" allowfullscreen=""></iframe>
         </header>
         <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--5-col-tablet mdl-cell--3-col-phone  mdl-shadow--4dp">
             <div class="mdl-card__title">
@@ -38,7 +27,7 @@
                 The history of Sega, a Japanese multinational video game developer and publisher, began with the founding of Nihon Goraku Bussan in 1960 to take over the distribution activities of Service Games of Japan. After acquiring Rosen Enterprises in 1965, the company became known as Sega Enterprises, Ltd.
             </div>
             <div class="mdl-card__actions  mdl-card--border">
-                <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">Watch Intro</a>
+                <a id="play-intro" href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">Watch Intro</a>
             </div>
         </div>
     </section>
@@ -128,16 +117,26 @@
         </section>
     </div>
 </div>
+<div class="extra-space"></div>
 
-<footer class="mdl-mini-footer">
+@*<footer class="mdl-mini-footer">
     <div class="footer-container">
         <div class="mdl-logo">&copy; Unitiled. Design: <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
         <ul class="mdl-mini-footer__link-list">
             <li><a href="#">Privacy & Terms</a></li>
         </ul>
     </div>
-</footer>
+</footer>*@
 
 <script src="https://code.getmdl.io/1.3.0/material.min.js" defer></script>
 
+<script>
+        $(document).ready(function() {
+         $('#play-intro').on('click', function(ev) {
 
+             $("#intro-video")[0].src += "&autoplay=1";
+        ev.preventDefault();
+
+      });
+    });
+</script>

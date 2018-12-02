@@ -6,10 +6,12 @@
     <title>Retro Collect</title>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/main.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/main.css" />        
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -33,7 +35,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>*@
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="" asp-controller="GameList" asp-action="Index">View Game List</a></li>
                 </ul>
@@ -41,9 +43,34 @@
             </div>
         </div>
     </nav>
-    <div>
-        @RenderBody()
-        <hr /> 
+    <div class="flex-wrapper">
+        <div class="site-container">
+            @RenderBody()            
+        </div>        
+    <footer class="page-footer font-small" >
+
+        <!-- Footer Elements -->
+        <div class="container">          
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <h5>Register for free</h5>
+                </li>
+                <li class="list-inline-item">
+                     @Html.ActionLink("Sign up!","register","account")
+                </li>
+            </ul>
+         
+
+        </div>
+        <!-- Footer Elements -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center">
+            © 2018 Copyright: <a href="http://www.plinx-tech.co.uk" target="_blank"> Plinx</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
     </div>
 
     <environment include="Development">
@@ -69,5 +96,9 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+
+
+
 </body>
 </html>
+

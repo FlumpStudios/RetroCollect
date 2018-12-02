@@ -1,17 +1,39 @@
-﻿@{
-    ViewData["Title"] = "Contact";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿<div class="extra-space"></div>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div class="container loginpage">
+    <div>
+        @{
+            ViewData["Title"] = "Contact us";
+        }
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+        <h3>@ViewData["Title"]</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <section>
+               <p>
+                   Need to let us know if we've missed any titles, have any requests or just want to tell us how awesome our site is? Drop us and email below.
+               </p>
+
+                    <address>
+                        <strong>Paul Marrable:</strong> <a href="mailto:paul@consolecollect.co.uk">paul@consolecollect.co.uk</a><br />
+                        <strong>Nick Osborne:</strong> <a href="mailto:nick@consolecollect.co.uk">nick@consolecollect.co.uk</a>
+                    </address>
+
+                </section>
+            </div>
+            <div class="col-md-6">
+  
+            </div>
+        </div>
+
+        @section Scripts {
+            @await Html.PartialAsync("_ValidationScriptsPartial")
+        }
+
+    </div>
+</div>
+
+
+
+

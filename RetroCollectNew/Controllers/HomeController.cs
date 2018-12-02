@@ -15,12 +15,12 @@ namespace ApplicationLayer.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
+        //public IActionResult About()
+        //{
+        //    ViewData["Message"] = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
         public IActionResult Contact()
         {

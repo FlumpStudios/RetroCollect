@@ -2,15 +2,8 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-    <link href="css/main.css" rel="stylesheet">
-
 <div class="extra-space"></div>
-<div class="mdl-layout__drawer mdl-layout--small-screen-only">
-    <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-        <a class="mdl-navigation__link" href="index.html">Home</a><a class="mdl-navigation__link" href="portfolio.html">Portfolio</a><a class="mdl-navigation__link" href="about.html">About</a><a class="mdl-navigation__link" href="contact.html">Contact</a>
-    </nav>
-</div>
+
 <div class="container loginpage">
     <div>
 
@@ -24,10 +17,16 @@
             @{
                 ViewData["Title"] = "Log in";
             }
-            <br />
-            <br/>
+        
 
-            <h2>@ViewData["Title"]</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>@ViewData["Title"]</h3>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="align-bottom">Login with soical media</h3>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <section>
@@ -54,22 +53,22 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-default">Log in</button>
+                                <button type="submit" class="btn btn-primary">Log in</button>
+                              
                             </div>
                             <div class="form-group">
-                                <p>
-                                    <a style="padding-right:10px; padding-left:10px;">Forgot your password? </a>
-                             
-                                   <a style="padding-left:10px" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
+                                <p>                                   
+                                    <a style="padding-left:10px" asp-area="" asp-controller="Account" asp-action="ForgotPassword">Forgot your password?</a>
+                                    <a style="padding-left:10px" asp-area="" asp-controller="Account" asp-action="Register">Register as a new user?</a>
                                 </p>
                             </div>
                         </form>
                     </section>
                 </div>
                 <div class="col-md-6">
-                    <section>
-                        <h4>Use another service to log in.</h4>
+                    <section>          
                         <hr />
+                        <br />
                         @{
                             var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
                             if (loginProviders.Count == 0)
@@ -86,11 +85,13 @@
                                 <form asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
                                     <div>
                                         <p>
+                                            
+
                                             @foreach (var provider in loginProviders)
                                             {
-                                                <button type="submit" style="font-size:30px; !important" class="socialmedia fa fa-@provider.Name.ToLower() fa-lg  btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"></button>
+                                                <button type="submit" style="font-size:30px;" class="socialmedia fa fa-@provider.Name.ToLower() fa-lg  btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"></button>
                                             }
-                                        </p>
+                                        </p>                                      
                                     </div>
                                 </form>
                             }

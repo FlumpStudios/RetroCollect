@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using ApplicationLayer.Models.Request;
 using ModelData;
+using ModelData.Request;
+using ModelData.Responses;
 
 namespace ApplicationLayer.Business_Logic.Sorting
 {

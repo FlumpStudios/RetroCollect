@@ -1,4 +1,4 @@
-﻿using ApplicationLayer.Enumerations;
+﻿using Common.Enumerations;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System;

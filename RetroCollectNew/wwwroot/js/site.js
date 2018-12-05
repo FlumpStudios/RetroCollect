@@ -93,7 +93,7 @@ function getGameDescription(gameName) {
         url: 'https://api-endpoint.igdb.com/games/' + gameName,
         type: 'get',
         success: function (result) {
-            console.log(result)
+            console.log(result);
         },
         error: function (e) {
             $.notify("There has been an error retriving description.", "error");

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using ApplicationLayer.Enumerations;
+using Common.Enumerations;
 using Microsoft.AspNetCore.Http;
 
 namespace ApplicationLayer.Business_Logic.FileHandling

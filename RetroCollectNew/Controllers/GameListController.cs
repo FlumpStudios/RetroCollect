@@ -2,15 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
-using ApplicationLayer.Models.Responses;
-using ApplicationLayer.Models.Request;
 using ModelData;
 using DataAccess.WorkUnits;
 using ApplicationLayer.Business_Logic.Builders;
 using Microsoft.AspNetCore.Hosting;
-using System.IO;
+using Common.Enumerations;
 using ApplicationLayer.Business_Logic.FileHandling;
-using ApplicationLayer.Enumerations;
+using HttpAccess;
+using ModelData.Request;
+using ModelData.Responses;
 
 namespace ApplicationLayer.Controllers
 {    
@@ -44,6 +44,9 @@ namespace ApplicationLayer.Controllers
         [HttpGet]
         public IActionResult Index(GameListRequest gameListRequestModel)
         {
+            HttpManager goo = new HttpManager();
+            goo.GetAll();
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -153,7 +156,7 @@ namespace ApplicationLayer.Controllers
         public IActionResult Edit(int id, [Bind("Id,Name,Developer,Genre,Publisher,ReleaseDateNA,ReleaseDateEU,ReleaseDateJP, Format, ScreenShot")] GameListModel gameListModel)
         {
             //Save screenshots
-            if (gameListModel.ScreenShot.Count() > 0)
+            if (gameListModel.ScreenShot != null && gameListModel.ScreenShot.Count() > 0)
             { 
                 _fileHandler.SaveFile(id.ToString(), gameListModel.ScreenShot);
             }

@@ -1,11 +1,12 @@
 ﻿using ApplicationLayer.Business_Logic.Sorting;
-using ApplicationLayer.Helpers;
-using ApplicationLayer.Models.Request;
-using ApplicationLayer.Models.Responses;
+using ModelData.Request;
+using ModelData.Responses;
 using DataAccess.WorkUnits;
 using Microsoft.Extensions.Configuration;
 using System.Security.Claims;
 using X.PagedList;
+using Common.Helpers;
+using ApplicationLayer.Business_Logic.Queries;
 
 namespace ApplicationLayer.Business_Logic.Builders
 {

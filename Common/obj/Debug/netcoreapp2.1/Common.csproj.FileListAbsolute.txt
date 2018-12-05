@@ -1,0 +1,4 @@
+C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.1\Common.csprojAssemblyReference.cache
+C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.1\Common.csproj.CoreCompileInputs.cache
+C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfoInputs.cache
+C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfo.cs

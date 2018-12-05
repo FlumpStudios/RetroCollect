@@ -1,0 +1,8 @@
+C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.csproj.CoreCompileInputs.cache
+C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
+C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
+C:\Dev\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.deps.json
+C:\Dev\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.dll
+C:\Dev\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.pdb
+C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.dll
+C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.pdb

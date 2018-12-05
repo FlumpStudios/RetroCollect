@@ -1,7 +1,7 @@
 ﻿using DataAccess.WorkUnits;
 using ModelData;
-using ApplicationLayer.Models.Request;
-using ApplicationLayer.Enumerations;
+using ModelData.Request;
+using Common.Enumerations;
 using ApplicationLayer.Extensions;
 using System;
 using System.Collections.Generic;

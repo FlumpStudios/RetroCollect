@@ -1,6 +1,6 @@
-﻿using ApplicationLayer.Models.Request;
-using ApplicationLayer.Models.Responses;
-using ModelData;
+﻿using ModelData;
+using ModelData.Request;
+using ModelData.Responses;
 using System.Collections.Generic;
 
 namespace Tests.MockModels

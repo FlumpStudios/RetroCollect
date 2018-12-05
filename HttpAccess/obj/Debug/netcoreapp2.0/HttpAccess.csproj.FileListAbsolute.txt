@@ -1,0 +1,14 @@
+C:\Dev\RetroCollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.csproj.CoreCompileInputs.cache
+C:\Dev\RetroCollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.AssemblyInfoInputs.cache
+C:\Dev\RetroCollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.AssemblyInfo.cs
+C:\Dev\RetroCollect\HttpAccess\bin\Debug\netcoreapp2.0\HttpAccess.deps.json
+C:\Dev\RetroCollect\HttpAccess\bin\Debug\netcoreapp2.0\HttpAccess.dll
+C:\Dev\RetroCollect\HttpAccess\bin\Debug\netcoreapp2.0\HttpAccess.pdb
+C:\Dev\RetroCollect\HttpAccess\bin\Debug\netcoreapp2.0\Common.dll
+C:\Dev\RetroCollect\HttpAccess\bin\Debug\netcoreapp2.0\ModelData.dll
+C:\Dev\RetroCollect\HttpAccess\bin\Debug\netcoreapp2.0\ModelData.pdb
+C:\Dev\RetroCollect\HttpAccess\bin\Debug\netcoreapp2.0\Common.pdb
+C:\Dev\RetroCollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.csprojAssemblyReference.cache
+C:\Dev\RetroCollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.csproj.CopyComplete
+C:\Dev\RetroCollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.dll
+C:\Dev\RetroCollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.pdb

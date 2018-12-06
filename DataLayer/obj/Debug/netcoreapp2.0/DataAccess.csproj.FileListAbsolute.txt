@@ -70,3 +70,5 @@ C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.csprojAssemblyR
 C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.csproj.CopyComplete
 C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.dll
 C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.pdb
+E:\RetroCollect\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\Common.dll
+E:\RetroCollect\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\Common.pdb

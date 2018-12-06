@@ -82,3 +82,5 @@ C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAcces
 C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csproj.CopyComplete
 C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
 C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb
+E:\RetroCollect\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\Common.dll
+E:\RetroCollect\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\Common.pdb

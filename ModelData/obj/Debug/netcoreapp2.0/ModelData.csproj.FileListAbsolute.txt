@@ -55,3 +55,5 @@ C:\Dev\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\Common.pdb
 C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.csproj.CopyComplete
 C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
 C:\Dev\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb
+E:\RetroCollect\retrocollect\ModelData\bin\Debug\netcoreapp2.0\Common.dll
+E:\RetroCollect\retrocollect\ModelData\bin\Debug\netcoreapp2.0\Common.pdb

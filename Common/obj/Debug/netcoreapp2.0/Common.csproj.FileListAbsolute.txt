@@ -6,3 +6,12 @@ C:\Dev\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.dll
 C:\Dev\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.pdb
 C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.dll
 C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.pdb
+E:\RetroCollect\retrocollect\Common\bin\Debug\netcoreapp2.0\Common.deps.json
+E:\RetroCollect\retrocollect\Common\bin\Debug\netcoreapp2.0\Common.dll
+E:\RetroCollect\retrocollect\Common\bin\Debug\netcoreapp2.0\Common.pdb
+E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.csprojResolveAssemblyReference.cache
+E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.csproj.CoreCompileInputs.cache
+E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
+E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
+E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.dll
+E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.pdb

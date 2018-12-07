@@ -10,6 +10,8 @@ using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using ApplicationLayer.Extensions.EnumExtensions;
 using ApplicationLayer.Business_Logic.Sorting.OrderByLogic;
+using HttpAccess;
+using System.Threading.Tasks;
 
 namespace ApplicationLayer.Business_Logic.Sorting
 {
@@ -17,11 +19,12 @@ namespace ApplicationLayer.Business_Logic.Sorting
     {
 
         private static readonly NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
-        private readonly IUnitOFWork _unitOFWork;
 
-        public SortingManager(IUnitOFWork unitOFWork)
+        private readonly IHttpManager _httpManager;
+
+        public SortingManager(IHttpManager httpManager)
         {
-            _unitOFWork = unitOFWork;            
+            _httpManager = httpManager;
         }
 
         /// <summary>
@@ -29,69 +32,75 @@ namespace ApplicationLayer.Business_Logic.Sorting
         /// </summary>
         /// <param name="gameListRequestModel"></param>
         /// <returns></returns>
-        public IEnumerable<GameListModel> GetFilteredResults(GameListRequest gameListRequestModel )
+        public IEnumerable<GameListModel> GetFilteredResults(GameListRequest gameListRequestModel)
         {
-            IOrderable orderInstance = SelectOrderInstance(gameListRequestModel.SortingOptions);          
-
-            return _unitOFWork.GameRepo.Get(
-                 orderInstance.GetOrder(gameListRequestModel.Switchsort),
-                 GetSearchExpression(gameListRequestModel.SearchText), 
-                 GetFormatExpression(gameListRequestModel.Format));
-        }
-
-
-        //TODO: Possibly Move into seperate classes
-        private Expression<Func<GameListModel, bool>> GetSearchExpression(string searchText)
-        {
-            Expression<Func<GameListModel, bool>> searchExpression = null;
-
             try
             {
-                searchExpression = (x => x.Name.Contains(searchText) || x.Developer.Contains(searchText));
+                return _httpManager.GetSortedResults(gameListRequestModel).Result;
+
             }
             catch (Exception e)
             {
-                _logger.Error(e,"Could not create search expression");
+                _logger.Error(e, "Error retriving results from http manager");
+
             }
-            return string.IsNullOrEmpty(searchText) ? null : searchExpression;
+             
+            return null;
         }
 
 
-        private Expression<Func<GameListModel, bool>> GetFormatExpression(string format)
-        {
-            Expression<Func<GameListModel, bool>> formatExpression = null;
-            try
-            {
-                formatExpression = (x => x.Format == format);
-            }
-            catch (Exception e)
-            {
-                _logger.Error(e, "Error creating format Expression");
-            }
-            return string.IsNullOrEmpty(format) ? null : formatExpression;
-        }
+    //    //TODO: Possibly Move into seperate classes
+    //    private Expression<Func<GameListModel, bool>> GetSearchExpression(string searchText)
+    //    {
+    //        Expression<Func<GameListModel, bool>> searchExpression = null;
+
+    //        try
+    //        {
+    //            searchExpression = (x => x.Cover.Contains(searchText) || x.Developer.Contains(searchText));
+    //        }
+    //        catch (Exception e)
+    //        {
+    //            _logger.Error(e,"Could not create search expression");
+    //        }
+    //        return string.IsNullOrEmpty(searchText) ? null : searchExpression;
+    //    }
 
 
-        private IOrderable SelectOrderInstance(string sortOption)
-        {   
-            if (sortOption == GameListColumnNames.Developer.GetDescription())
-            {
-                return new OrderByDeveloper();
-            }
+    //    private Expression<Func<GameListModel, bool>> GetFormatExpression(string format)
+    //    {
+    //        Expression<Func<GameListModel, bool>> formatExpression = null;
+    //        try
+    //        {
+    //            formatExpression = (x => x.Platform == format);
+    //        }
+    //        catch (Exception e)
+    //        {
+    //            _logger.Error(e, "Error creating format Expression");
+    //        }
+    //        return string.IsNullOrEmpty(format) ? null : formatExpression;
+    //    }
 
-            if (sortOption == GameListColumnNames.Genre.GetDescription())
-            {
-                return new OrderByGenre();
-            }
 
-            if (sortOption == GameListColumnNames.Publisher.GetDescription())
-            {
-                return new OrderByPublisher();
-            }
+    //    private IOrderable SelectOrderInstance(string sortOption)
+    //    {   
+    //        if (sortOption == GameListColumnNames.Developer.GetDescription())
+    //        {
+    //            return new OrderByDeveloper();
+    //        }
 
-            //Set Name as default sort option
-            return new OrderByName();
-        }
+    //        if (sortOption == GameListColumnNames.FirstReleaseDate.GetDescription())
+    //        {
+    //            return new OrderByGenre();
+    //        }
+
+    //        if (sortOption == GameListColumnNames.Publisher.GetDescription())
+    //        {
+    //            return new OrderByPublisher();
+    //        }
+
+    //        //Set Cover as default sort option
+    //        return new OrderByName();
+    //    }
     }  
 
 }

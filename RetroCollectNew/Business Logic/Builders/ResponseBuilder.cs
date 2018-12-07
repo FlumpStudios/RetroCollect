@@ -4,7 +4,8 @@ using ModelData;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using X.PagedList;
+using Common.Dictionaries;
+using System.Threading.Tasks;
 
 namespace ApplicationLayer.Business_Logic.Builders
 {
@@ -18,15 +19,15 @@ namespace ApplicationLayer.Business_Logic.Builders
 
             var currentPage = gameListRequestModel.Page ?? 1;
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var pagedResults = gameList.ToPagedList(currentPage, 10);
+            //var pagedResults = gameList.ToPagedList(currentPage, 10);
 
-            return new GameListResponse(pagedResults,
+            return new GameListResponse(gameList,
                 User.Identity.IsAuthenticated,
-                gameList.Select(x => x.Format).Distinct(),
+                Dictionaries.ConsoleDictionary,
                 User.IsInRole("Admin"),
                 gameListRequestModel.SortingOptions,
-                currentPage, pagedResults.PageCount,
-                gameListRequestModel.Format,
+                currentPage, 1000,
+                gameListRequestModel.Platform,
                 gameListRequestModel.SortingOptions,
                 gameListRequestModel.ShowClientList);
             }

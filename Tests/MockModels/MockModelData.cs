@@ -11,7 +11,7 @@ namespace Tests.MockModels
         {
             return new GameListRequest()
             {
-                Format = "Jaguar",
+                Platform = "Jaguar",
                 Page = 1,
                 SearchText = null,
                 ShowClientList = false,
@@ -42,7 +42,7 @@ namespace Tests.MockModels
             return new GameListModel()
             {
                 Developer = "Test Dev",
-                Format = "Test Format",
+                Platform = "Test Platform",
                 Genre = "Test Genre",
                 Id = 1,
                 Name = "test name",

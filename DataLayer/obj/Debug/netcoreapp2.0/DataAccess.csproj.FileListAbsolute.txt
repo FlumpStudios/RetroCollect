@@ -56,9 +56,8 @@ E:\RetroCollect\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.Assemb
 E:\RetroCollect\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfo.cs
 E:\RetroCollect\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.dll
 E:\RetroCollect\retrocollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.pdb
-C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.csproj.CoreCompileInputs.cache
-C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfoInputs.cache
-C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfo.cs
+E:\RetroCollect\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\Common.dll
+E:\RetroCollect\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\Common.pdb
 C:\Dev\RetroCollect\DataLayer\bin\Debug\netcoreapp2.0\DataAccess.deps.json
 C:\Dev\RetroCollect\DataLayer\bin\Debug\netcoreapp2.0\DataAccess.dll
 C:\Dev\RetroCollect\DataLayer\bin\Debug\netcoreapp2.0\DataAccess.pdb
@@ -67,8 +66,9 @@ C:\Dev\RetroCollect\DataLayer\bin\Debug\netcoreapp2.0\ModelData.dll
 C:\Dev\RetroCollect\DataLayer\bin\Debug\netcoreapp2.0\ModelData.pdb
 C:\Dev\RetroCollect\DataLayer\bin\Debug\netcoreapp2.0\Common.pdb
 C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.csprojAssemblyReference.cache
+C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfoInputs.cache
+C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfo.cs
 C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.csproj.CopyComplete
 C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.dll
 C:\Dev\RetroCollect\DataLayer\obj\Debug\netcoreapp2.0\DataAccess.pdb
-E:\RetroCollect\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\Common.dll
-E:\RetroCollect\retrocollect\DataLayer\bin\Debug\netcoreapp2.0\Common.pdb

@@ -44,8 +44,8 @@ namespace ApplicationLayer.Controllers
         [HttpGet]
         public IActionResult Index(GameListRequest gameListRequestModel)
         {
-            HttpManager goo = new HttpManager();
-            goo.GetAll();
+           // HttpManager goo = new HttpManager();
+          //  goo.GetAll();
 
             if (!ModelState.IsValid)
             {
@@ -132,7 +132,7 @@ namespace ApplicationLayer.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public IActionResult Create([Bind("Id,Name,Developer,Genre,Publisher,ReleaseDateNA,ReleaseDateEU,ReleaseDateJP,Format, ScreenShot")] GameListModel gameListModel)
+        public IActionResult Create([Bind("Id,Cover,Developer,FirstReleaseDate,Publisher,ReleaseDateNA,ReleaseDateEU,ReleaseDateJP,Platform, ScreenShot")] GameListModel gameListModel)
         {
             if (ModelState.IsValid)
             {
@@ -153,7 +153,7 @@ namespace ApplicationLayer.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public IActionResult Edit(int id, [Bind("Id,Name,Developer,Genre,Publisher,ReleaseDateNA,ReleaseDateEU,ReleaseDateJP, Format, ScreenShot")] GameListModel gameListModel)
+        public IActionResult Edit(int id, [Bind("Id,Cover,Developer,FirstReleaseDate,Publisher,ReleaseDateNA,ReleaseDateEU,ReleaseDateJP, Platform, ScreenShot")] GameListModel gameListModel)
         {
             //Save screenshots
             if (gameListModel.ScreenShot != null && gameListModel.ScreenShot.Count() > 0)

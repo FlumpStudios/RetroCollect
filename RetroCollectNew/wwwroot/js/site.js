@@ -14,7 +14,8 @@ $(document).ready(function () {
     $('.delete-game').click(function () {
         handleDeleteGame(this.id);
     });
-    $('.pagination > li').click(function () {
+    $('.pagination > li > a').click(function () {
+
         handlePagination(this.innerText);
     });
     $('.sorting-headers').click(function () {
@@ -39,9 +40,8 @@ $(document).ready(function () {
     $('.console-selection').click(
         function () {
             //If all has been selection send through null to back end
-            if (this.id.toUpperCase() === "ALL") $('#Format').val(null);
-            else $('#Format').val(this.id);
-
+            if (this.id.toUpperCase() === "ALL") $('#Platform').val(null);
+            else $('#Platform').val(this.id);
             //Reset paging to page 1
             $('#Page').val(1);
         });
@@ -107,10 +107,10 @@ function handlePagination(pageSelection) {
 
     event.preventDefault();
 
-    if (pageSelection === ">") {
+    if (pageSelection === "Next") {
         currentPage++;
         $('#Page').val(currentPage);
-    } else if (pageSelection === "<") {
+    } else if (pageSelection === "Prev") {
         currentPage--;
         $('#Page').val(currentPage);
     } else if (pageSelection === "<<") {
@@ -134,7 +134,7 @@ function handleSorting(id) {
 
     //Check if the current orderby option matches the one clicked, if it does match then reverse swtich sort.
     //This is to allow switching between ascending and decending sorting.
-    if ($('#CurrentOrderBy').val() === id) {
+    if ($('#CurrentOrderBy').val() !== id) {
         if (sortSwitch === 'true' || sortSwitch === true) sortSwitch = false;
         else sortSwitch = true;
     } else {

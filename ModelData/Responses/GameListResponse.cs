@@ -16,9 +16,10 @@ namespace ModelData.Responses
     /// </summary>
     public class GameListResponse
     {
-        public GameListResponse(IEnumerable<GameListModel> gameListModel, 
-            bool isLoggedIn, 
-            IEnumerable<string> consoleList, 
+        public GameListResponse(
+            IEnumerable<GameListModel> gameListModel, 
+            bool isLoggedIn,
+            Dictionary<string, string> consoleList, 
             bool isAdmin, 
             string currentOrderBy, 
             int? page, 
@@ -35,7 +36,7 @@ namespace ModelData.Responses
             CurrentOrderBy = currentOrderBy;
             Page = page;
             LastPage = lastPage;
-            Format = format;
+            Platform = format;
             SortingOptions = sortingOptions;
             ShowClientList = showClientList;
 
@@ -45,7 +46,7 @@ namespace ModelData.Responses
 
         public bool IsLoggedIn { get;  }
 
-        public IEnumerable<string> ConsoleList { get; }
+        public Dictionary<string,string> ConsoleList { get; }
         
         public bool IsAdmin { get; }
 
@@ -57,7 +58,7 @@ namespace ModelData.Responses
 
         public int LastPage { get;}
                 
-        public string Format { get; }
+        public string Platform { get; }
 
         public string SortingOptions { get;  }
        

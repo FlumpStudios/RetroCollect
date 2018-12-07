@@ -4,9 +4,8 @@ using ModelData.Responses;
 using DataAccess.WorkUnits;
 using Microsoft.Extensions.Configuration;
 using System.Security.Claims;
-using X.PagedList;
-using Common.Helpers;
 using ApplicationLayer.Business_Logic.Queries;
+using Common.Dictionaries;
 
 namespace ApplicationLayer.Business_Logic.Builders
 {
@@ -43,9 +42,8 @@ namespace ApplicationLayer.Business_Logic.Builders
 
             //Retrieve sorted values for view
             var gameList = _sortingManager.GetFilteredResults(gameListRequestModel);
-
-            //Get the list of all avaiable console in DB to return as selectable options in view
-            var consoleList = _unitOFWork.GameRepo.GetDistinct(x => x.Format);
+       
+            var consoleList = Dictionaries.ConsoleDictionary;
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -54,18 +52,19 @@ namespace ApplicationLayer.Business_Logic.Builders
             //If requset is to display only the clients games, check client DB for game ID's and only return games from game DB that exist in clients DB.
             if (gameListRequestModel.ShowClientList && !string.IsNullOrEmpty(userId))
             {
-                gameList = QueryHelper.InnerJoinClientListWithGameList(gameList, _unitOFWork.ClientRepo.Get(), userId);
+                //gameList = QueryHelper.InnerJoinClientListWithGameList(gameList, _unitOFWork.ClientRepo.Get(), userId);
             }
 
-            var pagedResults = gameList.ToPagedList(currentPage, resultsPerPage);
+            const int PAGE_COUNT = 1000;
+           // var pagedResults = gameList.ToPagedList(currentPage, resultsPerPage);
 
-            return new GameListResponse(pagedResults,
+            return new GameListResponse(gameList,
                 User.Identity.IsAuthenticated,
                 consoleList,
                 User.IsInRole(ADMIN_ROLE),
                 gameListRequestModel.SortingOptions,
-                currentPage, pagedResults.PageCount,
-                gameListRequestModel.Format,
+                currentPage, PAGE_COUNT,
+                gameListRequestModel.Platform,
                 gameListRequestModel.SortingOptions,
                 gameListRequestModel.ShowClientList);
         }

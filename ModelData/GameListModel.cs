@@ -13,10 +13,10 @@ namespace ModelData
         public int Id { get; set; }
         [MaxLength(70)]
         
-        public String Format { get; set; }
+        public string Platform { get; set; }
         [MaxLength(70)]
 
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         [MaxLength(70)]
         [Required]
@@ -45,6 +45,24 @@ namespace ModelData
         [NotMapped]
         public IEnumerable<string> ScreenShotURL { get; set; }
 
-   
+        [NotMapped]
+        public long Rating { get; set; }
+
+        [NotMapped]
+        public string First_release_date { get; set; }
+
+        [NotMapped]
+        public Cover Cover { get; set; }
+    }
+
+    public class Cover
+    {
+        public string Url { get; set; }
+
+        public string Cloudinary_id { get; set; }
+
+        public string Width { get; set; }
+
+        public string Height { get; set; }
     }
 }

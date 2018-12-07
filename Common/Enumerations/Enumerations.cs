@@ -5,14 +5,14 @@ namespace Common.Enumerations
 {
     public enum GameListColumnNames
     { 
+        [Description("Cover Art")]
+        Cover = 0,
         [Description("Name")]
-        Name = 0,
-        [Description("Developer")]
-        Developer = 1,
-        [Description("Genre")]
-        Genre = 2,
-        [Description("Publisher")]
-        Publisher = 4
+        Name = 1,
+        [Description("First Release Date")]
+        FirstReleaseDate = 2,
+        [Description("Rating")]
+        Rating = 4
     }
 
     public enum FileResponse

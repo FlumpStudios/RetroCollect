@@ -26,11 +26,9 @@
                             <div>
                                 <br />
                                 <br />
+                                @using JA.Pagination.MVC6
                                 @model ModelData.Responses.GameListResponse
-
-
-                                @using X.PagedList;
-
+                                @*@using X.PagedList;*@
                                 @{
                                     ViewData["Title"] = "Index";
                                 }
@@ -45,6 +43,7 @@
                                     {
                                         <a asp-action="Create">Create New</a>
                                     }
+
 
                                     <!--Searching and filtering controls-->
                             </div>
@@ -63,16 +62,17 @@
                                     <button class="console-selection  btn btn-info" id="all" value="all">All</button>
                                     @foreach (var items in Model.ConsoleList)
                                     {
-                                        @if (!string.IsNullOrEmpty(items))
+                                        @if (!string.IsNullOrEmpty(items.Value))
                                         {
-                                            <button class="console-selection btn btn-info" id="@items" value="@items">@items</button>
-                                            @Html.HiddenFor(x => x.ShowClientList)
-                                            @Html.HiddenFor(x => x.Page)
-                                            @Html.HiddenFor(x => x.SortingOptions)
-                                            @Html.HiddenFor(x => x.Format)
-                                            @Html.Hidden("switchsort", true)
+                                            <button class="console-selection btn btn-info" id="@items.Key" value="@items.Value">@items.Value</button>
+
                                         }
                                     }
+                                    @Html.HiddenFor(x => x.ShowClientList)
+                                    @Html.HiddenFor(x => x.Page)
+                                    @Html.HiddenFor(x => x.SortingOptions)
+                                    @Html.HiddenFor(x => x.Platform)
+                                    @Html.Hidden("switchsort", false)
                                 </div>
                                 <br />
                                 <br />
@@ -99,8 +99,8 @@
                                         <tr>
                                             @foreach (var columnName in Model.ColumnNames)
                                             {
-                                                <th id="@columnName" class="sorting-headers">
-                                                    @columnName <i class="fa fa-sort-down"></i>
+                                                <th id="@columnName" class="@(columnName.Contains("Cover") ? "" : "sorting-headers") ">
+                                                    @columnName @if(!columnName.Contains("Cover")){<i class="fa fa-sort-down"></i>}
                                                 </th>}
                                             <th></th>
                                             @if (Model.IsLoggedIn)
@@ -114,16 +114,27 @@
                                         {
                                             <tr>
                                                 <td>
+                                                    @if (item.Cover != null)
+                                                    {
+                                                    <img src="@item.Cover.Url" />
+                                                    }
+                                                </td>
+                                                <td>
                                                     @Html.DisplayFor(modelItem => item.Name)
                                                 </td>
                                                 <td>
-                                                    @Html.DisplayFor(modelItem => item.Developer)
+                                                    @Html.DisplayFor(modelItem => item.First_release_date)
+
                                                 </td>
                                                 <td>
-                                                    @Html.DisplayFor(modelItem => item.Genre)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Publisher)
+                                                    @if (item.Rating > 0)
+                                                    {
+                                                        @Html.DisplayFor(modelItem => item.Rating)
+                                                    }
+                                                    else
+                                                    {
+                                                        <text>No rating available</text>
+                                                    }
                                                 </td>
 
                                                 @if (Model.IsLoggedIn)
@@ -172,9 +183,9 @@
                                         }
                                         <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
 
-                                        <div class="pagination">
-                                            @X.PagedList.Mvc.Core.HtmlHelper.PagedListPager(Html, (IPagedList)Model.GameListModel, page => Url.Action("Index", new { Page = Model.Page }))
-                                        </div>
+                                                  <div class="pagination-container">                                                     
+                                                     @Html.RenderPager((int)Model.Page + 1, Model.LastPage)
+                                                  </div>
                                     </div>
                                 </div>
                             </div>

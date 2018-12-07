@@ -66,9 +66,8 @@ E:\RetroCollect\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\
 E:\RetroCollect\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.AssemblyInfo.cs
 E:\RetroCollect\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
 E:\RetroCollect\retrocollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb
-C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csproj.CoreCompileInputs.cache
-C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.AssemblyInfoInputs.cache
-C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.AssemblyInfo.cs
+E:\RetroCollect\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\Common.dll
+E:\RetroCollect\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\Common.pdb
 C:\Dev\RetroCollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.deps.json
 C:\Dev\RetroCollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
 C:\Dev\RetroCollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb
@@ -79,8 +78,9 @@ C:\Dev\RetroCollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\DataAcces
 C:\Dev\RetroCollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\Common.pdb
 C:\Dev\RetroCollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\ModelData.pdb
 C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csprojAssemblyReference.cache
+C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csproj.CoreCompileInputs.cache
+C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.AssemblyInfoInputs.cache
+C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.AssemblyInfo.cs
 C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.csproj.CopyComplete
 C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.dll
 C:\Dev\RetroCollect\DataAccess.EntityFramework\obj\Debug\netcoreapp2.0\DataAccess.EntityFramework.pdb
-E:\RetroCollect\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\Common.dll
-E:\RetroCollect\retrocollect\DataAccess.EntityFramework\bin\Debug\netcoreapp2.0\Common.pdb

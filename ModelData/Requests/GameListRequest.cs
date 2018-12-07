@@ -4,7 +4,7 @@
     {
         public string SearchText { get; set; }
 
-        public string Format { get; set; }
+        public string Platform { get; set; }
 
         public string SortingOptions { get; set; }
 

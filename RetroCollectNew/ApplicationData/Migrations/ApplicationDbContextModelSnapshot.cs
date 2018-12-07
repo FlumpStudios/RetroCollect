@@ -25,7 +25,7 @@ namespace ApplicationLayer.ApplicationData.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Cover")
                         .HasAnnotation("MaxLength", 256);
 
                     b.Property<string>("NormalizedName")
@@ -116,11 +116,11 @@ namespace ApplicationLayer.ApplicationData.Migrations
 
                     b.Property<string>("LoginProvider");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Cover");
 
                     b.Property<string>("Value");
 
-                    b.HasKey("UserId", "LoginProvider", "Name");
+                    b.HasKey("UserId", "LoginProvider", "Cover");
 
                     b.ToTable("AspNetUserTokens");
                 });

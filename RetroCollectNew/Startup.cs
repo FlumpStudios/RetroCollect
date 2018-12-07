@@ -17,6 +17,7 @@ using DataAccess.Repositories;
 using DataAccess.WorkUnits;
 using ApplicationLayer.Business_Logic.Builders;
 using ApplicationLayer.Business_Logic.FileHandling;
+using HttpAccess;
 
 namespace ApplicationLayer
 {
@@ -65,6 +66,8 @@ namespace ApplicationLayer
             services.AddTransient<ISortingManager, SortingManager>();
             services.AddTransient<IGameListResponseBuilder, GameListResponseBuilder>();
             services.AddTransient<IFileHandler, FileHandler>();
+            services.AddTransient<IHttpManager, HttpManager>();
+
 
             services.AddMvc();
 

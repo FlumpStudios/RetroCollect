@@ -420,3 +420,7 @@ footer {
     flex-direction: column;
     justify-content: space-between
 }
+
+.sorting-headers {
+    cursor:pointer;
+}

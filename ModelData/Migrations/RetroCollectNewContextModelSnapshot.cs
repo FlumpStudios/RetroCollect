@@ -44,14 +44,14 @@ namespace ModelData.Migrations
                         .IsRequired()
                         .HasMaxLength(70);
 
-                    b.Property<string>("Format")
+                    b.Property<string>("Platform")
                         .HasMaxLength(70);
 
-                    b.Property<string>("Genre")
+                    b.Property<string>("FirstReleaseDate")
                         .IsRequired()
                         .HasMaxLength(70);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Cover")
                         .HasMaxLength(70);
 
                     b.Property<string>("Publisher")

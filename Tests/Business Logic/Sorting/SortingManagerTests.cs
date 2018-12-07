@@ -42,7 +42,7 @@ public class SortingManagerTests
     {
         // Arrange
         var unitUnderTest = CreateManager();
-        GameListRequest gameListRequestModel = new GameListRequest() { Format = "Jaguar",Page = 1,SearchText=null,ShowClientList = false,SortingOptions=null,Switchsort= false};
+        GameListRequest gameListRequestModel = new GameListRequest() { Platform = "Jaguar",Page = 1,SearchText=null,ShowClientList = false,SortingOptions=null,Switchsort= false};
 
         // Act
         var result = unitUnderTest.GetFilteredResults(

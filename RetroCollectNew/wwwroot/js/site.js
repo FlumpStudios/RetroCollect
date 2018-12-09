@@ -17,10 +17,19 @@ $(document).ready(function () {
     $('.delete-game').click(function () {
         handleDeleteGame(this.id);
     });
+
+    //Through pagination library
     $('.pagination > li > a').click(function () {
 
         handlePagination(this.innerText);
     });
+
+    //Through standard pagination
+    $('.pagination-button').click(function () {
+
+        handlePagination(this.innerText);
+    });
+
     $('.sorting-headers').click(function () {
         handleSorting(this.id);
     });
@@ -119,7 +128,7 @@ function getGameDescription(gameName) {
 }
 
 
-function handlePagination(pageSelection) {
+function handlePagination(pageSelection) {   
     var currentPage = $('#Page').val();
 
     event.preventDefault();

@@ -61,6 +61,7 @@
                                 <div class="col-sm-12">
                                     <div class="row">
                                         <div class="col-xs-2">
+                                            <br />
                                             <div class="dropdown">
                                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Console
@@ -84,7 +85,7 @@
                                             <div class="form-group">
                                                 <label>From date</label>
                                                 <div class="input-group date" data-date-format="dd/mm/yyyy">
-                                                    <input type="text" value="01/01/1975" id="fromDate" name="fromDate" class="form-control" placeholder="dd/mm/yyyy">
+                                                    <input type="text" value="@Model.FromDate" id="fromDate" name="fromDate" class="form-control" placeholder="dd/mm/yyyy">
                                                     <div class="input-group-addon">
                                                         <span class="glyphicon glyphicon-th"></span>
                                                     </div>
@@ -95,12 +96,16 @@
                                             <div class="form-group">
                                                 <label>To date</label>
                                                 <div class="input-group date" data-date-format="dd/mm/yyyy">
-                                                    <input type="text" value="01/01/2010" id="toDate" name="toDate" class="form-control" placeholder="dd/mm/yyyy">
+                                                    <input type="text" value="@Model.ToDate" id="toDate" name="toDate" class="form-control" placeholder="dd/mm/yyyy">
                                                     <div class="input-group-addon">
                                                         <span class="glyphicon glyphicon-th"></span>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <br />
+                                            <button class="btn btn-primary" type="submit">Go!</button>
                                         </div>
 
                                         </div>
@@ -215,13 +220,19 @@
                                     <div>
                                         @if (Model.GameListModel.Count() < 1)
                                         {
-                                            <text><div class="warning-text small">There's no items in your collection. Add games to you collection through the 'All Games' Tab.</div> </text>
+                                            <text><div class="warning-text small">No items found</div> </text>
                                         }
                                         <!-- output a paging control that lets the user navigation to the previous page, next page, etc -->
 
-                                                  <div class="pagination-container">                                                     
-                                                     @Html.RenderPager((int)Model.Page + 1, Model.LastPage)
-                                                  </div>
+                                        @*<div class="pagination-container">                                                     
+                                            @Html.RenderPager((int)Model.Page + 1, Model.LastPage)
+                                        </div>*@
+                                        <div class="pagination-container">
+                                            <button class="pagination-button btn btn-primary" id="page-down" type="button" @(Model.Page == 0 ? "disabled" : "") >Prev</button>
+                                            <text>Page @(Model.Page + 1)</text>
+                                            @* TODO: Replace hardcoded 50 with item per page count *@
+                                            <button class="pagination-button btn btn-primary" id="page-up" type="button"  @(Model.GameListModel.Count() < 50  ? "disabled" : "") >Next</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

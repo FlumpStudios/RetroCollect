@@ -18,8 +18,7 @@ namespace ApplicationLayer.Business_Logic.Builders
         {
 
             var currentPage = gameListRequestModel.Page ?? 1;
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            //var pagedResults = gameList.ToPagedList(currentPage, 10);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);           
 
             return new GameListResponse(gameList,
                 User.Identity.IsAuthenticated,
@@ -29,7 +28,10 @@ namespace ApplicationLayer.Business_Logic.Builders
                 currentPage, 1000,
                 gameListRequestModel.Platform,
                 gameListRequestModel.SortingOptions,
-                gameListRequestModel.ShowClientList);
+                gameListRequestModel.ShowClientList,
+                gameListRequestModel.FromDate,
+                gameListRequestModel.ToDate
+                );
             }
     }
 }

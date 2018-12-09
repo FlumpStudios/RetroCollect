@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using System.Security.Claims;
 using ApplicationLayer.Business_Logic.Queries;
 using Common.Dictionaries;
+using Common.Extensions;
 
 namespace ApplicationLayer.Business_Logic.Builders
 {
@@ -40,6 +41,11 @@ namespace ApplicationLayer.Business_Logic.Builders
             //Get the amount of items to return to page for pagination
             var resultsPerPage = _configuration.GetValue<int>("Paging:ResultsPerPage");
 
+            var defaultFromDate = _configuration.GetValue<string>("DefaultSearchDates:FromDate");
+
+            var defaultToDate = _configuration.GetValue<string>("DefaultSearchDates:ToDate");
+            
+
             //Retrieve sorted values for view
             var gameList = _sortingManager.GetFilteredResults(gameListRequestModel);
        
@@ -54,6 +60,9 @@ namespace ApplicationLayer.Business_Logic.Builders
             {
                 //gameList = QueryHelper.InnerJoinClientListWithGameList(gameList, _unitOFWork.ClientRepo.Get(), userId);
             }
+            
+            
+
 
             const int PAGE_COUNT = 1000;
            // var pagedResults = gameList.ToPagedList(currentPage, resultsPerPage);
@@ -66,7 +75,10 @@ namespace ApplicationLayer.Business_Logic.Builders
                 currentPage, PAGE_COUNT,
                 gameListRequestModel.Platform,
                 gameListRequestModel.SortingOptions,
-                gameListRequestModel.ShowClientList);
+                gameListRequestModel.ShowClientList,
+                 gameListRequestModel.ToDate ?? defaultToDate.FromUnix(),
+                gameListRequestModel.FromDate ?? defaultFromDate.FromUnix()               
+                );
         }
     }
 }

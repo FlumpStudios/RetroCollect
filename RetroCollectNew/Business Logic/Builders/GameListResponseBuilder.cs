@@ -7,6 +7,9 @@ using System.Security.Claims;
 using ApplicationLayer.Business_Logic.Queries;
 using Common.Dictionaries;
 using Common.Extensions;
+using HttpAccess;
+using System.Collections.Generic;
+using ModelData;
 
 namespace ApplicationLayer.Business_Logic.Builders
 {
@@ -20,11 +23,14 @@ namespace ApplicationLayer.Business_Logic.Builders
 
         private readonly IUnitOFWork _unitOFWork;
 
-        public GameListResponseBuilder(ISortingManager sortingManager, IConfiguration configuration, IUnitOFWork unitOFWork)
+        private readonly IHttpManager _httpManager;
+
+        public GameListResponseBuilder(ISortingManager sortingManager, IConfiguration configuration, IUnitOFWork unitOFWork, IHttpManager httpManager)
         {          
             _sortingManager = sortingManager;
             _configuration = configuration;
             _unitOFWork = unitOFWork;
+            _httpManager = httpManager;
         }
 
         /// <summary>
@@ -47,11 +53,21 @@ namespace ApplicationLayer.Business_Logic.Builders
             
 
             //Retrieve sorted values for view
-            var gameList = _sortingManager.GetFilteredResults(gameListRequestModel);
-       
             var consoleList = Dictionaries.ConsoleDictionary;
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            IEnumerable<GameListModel> gameList = null;
+
+            if (gameListRequestModel.ShowClientList)
+            {
+                gameList = _httpManager.GetClientResults(gameListRequestModel, userId).Result;
+            }
+            else
+            {
+                gameList= _httpManager.GetSortedResults(gameListRequestModel, userId).Result;
+            }
+
 
             var currentPage = gameListRequestModel.Page ?? 1;         
 

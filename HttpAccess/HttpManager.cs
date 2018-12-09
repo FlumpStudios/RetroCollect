@@ -12,40 +12,33 @@ using System.Linq;
 using System.Globalization;
 using Common.Extensions;
 using Microsoft.Extensions.Configuration;
+using DataAccess.WorkUnits;
+using System.Linq.Dynamic.Core;
 
 namespace HttpAccess
 {
     public class HttpManager : IHttpManager
     {
-        private readonly IConfiguration _configuration;
+        private string _userId = null;
 
+        private readonly IConfiguration _configuration;
+        private readonly IUnitOFWork _unitOFWork;
+        
         HttpClient client = new HttpClient();
 
-        public HttpManager(IConfiguration configuration)
+        public HttpManager(IConfiguration configuration, IUnitOFWork unitOFWork)
         {
-            _configuration = configuration;          
+            _configuration = configuration;
+            _unitOFWork = unitOFWork;
         }
 
-        private async Task<string> GetResultCount(GameListRequest gameListRequest)
+
+        public async Task<IEnumerable<GameListModel>> GetSortedResults(GameListRequest gameListRequest, string userId = null)
         {
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Add("user-key", "b0d327604a696f914cafb0a23d782e6f");
-
-            string queryString = string.Format("https://api-endpoint.igdb.com/count/?search={0}&filter[platforms][eq]={1}", gameListRequest.SearchText, gameListRequest.Platform);
-            
-            var stringTask = client.GetStringAsync(queryString);
-
-            var msg = await stringTask;
-            return msg;
-        }
-
-        public async Task<IEnumerable<GameListModel>> GetSortedResults(GameListRequest gameListRequest)
-        {
-
+            _userId = userId;
             //TODO: Massive clean up on this method!
 
-#region Setup Http client
+            #region Setup Http client
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("user-key", "b0d327604a696f914cafb0a23d782e6f");
@@ -129,21 +122,23 @@ namespace HttpAccess
                 orderByOption = "&order="+gameListRequest.SortingOptions;
             }
 
-#endregion
+            #endregion
 
-            string queryString = string.Format("https://api-endpoint.igdb.com/games/?{4}fields=cover,name,first_release_date,popularity,rating{0}{1}&offset={2}{3}&limit=50{5}{6}",
+            string queryString = string.Format("https://api-endpoint.igdb.com/games/{7}?{4}fields=cover,name,first_release_date,popularity,rating,platforms{0}{1}&offset={2}{3}&limit=50{5}{6}",
                 orderByOption,
                 orderOption,
                 gameListRequest.Page * 10 ?? 0,
                 filterText,
                 searchString,
                 fromDate ?? "",
-                toDate ?? ""
+                toDate ?? "",
+                gameListRequest.ShowClientList ? GetUserGameList() : ""
                 );
 
             //string msg = await client.GetStringAsync(queryString);
+            var msg = await client.GetStringAsync(queryString);
 
-            IEnumerable<GameListModel> result = JsonConvert.DeserializeObject<IEnumerable<GameListModel>>(await client.GetStringAsync(queryString));
+            IEnumerable<GameListModel> result = JsonConvert.DeserializeObject<IEnumerable<GameListModel>>(msg);
 
             //Convert returned Unix time stamps to date strings
             result.ToList().ForEach(X => X.First_release_date = string.IsNullOrEmpty(X.First_release_date) ? "No Release Date Available" : DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(X.First_release_date)).ToString("dd/MM/yyyy"));
@@ -151,6 +146,44 @@ namespace HttpAccess
             return result;
         }
 
+        public async Task<IEnumerable<GameListModel>> GetClientResults(GameListRequest gameListRequest, string userId = null)
+        {
+            _userId = userId;
+
+            #region Setup Http client
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Add("user-key", "b0d327604a696f914cafb0a23d782e6f");
+            #endregion
+
+            string queryString = string.Format("https://api-endpoint.igdb.com/games/{0}?fields=cover,name,first_release_date,popularity,rating,platforms", GetUserGameList());
+            var msg = await client.GetStringAsync(queryString);
+
+            IEnumerable<GameListModel> result = JsonConvert.DeserializeObject<IEnumerable<GameListModel>>(msg);
+
+            result.ToList().ForEach(X => X.First_release_date = string.IsNullOrEmpty(X.First_release_date) ? "No Release Date Available" : DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(X.First_release_date)).ToString("dd/MM/yyyy"));
+
+            if (!string.IsNullOrEmpty(gameListRequest.SearchText))
+            { 
+                result = result.Where(x => x.Name.ToUpper().Contains(gameListRequest.SearchText.ToUpper()));
+            }
+
+
+            if (!string.IsNullOrEmpty(gameListRequest.SortingOptions))
+            {               
+                gameListRequest.SortingOptions = gameListRequest.SortingOptions.Replace(" ", "_").ToLower();                
+                var sortOption = gameListRequest.Switchsort ? " descending" : "";
+                result = result.AsQueryable().OrderBy(gameListRequest.SortingOptions + sortOption);
+            }
+
+            if (!string.IsNullOrEmpty(gameListRequest.Platform))
+            {
+                result = result.Where(x => x.Platforms.Contains(gameListRequest.Platform));
+            }
+
+            return result;
+
+        }
         private string GetConsoleListString()
         {           
             StringBuilder s = new StringBuilder();
@@ -162,6 +195,19 @@ namespace HttpAccess
             var result = s.ToString();
             return s.ToString();
         }
+
+        private string GetUserGameList()
+        {
+            var DB = _unitOFWork.ClientRepo.Get(filter: x => x.UserId == _userId);
+            StringBuilder responseString = new StringBuilder();
+            foreach (var item in DB)
+            {
+                responseString.Append(item.GameId.ToString() + ",");
+            }
+
+            responseString.Length = responseString.Length - 1;
+            return responseString.ToString();
+        }    
     }
 
 }

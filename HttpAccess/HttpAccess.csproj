@@ -6,9 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.8.16" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataAccess.csproj" />
     <ProjectReference Include="..\ModelData\ModelData.csproj" />
   </ItemGroup>
 

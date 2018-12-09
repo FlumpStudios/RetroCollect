@@ -56,6 +56,12 @@ namespace ModelData
 
         [NotMapped]
         public long Popularity { get; set; }
+
+        [NotMapped]
+        public IEnumerable<string> Platforms { get; set; }
+
+
+
     }
 
     public class Cover

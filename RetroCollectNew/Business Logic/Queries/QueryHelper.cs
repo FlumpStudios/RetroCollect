@@ -28,10 +28,10 @@ namespace ApplicationLayer.Business_Logic.Queries
 
             try
             {
-                query = (from s in gameList
-                            join c in clientList on s.Id equals c.GameId
-                            where c.GameId == s.Id && userId == c.UserId
-                            select s).ToList();
+                //query = (from s in gameList
+                //            join c in clientList on s.Id equals c.GameId
+                //            where c.GameId == s.Id && userId == c.UserId
+                //            select s).ToList();
             }
             catch (Exception e)
             {

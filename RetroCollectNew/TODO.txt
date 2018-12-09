@@ -1,10 +1,7 @@
 
-Change pagination for simple page up and down
-Add to and from dates to response and populate date picker
-Populate date picker with default values from app.settings
-Add submit button next to datepicker
 Maybe add genre filter
-Addability for playe to add title to collection
-
+Add filter search between dates on client list
+Add pagination to client list
+Add 'Other' search on client list
 
 

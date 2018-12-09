@@ -12,6 +12,7 @@ $(document).ready(function () {
 
 
     $('.add-new-game').click(function () {
+        alert(this.id);
         handleAddNewGame(this.id);
     });
     $('.delete-game').click(function () {

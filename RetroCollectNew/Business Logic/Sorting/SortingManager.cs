@@ -37,7 +37,6 @@ namespace ApplicationLayer.Business_Logic.Sorting
             try
             {
                 return _httpManager.GetSortedResults(gameListRequestModel).Result;
-
             }
             catch (Exception e)
             {

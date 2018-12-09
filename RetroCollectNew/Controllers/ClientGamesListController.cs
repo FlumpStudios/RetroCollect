@@ -54,7 +54,7 @@ namespace ApplicationLayer.Controllers
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            int recordId = _unitOFWork.ClientRepo.Get(filter: x => x.GameId == id && x.UserId == userId).FirstOrDefault().Id;
+            int recordId = _unitOFWork.ClientRepo.Get(filter: x => x.GameId == id.ToString() && x.UserId == userId).FirstOrDefault().Id;
 
             try
             {

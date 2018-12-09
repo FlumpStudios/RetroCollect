@@ -4104,8 +4104,10 @@
       },
       "HttpAccess/1.0.0": {
         "dependencies": {
+          "DataAccess": "1.0.0",
           "ModelData": "1.0.0",
-          "Newtonsoft.Json": "12.0.1"
+          "Newtonsoft.Json": "12.0.1",
+          "System.Linq.Dynamic.Core": "1.0.8.16"
         },
         "runtime": {
           "HttpAccess.dll": {}

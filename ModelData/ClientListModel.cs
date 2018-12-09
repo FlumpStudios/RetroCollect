@@ -13,7 +13,8 @@ namespace ModelData
 
         [MaxLength(50)]
         public string UserId { get; set; }
-        
-        public int GameId { get; set; }
+
+        [MaxLength(50)]
+        public string GameId { get; set; }
     }
 }

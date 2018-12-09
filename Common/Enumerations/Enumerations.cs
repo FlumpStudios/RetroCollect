@@ -12,7 +12,9 @@ namespace Common.Enumerations
         [Description("First Release Date")]
         FirstReleaseDate = 2,
         [Description("Rating")]
-        Rating = 4
+        Rating = 3,
+        [Description("Popularity")]
+        Popularity = 4
     }
 
     public enum FileResponse

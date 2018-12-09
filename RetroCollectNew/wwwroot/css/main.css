@@ -424,3 +424,7 @@ footer {
 .sorting-headers {
     cursor:pointer;
 }
+
+.console-selection {
+    padding-left:10px;
+}

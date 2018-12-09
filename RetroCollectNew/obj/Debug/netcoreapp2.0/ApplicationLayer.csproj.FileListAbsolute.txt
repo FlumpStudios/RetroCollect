@@ -102,7 +102,6 @@ E:\RetroCollect\retrocollect\RetroCollectNew\bin\Debug\netcoreapp2.0\DataAccess.
 E:\RetroCollect\retrocollect\RetroCollectNew\bin\Debug\netcoreapp2.0\ModelData.pdb
 E:\RetroCollect\retrocollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.csprojResolveAssemblyReference.cache
 E:\RetroCollect\retrocollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.csproj.CoreCompileInputs.cache
-E:\RetroCollect\retrocollect\RetroCollectNew\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 E:\RetroCollect\retrocollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.AssemblyInfoInputs.cache
 E:\RetroCollect\retrocollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.AssemblyInfo.cs
 E:\RetroCollect\retrocollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.dll
@@ -134,3 +133,4 @@ C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.Ass
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.csproj.CopyComplete
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.dll
 C:\Dev\RetroCollect\RetroCollectNew\obj\Debug\netcoreapp2.0\ApplicationLayer.pdb
+E:\RetroCollect\retrocollect\RetroCollectNew\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

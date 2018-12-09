@@ -7,7 +7,10 @@
 //    getGameDescription("resident-evil");
 //});
 
+
 $(document).ready(function () {
+
+
     $('.add-new-game').click(function () {
         handleAddNewGame(this.id);
     });
@@ -20,6 +23,18 @@ $(document).ready(function () {
     });
     $('.sorting-headers').click(function () {
         handleSorting(this.id);
+    });
+
+
+
+    $('#searchText').keypress(function (e) {
+        if (e.keyCode === 13) {
+            handleSearching();
+        }
+    });
+
+    $('#search-submit-button').click(function () {
+        handleSearching();
     });
 
 
@@ -40,10 +55,12 @@ $(document).ready(function () {
     $('.console-selection').click(
         function () {
             //If all has been selection send through null to back end
+            console.log(this.id);
             if (this.id.toUpperCase() === "ALL") $('#Platform').val(null);
             else $('#Platform').val(this.id);
             //Reset paging to page 1
             $('#Page').val(1);
+            $('#game-form').submit();
         });
 });
 
@@ -146,6 +163,13 @@ function handleSorting(id) {
     $('#game-form').submit();
 }
 
+//Reset sorting options when using search so API uses default 'sort by relevance'
+function handleSearching(){
+    event.preventDefault();
+    $('#SortingOptions').val(null);
+    $('#switchsort').val(false);
+    $('#game-form').submit();
+}
 
 
 /***********************

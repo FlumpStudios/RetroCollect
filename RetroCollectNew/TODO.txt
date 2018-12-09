@@ -1,13 +1,10 @@
 
-Architecture
-=============
-Create repo and business logic tests
-Add basic logging
-Add swagger
+Change pagination for simple page up and down
+Add to and from dates to response and populate date picker
+Populate date picker with default values from app.settings
+Add submit button next to datepicker
+Maybe add genre filter
+Addability for playe to add title to collection
 
-Frontend
-========
-Add response into requset to ensure all the sorting is correct.
-Currently there is a checkbox to switch to client, change to tab
-Crap load of styling
+
 

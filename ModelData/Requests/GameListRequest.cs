@@ -1,4 +1,6 @@
-﻿namespace ModelData.Request
+﻿using System;
+
+namespace ModelData.Request
 {
     public class GameListRequest
     {
@@ -12,6 +14,11 @@
 
         public bool ShowClientList { get; set; }        
 
-        public int? Page { get; set; }        
+        public int? Page { get; set; }
+
+        public string ToDate { get; set; }
+
+        public string FromDate { get; set; }
+
     }
 }

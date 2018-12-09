@@ -9,12 +9,22 @@ using Newtonsoft.Json;
 using Common.Dictionaries;
 using System.Text;
 using System.Linq;
+using System.Globalization;
+using Common.Extensions;
+using Microsoft.Extensions.Configuration;
 
 namespace HttpAccess
 {
     public class HttpManager : IHttpManager
     {
+        private readonly IConfiguration _configuration;
+
         HttpClient client = new HttpClient();
+
+        public HttpManager(IConfiguration configuration)
+        {
+            _configuration = configuration;          
+        }
 
         private async Task<string> GetResultCount(GameListRequest gameListRequest)
         {
@@ -32,22 +42,78 @@ namespace HttpAccess
 
         public async Task<IEnumerable<GameListModel>> GetSortedResults(GameListRequest gameListRequest)
         {
-            if (gameListRequest.Page != null && gameListRequest.Page > 0) gameListRequest.Page--;
-            else gameListRequest.Page = 0;
 
-       
+            //TODO: Massive clean up on this method!
+
+#region Setup Http client
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("user-key", "b0d327604a696f914cafb0a23d782e6f");
+#endregion
 
+#region date filters
+            var defaultFromDate = _configuration.GetSection("DefaultSearchDates:FromDate").Value.ToString();
+            var defaultToDate = _configuration.GetSection("DefaultSearchDates:ToDate").Value.ToString();
+
+            string toDate = null;
+            string fromDate = null;
+            if (string.IsNullOrEmpty(gameListRequest.FromDate))
+            {
+                fromDate = "&filter[first_release_date][gt]=" + defaultFromDate;
+            }
+            else
+            {
+                var d = gameListRequest.FromDate.ToDateTime();
+                fromDate = "&filter[first_release_date][gt]=" + d.ToUnix().ToString();
+            }
+
+
+            if (string.IsNullOrEmpty(gameListRequest.ToDate))
+            {
+                toDate = "&filter[first_release_date][lte]=" + defaultToDate;
+            }
+            else
+            {
+                var d = gameListRequest.ToDate.ToDateTime();               
+                toDate = "&filter[first_release_date][lte]=" + d.ToUnix().ToString();
+            }
+            #endregion
+
+#region paging
+
+            if (gameListRequest.Page != null && gameListRequest.Page > 0) gameListRequest.Page--;
+            else gameListRequest.Page = 0;
+            #endregion
+
+#region Searching
             string searchType = string.IsNullOrEmpty(gameListRequest.Platform) ? "any" : "in";
+            string searchString = string.IsNullOrEmpty(gameListRequest.SearchText) ? "" : string.Format("search={0}&", gameListRequest.SearchText);
+            searchString = searchString.Replace(" ", "%20");
+            #endregion
 
-            if(!string.IsNullOrEmpty(gameListRequest.SortingOptions))
+#region Sorting and filtering
+
+            if (!string.IsNullOrEmpty(gameListRequest.SortingOptions))
             { 
                 gameListRequest.SortingOptions = gameListRequest.SortingOptions.Replace(" ", "_").ToLower();
             }
-            string orderOption = gameListRequest.Switchsort ? ":desc" : ":asc";
+
+            string orderOption = gameListRequest.Switchsort ? ":asc" : ":desc";
             string orderByOption = "";
+            string filterText = "";
+
+            if (!string.IsNullOrEmpty(gameListRequest.Platform) && gameListRequest.Platform != "Other")
+            {
+                filterText = string.Format("&filter[platforms][{0}]={1}", searchType, gameListRequest.Platform);
+            }
+            else if (gameListRequest.Platform == "Other")
+            {
+                filterText = string.Format("&filter[platforms][{0}]={1}", "not_in", GetConsoleListString());
+            }
+            else
+            {
+                filterText = "";
+            }
 
             if (!string.IsNullOrEmpty(gameListRequest.SearchText) && string.IsNullOrEmpty(gameListRequest.SortingOptions))
             {
@@ -56,27 +122,30 @@ namespace HttpAccess
             }
             else if (string.IsNullOrEmpty(gameListRequest.SearchText) && string.IsNullOrEmpty(gameListRequest.SortingOptions))
             {
-                orderByOption = "&order=name";
+                orderByOption = "&order=popularity";
             }
             else
             {
                 orderByOption = "&order="+gameListRequest.SortingOptions;
             }
 
+#endregion
 
-            string searchString = string.IsNullOrEmpty(gameListRequest.SearchText) ? "" : string.Format("search={0}&max=5&", gameListRequest.SearchText);
-
-            string queryString = string.Format("https://api-endpoint.igdb.com/games/?{4}fields=cover,name,first_release_date,rating{0}{1}&offset={2}{3}&limit=50",
+            string queryString = string.Format("https://api-endpoint.igdb.com/games/?{4}fields=cover,name,first_release_date,popularity,rating{0}{1}&offset={2}{3}&limit=50{5}{6}",
                 orderByOption,
                 orderOption,
                 gameListRequest.Page * 10 ?? 0,
-                string.Format("&filter[platforms][{0}]={1}",searchType, gameListRequest.Platform ?? GetConsoleListString()),
-                searchString);
+                filterText,
+                searchString,
+                fromDate ?? "",
+                toDate ?? ""
+                );
 
-            string msg = await client.GetStringAsync(queryString);
+            //string msg = await client.GetStringAsync(queryString);
 
-            IEnumerable<GameListModel> result = JsonConvert.DeserializeObject<IEnumerable<GameListModel>>(msg);
+            IEnumerable<GameListModel> result = JsonConvert.DeserializeObject<IEnumerable<GameListModel>>(await client.GetStringAsync(queryString));
 
+            //Convert returned Unix time stamps to date strings
             result.ToList().ForEach(X => X.First_release_date = string.IsNullOrEmpty(X.First_release_date) ? "No Release Date Available" : DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(X.First_release_date)).ToString("dd/MM/yyyy"));
 
             return result;

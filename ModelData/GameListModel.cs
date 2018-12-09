@@ -53,6 +53,9 @@ namespace ModelData
 
         [NotMapped]
         public Cover Cover { get; set; }
+
+        [NotMapped]
+        public long Popularity { get; set; }
     }
 
     public class Cover

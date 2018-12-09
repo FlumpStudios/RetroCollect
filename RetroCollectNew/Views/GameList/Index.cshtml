@@ -49,25 +49,62 @@
                             </div>
                             @using (Html.BeginForm("Index", "GameList", FormMethod.Get, new { id = "game-form" }))
                             {
-                                <div class="col-sm-8">
+                                <div class="col-xs-8">
                                     @Html.TextBox("searchText", null, new { @class = "form-control" })
                                     @Html.Hidden("showClientList", false)
                                 </div>
-                                <button type="submit" class="btn btn-primary col-sm-4 fa fa-search"></button>
+                                <button id="search-submit-button" type="submit" class="btn btn-primary col-sm-4 fa fa-search"></button>
 
 
                                 <br />
                                 <br />
                                 <div class="col-sm-12">
-                                    <button class="console-selection  btn btn-info" id="all" value="all">All</button>
-                                    @foreach (var items in Model.ConsoleList)
-                                    {
-                                        @if (!string.IsNullOrEmpty(items.Value))
-                                        {
-                                            <button class="console-selection btn btn-info" id="@items.Key" value="@items.Value">@items.Value</button>
+                                    <div class="row">
+                                        <div class="col-xs-2">
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Console
+                                                </button>
 
-                                        }
-                                    }
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a id="All" value="All" class="dropdown-item console-selection" href="#">All</a> <br />
+                                                    @foreach (var items in Model.ConsoleList)
+                                                    {
+                                                        @if (!string.IsNullOrEmpty(items.Value))
+                                                        {
+                                                            <a id="@items.Key" value="@items.Value" class="dropdown-item console-selection" href="#">@items.Value</a> <br />
+                                                        }
+                                                    }
+                                                    <a id="Other" value="Other" class="dropdown-item console-selection" href="#">Other</a> <br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-2">
+
+                                            <div class="form-group">
+                                                <label>From date</label>
+                                                <div class="input-group date" data-date-format="dd/mm/yyyy">
+                                                    <input type="text" value="01/01/1975" id="fromDate" name="fromDate" class="form-control" placeholder="dd/mm/yyyy">
+                                                    <div class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-th"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-2">
+                                            <div class="form-group">
+                                                <label>To date</label>
+                                                <div class="input-group date" data-date-format="dd/mm/yyyy">
+                                                    <input type="text" value="01/01/2010" id="toDate" name="toDate" class="form-control" placeholder="dd/mm/yyyy">
+                                                    <div class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-th"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                           
                                     @Html.HiddenFor(x => x.ShowClientList)
                                     @Html.HiddenFor(x => x.Page)
                                     @Html.HiddenFor(x => x.SortingOptions)
@@ -77,20 +114,15 @@
                                 <br />
                                 <br />
                             }
-
-                            </p>
+                          
                             <div class="col-sm-12">
                                 <ul class="nav nav-tabs">
-                                    <li id="show-all-games" class="@(@Model.ShowClientList ? "" : "active")"><a data-toggle="tab" href="#home">All Games</a></li>
+                                    <li id="show-all-games" class="@(@Model.ShowClientList ? "" : "active")"><a data-toggle="tab" href="#home">@(string.IsNullOrEmpty(Model.Platform) || Model.Platform == "Other" ? Model.Platform == "Other" ? "Other" : "All" : Model.ConsoleList[Model.Platform]) Games </a></li>
                                     @if (Model.IsLoggedIn)
                                     {
                                         <li id="show-my-collection" class="@(@Model.ShowClientList ? "active" : "")"><a data-toggle="tab" href="#menu1">Your Collection  </a></li>
                                     }
-                                </ul>
-
-                                <div class="tab-content">
-                                    <!--Put any tab text here if you want, didn't think we needed any at the time-->
-                                </div>
+                                </ul> 
 
 
                                 <table class="table table-striped table-hove table-bordered">
@@ -135,6 +167,10 @@
                                                     {
                                                         <text>No rating available</text>
                                                     }
+                                                </td>
+
+                                                <td>                                                  
+                                                        @Html.DisplayFor(modelItem => item.Popularity)
                                                 </td>
 
                                                 @if (Model.IsLoggedIn)
@@ -198,3 +234,7 @@
 </body>
 </html>
 
+<script>
+    $('.input-group.date').datepicker({ format: "dd/mm/yyyy" });
+    $.fn.datepicker.defaults.startDate = "-3y";
+</script>

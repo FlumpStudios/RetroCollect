@@ -56,7 +56,7 @@ $(document).ready(function () {
     });
 
     $('#show-my-collection').click(function () {
-        $('#Page').val(1);
+        $('#Page').val(0);      
         $('#showClientList').val(true);
         $('#game-form').submit();
     });
@@ -176,6 +176,7 @@ function handleSorting(id) {
 //Reset sorting options when using search so API uses default 'sort by relevance'
 function handleSearching(){
     event.preventDefault();
+    $('#Page').val(0);    
     $('#SortingOptions').val(null);
     $('#switchsort').val(false);
     $('#game-form').submit();

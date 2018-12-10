@@ -71,12 +71,7 @@ namespace ApplicationLayer.Business_Logic.Builders
 
             var currentPage = gameListRequestModel.Page ?? 1;         
 
-            //If requset is to display only the clients games, check client DB for game ID's and only return games from game DB that exist in clients DB.
-            if (gameListRequestModel.ShowClientList && !string.IsNullOrEmpty(userId))
-            {
-                //gameList = QueryHelper.InnerJoinClientListWithGameList(gameList, _unitOFWork.ClientRepo.Get(), userId);
-            }
-            
+                      
             
 
 
@@ -92,8 +87,9 @@ namespace ApplicationLayer.Business_Logic.Builders
                 gameListRequestModel.Platform,
                 gameListRequestModel.SortingOptions,
                 gameListRequestModel.ShowClientList,
-                 gameListRequestModel.ToDate ?? defaultToDate.FromUnix(),
-                gameListRequestModel.FromDate ?? defaultFromDate.FromUnix()               
+                gameListRequestModel.ToDate ?? defaultToDate.FromUnix(),
+                gameListRequestModel.FromDate ?? defaultFromDate.FromUnix(),
+                resultsPerPage
                 );
         }
     }

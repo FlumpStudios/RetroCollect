@@ -231,7 +231,7 @@
                                             <button class="pagination-button btn btn-primary" id="page-down" type="button" @(Model.Page == 0 ? "disabled" : "") >Prev</button>
                                             <text>Page @(Model.Page + 1)</text>
                                             @* TODO: Replace hardcoded 50 with item per page count *@
-                                            <button class="pagination-button btn btn-primary" id="page-up" type="button"  @(Model.GameListModel.Count() < 50  ? "disabled" : "") >Next</button>
+                                            <button class="pagination-button btn btn-primary" id="page-up" type="button"  @(Model.GameListModel.Count() < Model.ResultsPerPage  ? "disabled" : "") >Next</button>
                                         </div>
                                     </div>
                                 </div>

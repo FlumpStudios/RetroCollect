@@ -47,6 +47,7 @@ namespace HttpAccess
 #region date filters
             var defaultFromDate = _configuration.GetSection("DefaultSearchDates:FromDate").Value.ToString();
             var defaultToDate = _configuration.GetSection("DefaultSearchDates:ToDate").Value.ToString();
+            int resultsPerPage = int.Parse( _configuration.GetSection("Paging:ResultsPerPage").Value);
 
             string toDate = null;
             string fromDate = null;
@@ -124,15 +125,16 @@ namespace HttpAccess
 
             #endregion
 
-            string queryString = string.Format("https://api-endpoint.igdb.com/games/{7}?{4}fields=cover,name,first_release_date,popularity,rating,platforms{0}{1}&offset={2}{3}&limit=50{5}{6}",
+            string queryString = string.Format("https://api-endpoint.igdb.com/games/{7}?{4}fields=cover,name,first_release_date,popularity,rating,platforms{0}{1}&offset={2}{3}&limit={8}{5}{6}",
                 orderByOption,
                 orderOption,
-                gameListRequest.Page * 10 ?? 0,
+                gameListRequest.Page * resultsPerPage,
                 filterText,
                 searchString,
                 fromDate ?? "",
                 toDate ?? "",
-                gameListRequest.ShowClientList ? GetUserGameList() : ""
+                gameListRequest.ShowClientList ? GetUserGameList() : "",
+                resultsPerPage
                 );
 
             //string msg = await client.GetStringAsync(queryString);
@@ -149,7 +151,14 @@ namespace HttpAccess
         public async Task<IEnumerable<GameListModel>> GetClientResults(GameListRequest gameListRequest, string userId = null)
         {
             _userId = userId;
+            int resultsPerPage = int.Parse(_configuration.GetSection("Paging:ResultsPerPage").Value);
 
+            int pageSkip = 1;
+            if (gameListRequest.Page != null)
+            { 
+                pageSkip = (int)gameListRequest.Page * resultsPerPage;
+            }
+           
             #region Setup Http client
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -163,11 +172,15 @@ namespace HttpAccess
 
             result.ToList().ForEach(X => X.First_release_date = string.IsNullOrEmpty(X.First_release_date) ? "No Release Date Available" : DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(X.First_release_date)).ToString("dd/MM/yyyy"));
 
+            if (gameListRequest.FromDate != null && gameListRequest.ToDate != null)
+            {
+                result = result.Where(x => x.First_release_date.ToDateTime().ToUnix() > gameListRequest.FromDate.ToDateTime().ToUnix() &&  x.First_release_date.ToDateTime().ToUnix() < gameListRequest.ToDate.ToDateTime().ToUnix());   
+            }
+
             if (!string.IsNullOrEmpty(gameListRequest.SearchText))
             { 
                 result = result.Where(x => x.Name.ToUpper().Contains(gameListRequest.SearchText.ToUpper()));
             }
-
 
             if (!string.IsNullOrEmpty(gameListRequest.SortingOptions))
             {               
@@ -181,7 +194,7 @@ namespace HttpAccess
                 result = result.Where(x => x.Platforms.Contains(gameListRequest.Platform));
             }
 
-            return result;
+            return result.Skip(pageSkip).Take(resultsPerPage);
 
         }
         private string GetConsoleListString()

@@ -27,3 +27,5 @@ E:\RetroCollect\retrocollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.Assem
 E:\RetroCollect\retrocollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.AssemblyInfo.cs
 E:\RetroCollect\retrocollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.dll
 E:\RetroCollect\retrocollect\HttpAccess\obj\Debug\netcoreapp2.0\HttpAccess.pdb
+C:\Dev\RetroCollect\HttpAccess\bin\Debug\netcoreapp2.0\DataAccess.dll
+C:\Dev\RetroCollect\HttpAccess\bin\Debug\netcoreapp2.0\DataAccess.pdb

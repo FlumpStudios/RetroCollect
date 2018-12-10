@@ -28,7 +28,9 @@ namespace ModelData.Responses
             string sortingOptions,       
             bool showClientList,
             string toDate,
-            string fromDate)
+            string fromDate,
+            int resultsPerPage
+            )
         {
             GameListModel = gameListModel;
             IsLoggedIn = isLoggedIn;
@@ -43,6 +45,8 @@ namespace ModelData.Responses
             ShowClientList = showClientList;
             FromDate = fromDate;
             ToDate = toDate;
+            ResultsPerPage = resultsPerPage;
+            
 
         }
 
@@ -72,7 +76,8 @@ namespace ModelData.Responses
 
         public string ToDate { get; }
 
-    
+        public  int ResultsPerPage { get; set; }
+
 
     }
 }

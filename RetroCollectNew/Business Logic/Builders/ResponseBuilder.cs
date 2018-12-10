@@ -30,7 +30,8 @@ namespace ApplicationLayer.Business_Logic.Builders
                 gameListRequestModel.SortingOptions,
                 gameListRequestModel.ShowClientList,
                 gameListRequestModel.FromDate,
-                gameListRequestModel.ToDate
+                gameListRequestModel.ToDate,
+                5
                 );
             }
     }

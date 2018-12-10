@@ -15,3 +15,4 @@ E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoI
 E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
 E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.dll
 E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.pdb
+E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.csprojResolveAssemblyReference.cache

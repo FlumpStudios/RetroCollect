@@ -10,6 +10,7 @@ using Common.Extensions;
 using HttpAccess;
 using System.Collections.Generic;
 using ModelData;
+using System;
 
 namespace ApplicationLayer.Business_Logic.Builders
 {
@@ -50,7 +51,10 @@ namespace ApplicationLayer.Business_Logic.Builders
             var defaultFromDate = _configuration.GetValue<string>("DefaultSearchDates:FromDate");
 
             var defaultToDate = _configuration.GetValue<string>("DefaultSearchDates:ToDate");
+
+            var useTodaysDate = _configuration.GetValue<bool>("DefaultSearchDates:UseTodaysDate");
             
+            var toDate = useTodaysDate ? DateTime.Now.ToString("dd/MM/yyyy") : defaultToDate;
 
             //Retrieve sorted values for view
             var consoleList = Dictionaries.ConsoleDictionary;
@@ -68,13 +72,9 @@ namespace ApplicationLayer.Business_Logic.Builders
                 gameList= _httpManager.GetSortedResults(gameListRequestModel, userId).Result;
             }
 
-
             var currentPage = gameListRequestModel.Page ?? 1;         
 
-                      
-            
-
-
+            //TODO: Remove page count from model
             const int PAGE_COUNT = 1000;
            // var pagedResults = gameList.ToPagedList(currentPage, resultsPerPage);
 
@@ -87,7 +87,7 @@ namespace ApplicationLayer.Business_Logic.Builders
                 gameListRequestModel.Platform,
                 gameListRequestModel.SortingOptions,
                 gameListRequestModel.ShowClientList,
-                gameListRequestModel.ToDate ?? defaultToDate.FromUnix(),
+                gameListRequestModel.ToDate ?? toDate,
                 gameListRequestModel.FromDate ?? defaultFromDate.FromUnix(),
                 resultsPerPage
                 );

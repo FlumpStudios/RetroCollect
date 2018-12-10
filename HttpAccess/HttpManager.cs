@@ -48,6 +48,7 @@ namespace HttpAccess
             var defaultFromDate = _configuration.GetSection("DefaultSearchDates:FromDate").Value.ToString();
             var defaultToDate = _configuration.GetSection("DefaultSearchDates:ToDate").Value.ToString();
             int resultsPerPage = int.Parse( _configuration.GetSection("Paging:ResultsPerPage").Value);
+            var useTodaysDate = bool.Parse(_configuration.GetSection("DefaultSearchDates:UseTodaysDate").Value);
 
             string toDate = null;
             string fromDate = null;
@@ -64,7 +65,7 @@ namespace HttpAccess
 
             if (string.IsNullOrEmpty(gameListRequest.ToDate))
             {
-                toDate = "&filter[first_release_date][lte]=" + defaultToDate;
+                toDate = "&filter[first_release_date][lte]=" + (useTodaysDate ? DateTime.Now.ToString("dd/MM/yyyy").ToDateTime().ToUnix().ToString() : defaultToDate);
             }
             else
             {

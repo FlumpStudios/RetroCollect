@@ -2,14 +2,7 @@
  **  Event Methods  **
  *********************/
 
-//$("#gameDescription").ready(function () {
-//    alert('');
-//    getGameDescription("resident-evil");
-//});
-
-
 $(document).ready(function () {
-
 
     $('.add-new-game').click(function () {
         alert(this.id);
@@ -35,8 +28,6 @@ $(document).ready(function () {
         handleSorting(this.id);
     });
 
-
-
     $('#searchText').keypress(function (e) {
         if (e.keyCode === 13) {
             handleSearching();
@@ -47,10 +38,9 @@ $(document).ready(function () {
         handleSearching();
     });
 
-
     //Select display between all games and personal Collection
     $('#show-all-games').click(function () {
-        $('#Page').val(1);
+        $('#Page').val(0);
         $('#showClientList').val(false);
         $('#game-form').submit();
     });

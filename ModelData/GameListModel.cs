@@ -60,7 +60,37 @@ namespace ModelData
         [NotMapped]
         public IEnumerable<string> Platforms { get; set; }
 
+        [NotMapped]
+        public string Summary { get; set; }
 
+        [NotMapped]
+        public IEnumerable<Screenshots> Screenshots { get; set; }
+
+        [NotMapped]
+        public IEnumerable<Videos> Videos { get; set; }
+
+        [NotMapped]
+        public IEnumerable<Artworks> Artworks { get; set; }
+
+      
+    }
+
+
+    public class Artworks
+    {
+        public string Url { get; set; }
+        public string Cloudinary_id { get; set; }
+    }
+    public class Videos
+    {
+        public string Name { get; set; }
+        public string Video_id { get; set; }
+    }
+
+    public class Screenshots
+    {   
+        public string Url { get; set; }
+        public string Cloudinary_id { get; set; }
 
     }
 

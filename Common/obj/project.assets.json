@@ -664,26 +664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FlumpStudios\\.nuget\\packages\\": {},
+    "C:\\Users\\paul.marrable\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "E:\\RetroCollect\\retrocollect\\Common\\Common.csproj",
+      "projectUniqueName": "C:\\Dev\\RetroCollect\\Common\\Common.csproj",
       "projectName": "Common",
-      "projectPath": "E:\\RetroCollect\\retrocollect\\Common\\Common.csproj",
-      "packagesPath": "C:\\Users\\FlumpStudios\\.nuget\\packages\\",
-      "outputPath": "E:\\RetroCollect\\retrocollect\\Common\\obj\\",
+      "projectPath": "C:\\Dev\\RetroCollect\\Common\\Common.csproj",
+      "packagesPath": "C:\\Users\\paul.marrable\\.nuget\\packages\\",
+      "outputPath": "C:\\Dev\\RetroCollect\\Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\FlumpStudios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\paul.marrable\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -710,7 +707,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },

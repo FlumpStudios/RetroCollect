@@ -196,8 +196,27 @@ namespace HttpAccess
             }
 
             return result.Skip(pageSkip).Take(resultsPerPage);
-
         }
+
+        public async Task<GameListModel> GetByID(string id)
+        {
+            #region Setup Http client
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Add("user-key", "b0d327604a696f914cafb0a23d782e6f");
+            #endregion
+
+            string queryString = string.Format("https://api-endpoint.igdb.com/games/{0}?fields=*",id);
+
+            var msg = await client.GetStringAsync(queryString);
+
+            IEnumerable<GameListModel> mappedResult = JsonConvert.DeserializeObject<IEnumerable<GameListModel>>(msg);
+
+            GameListModel result = mappedResult.FirstOrDefault();
+
+            return result;
+        }
+
         private string GetConsoleListString()
         {           
             StringBuilder s = new StringBuilder();

@@ -9,5 +9,6 @@ namespace HttpAccess
     {
         Task<IEnumerable<GameListModel>> GetSortedResults(GameListRequest gameListRequest, string userId = null);
         Task<IEnumerable<GameListModel>> GetClientResults(GameListRequest gameListRequest, string userId = null);
+        Task<GameListModel> GetByID(string id);
     }
 }

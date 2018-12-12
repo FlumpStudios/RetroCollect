@@ -24,15 +24,19 @@ namespace ApplicationLayer.Controllers
 
         private readonly IFileHandler _fileHandler;
 
+        private readonly IHttpManager _httpManager;
+
         public GameListController(IUnitOFWork unitOFWork, 
             IGameListResponseBuilder gameListResponseBuilder, 
             IHostingEnvironment hostingEnvironment,
-            IFileHandler fileHandler)            
+            IFileHandler fileHandler,
+            IHttpManager httpManager)            
         {
             _hostingEnvironment = hostingEnvironment;
             _unitOFWork = unitOFWork;        
             _gameListResponseBuilder = gameListResponseBuilder;
             _fileHandler = fileHandler;
+            _httpManager = httpManager;
         }
 
         /// <summary>
@@ -63,12 +67,12 @@ namespace ApplicationLayer.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult Details(int? id)
+        public IActionResult Details(string id)
         {
             if (id == null) return NotFound();
-            var gameListModel = _unitOFWork.GameRepo.GetByID(id);
+            var gameListModel = _httpManager.GetByID(id).Result;
             if (gameListModel == null) return NotFound();
-            gameListModel.ScreenShotURL = _fileHandler.LoadFiles(id.ToString());
+            //gameListModel.ScreenShotURL = _fileHandler.LoadFiles(id.ToString());
 
             return View(gameListModel);
         }

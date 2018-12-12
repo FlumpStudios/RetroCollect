@@ -1,4 +1,5 @@
 ﻿@model ModelData.GameListModel
+@using Common.Extensions;
 
 @{
     ViewData["Title"] = "Details";
@@ -17,80 +18,54 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Developer)
+            @Html.DisplayNameFor(model => model.First_release_date)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Developer)
+            <text>@Model.First_release_date.FromUnix()</text>
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Genre)
+            @Html.DisplayNameFor(model => model.Popularity)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Genre)
+            @Html.DisplayFor(model => model.Popularity)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Publisher)
+            @Html.DisplayNameFor(model => model.Rating)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Publisher)
+            @Html.DisplayFor(model => model.Rating)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ReleaseDateNA)
+            @Html.DisplayNameFor(model => model.Summary)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ReleaseDateNA)
+            @Html.DisplayFor(model => model.Summary)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ReleaseDateEU)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ReleaseDateEU)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ReleaseDateJP)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ReleaseDateJP)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Format)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Format)
-        </dd>   
+
         <dt>
 
         </dt>
         <dd>
-            <a target="_blank" href='@string.Format("https://www.amazon.co.uk/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords={0}+{1}", Model.Name, Model.Format)'>View on Amazon</a>
+        
         </dd>
         <dt>
 
         </dt>
         <dd>
-            <a target="_blank" href='@string.Format("http://www.ebay.co.uk/sch/?_nkw={0}%20{1}&LH_Auction=1", Model.Name, Model.Format)'>View on eBay</a>
+          
         </dd>
-        <dt>
-
-        </dt>
-        <dd>
-            @{
-                var gameName = Model.Name.Replace(" ", "-").ToLower();
-             }
-            <a target="_blank" href='@string.Format("https://www.igdb.com/games/{0}", gameName)'>Find out more about @Model.Name on IGDB</a>
-        </dd>
-    </dl>
+         </dl>
 </div>
 
 <div class="container">
     <div class="row">
-        @if (Model.ScreenShotURL != null)
+        @if (Model.Screenshots.Count() > 0)
         {
-            @foreach (var X in Model.ScreenShotURL)
+            @foreach (var X in Model.Screenshots)
             {
                 <div class="col-xs-4">
                     <div class="thumbnail-section">
-                        <a href="\@X"><img class="img-thumbnail" src="\@X" /></a>
+                        <a href="@X.Url"><img class="img-thumbnail" src="@X.Url" /></a>
                     </div>
                 </div>
             }

@@ -6,7 +6,6 @@ C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cac
 C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
 C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.dll
 C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.pdb
-C:\Dev\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.csprojAssemblyReference.cache
 E:\RetroCollect\retrocollect\Common\bin\Debug\netcoreapp2.0\Common.deps.json
 E:\RetroCollect\retrocollect\Common\bin\Debug\netcoreapp2.0\Common.dll
 E:\RetroCollect\retrocollect\Common\bin\Debug\netcoreapp2.0\Common.pdb

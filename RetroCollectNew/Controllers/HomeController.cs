@@ -14,6 +14,10 @@ namespace ApplicationLayer.Controllers
         {
             return View();
         }
+        public IActionResult Video()
+        {
+            return View();
+        }
 
         //public IActionResult About()
         //{

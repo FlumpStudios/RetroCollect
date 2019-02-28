@@ -107,23 +107,6 @@ namespace ApplicationLayer.Controllers
 
             return View(gameListModel);
         }
-
-
-        /// <summary>
-        /// Return the edit view with along with retrieved record
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [Authorize(Roles = "Admin")]
-        public IActionResult Delete(int? id)
-        {
-            if (id == null) return NotFound();
-            var gameListModel = _unitOFWork.GameRepo.GetByID(id);
-            if (gameListModel == null) return NotFound();
-
-            return View(gameListModel);
-        }
         #endregion
 
 

@@ -51,3 +51,12 @@ E:\RetroCollect\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyI
 E:\RetroCollect\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.dll
 E:\RetroCollect\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.pdb
 E:\RetroCollect\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csprojResolveAssemblyReference.cache
+C:\retrocollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.deps.json
+C:\retrocollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.dll
+C:\retrocollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.pdb
+C:\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csprojResolveAssemblyReference.cache
+C:\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csproj.CoreCompileInputs.cache
+C:\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfoInputs.cache
+C:\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfo.cs
+C:\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.dll
+C:\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.pdb

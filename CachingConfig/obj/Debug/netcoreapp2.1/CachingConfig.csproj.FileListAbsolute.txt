@@ -1,0 +1,9 @@
+E:\retroCollectLatest\RetroCollect\CachingConfig\bin\Debug\netcoreapp2.1\CachingConfig.deps.json
+E:\retroCollectLatest\RetroCollect\CachingConfig\bin\Debug\netcoreapp2.1\CachingConfig.dll
+E:\retroCollectLatest\RetroCollect\CachingConfig\bin\Debug\netcoreapp2.1\CachingConfig.pdb
+E:\retroCollectLatest\RetroCollect\CachingConfig\obj\Debug\netcoreapp2.1\CachingConfig.csprojResolveAssemblyReference.cache
+E:\retroCollectLatest\RetroCollect\CachingConfig\obj\Debug\netcoreapp2.1\CachingConfig.csproj.CoreCompileInputs.cache
+E:\retroCollectLatest\RetroCollect\CachingConfig\obj\Debug\netcoreapp2.1\CachingConfig.AssemblyInfoInputs.cache
+E:\retroCollectLatest\RetroCollect\CachingConfig\obj\Debug\netcoreapp2.1\CachingConfig.AssemblyInfo.cs
+E:\retroCollectLatest\RetroCollect\CachingConfig\obj\Debug\netcoreapp2.1\CachingConfig.dll
+E:\retroCollectLatest\RetroCollect\CachingConfig\obj\Debug\netcoreapp2.1\CachingConfig.pdb

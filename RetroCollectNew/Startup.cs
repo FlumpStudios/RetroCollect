@@ -18,6 +18,8 @@ using DataAccess.WorkUnits;
 using ApplicationLayer.Business_Logic.Builders;
 using ApplicationLayer.Business_Logic.FileHandling;
 using HttpAccess;
+using Caching;
+using CachingConfig;
 
 namespace ApplicationLayer
 {
@@ -67,6 +69,8 @@ namespace ApplicationLayer
             services.AddTransient<IGameListResponseBuilder, GameListResponseBuilder>();
             services.AddTransient<IFileHandler, FileHandler>();
             services.AddTransient<IHttpManager, HttpManager>();
+            services.AddTransient<ICachingManager, CachingManager>();
+            services.AddSingleton(new MemoryCacheConfig(Configuration.GetValue<int>("Caching:sizeLimit")));
 
 
             services.AddMvc();

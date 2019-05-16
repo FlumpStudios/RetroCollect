@@ -40,6 +40,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CachingConfig\CachingConfig.csproj" />
+    <ProjectReference Include="..\Caching\Caching.csproj" />
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\DataAccess.EntityFramework\DataAccess.EntityFramework.csproj" />
     <ProjectReference Include="..\DataLayer\DataAccess.csproj" />

@@ -23,3 +23,11 @@ C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
 C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
 C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.dll
 C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.pdb
+E:\retroCollectLatest\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.deps.json
+E:\retroCollectLatest\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.dll
+E:\retroCollectLatest\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.pdb
+E:\retroCollectLatest\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.csproj.CoreCompileInputs.cache
+E:\retroCollectLatest\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
+E:\retroCollectLatest\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
+E:\retroCollectLatest\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.dll
+E:\retroCollectLatest\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.pdb

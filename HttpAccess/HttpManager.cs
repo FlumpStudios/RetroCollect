@@ -9,11 +9,11 @@ using Newtonsoft.Json;
 using Common.Dictionaries;
 using System.Text;
 using System.Linq;
-using System.Globalization;
 using Common.Extensions;
 using Microsoft.Extensions.Configuration;
 using DataAccess.WorkUnits;
 using System.Linq.Dynamic.Core;
+using Caching;
 
 namespace HttpAccess
 {
@@ -23,13 +23,15 @@ namespace HttpAccess
 
         private readonly IConfiguration _configuration;
         private readonly IUnitOFWork _unitOFWork;
-        
+        private readonly ICachingManager _cachingManager;
+
         HttpClient client = new HttpClient();
 
-        public HttpManager(IConfiguration configuration, IUnitOFWork unitOFWork)
+        public HttpManager(IConfiguration configuration, IUnitOFWork unitOFWork, ICachingManager cachingManager)
         {
             _configuration = configuration;
             _unitOFWork = unitOFWork;
+            _cachingManager = cachingManager;
         }
 
 
@@ -42,12 +44,12 @@ namespace HttpAccess
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("user-key", "b0d327604a696f914cafb0a23d782e6f");
-#endregion
+            #endregion
 
-#region date filters
+            #region date filters
             var defaultFromDate = _configuration.GetSection("DefaultSearchDates:FromDate").Value.ToString();
             var defaultToDate = _configuration.GetSection("DefaultSearchDates:ToDate").Value.ToString();
-            int resultsPerPage = int.Parse( _configuration.GetSection("Paging:ResultsPerPage").Value);
+            int resultsPerPage = int.Parse(_configuration.GetSection("Paging:ResultsPerPage").Value);
             var useTodaysDate = bool.Parse(_configuration.GetSection("DefaultSearchDates:UseTodaysDate").Value);
 
             string toDate = null;
@@ -69,27 +71,27 @@ namespace HttpAccess
             }
             else
             {
-                var d = gameListRequest.ToDate.ToDateTime();               
+                var d = gameListRequest.ToDate.ToDateTime();
                 toDate = "&filter[first_release_date][lte]=" + d.ToUnix().ToString();
             }
             #endregion
 
-#region paging
+            #region paging
 
             if (gameListRequest.Page != null && gameListRequest.Page > 0) gameListRequest.Page--;
             else gameListRequest.Page = 0;
             #endregion
 
-#region Searching
+            #region Searching
             string searchType = string.IsNullOrEmpty(gameListRequest.Platform) ? "any" : "in";
             string searchString = string.IsNullOrEmpty(gameListRequest.SearchText) ? "" : string.Format("search={0}&", gameListRequest.SearchText);
             searchString = searchString.Replace(" ", "%20");
             #endregion
 
-#region Sorting and filtering
+            #region Sorting and filtering
 
             if (!string.IsNullOrEmpty(gameListRequest.SortingOptions))
-            { 
+            {
                 gameListRequest.SortingOptions = gameListRequest.SortingOptions.Replace(" ", "_").ToLower();
             }
 
@@ -121,7 +123,7 @@ namespace HttpAccess
             }
             else
             {
-                orderByOption = "&order="+gameListRequest.SortingOptions;
+                orderByOption = "&order=" + gameListRequest.SortingOptions;
             }
 
             #endregion
@@ -139,7 +141,7 @@ namespace HttpAccess
                 );
 
             //string msg = await client.GetStringAsync(queryString);
-            var msg = await client.GetStringAsync(queryString);
+            var msg = await GetResultsFromAPI(queryString);
 
             IEnumerable<GameListModel> result = JsonConvert.DeserializeObject<IEnumerable<GameListModel>>(msg);
 
@@ -156,10 +158,10 @@ namespace HttpAccess
 
             int pageSkip = 1;
             if (gameListRequest.Page != null)
-            { 
+            {
                 pageSkip = (int)gameListRequest.Page * resultsPerPage;
             }
-           
+
             #region Setup Http client
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -167,7 +169,7 @@ namespace HttpAccess
             #endregion
 
             string queryString = string.Format("https://api-endpoint.igdb.com/games/{0}?fields=cover,name,first_release_date,popularity,rating,platforms", GetUserGameList());
-            var msg = await client.GetStringAsync(queryString);
+            var msg = await GetResultsFromAPI(queryString);
 
             IEnumerable<GameListModel> result = JsonConvert.DeserializeObject<IEnumerable<GameListModel>>(msg);
 
@@ -175,17 +177,17 @@ namespace HttpAccess
 
             if (gameListRequest.FromDate != null && gameListRequest.ToDate != null)
             {
-                result = result.Where(x => x.First_release_date.ToDateTime().ToUnix() > gameListRequest.FromDate.ToDateTime().ToUnix() &&  x.First_release_date.ToDateTime().ToUnix() < gameListRequest.ToDate.ToDateTime().ToUnix());   
+                result = result.Where(x => x.First_release_date.ToDateTime().ToUnix() > gameListRequest.FromDate.ToDateTime().ToUnix() && x.First_release_date.ToDateTime().ToUnix() < gameListRequest.ToDate.ToDateTime().ToUnix());
             }
 
             if (!string.IsNullOrEmpty(gameListRequest.SearchText))
-            { 
+            {
                 result = result.Where(x => x.Name.ToUpper().Contains(gameListRequest.SearchText.ToUpper()));
             }
 
             if (!string.IsNullOrEmpty(gameListRequest.SortingOptions))
-            {               
-                gameListRequest.SortingOptions = gameListRequest.SortingOptions.Replace(" ", "_").ToLower();                
+            {
+                gameListRequest.SortingOptions = gameListRequest.SortingOptions.Replace(" ", "_").ToLower();
                 var sortOption = gameListRequest.Switchsort ? " descending" : "";
                 result = result.AsQueryable().OrderBy(gameListRequest.SortingOptions + sortOption);
             }
@@ -206,7 +208,7 @@ namespace HttpAccess
             client.DefaultRequestHeaders.Add("user-key", "b0d327604a696f914cafb0a23d782e6f");
             #endregion
 
-            string queryString = string.Format("https://api-endpoint.igdb.com/games/{0}?fields=*",id);
+            string queryString = string.Format("https://api-endpoint.igdb.com/games/{0}?fields=*", id);
 
             var msg = await client.GetStringAsync(queryString);
 
@@ -218,7 +220,7 @@ namespace HttpAccess
         }
 
         private string GetConsoleListString()
-        {           
+        {
             StringBuilder s = new StringBuilder();
             foreach (var item in Dictionaries.ConsoleDictionary)
             {
@@ -240,7 +242,15 @@ namespace HttpAccess
 
             responseString.Length = responseString.Length - 1;
             return responseString.ToString();
-        }    
+        }
+
+        private async Task<string> GetResultsFromAPI(string queryString)
+        {
+
+            //Use the query string as a key so if query is the same we don't have to make an API call.
+            return _cachingManager.GetCache<string>(queryString) ??
+                _cachingManager.SetCache(await client.GetStringAsync(queryString), queryString);
+        }
     }
 
 }

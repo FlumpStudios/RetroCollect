@@ -1,0 +1,11 @@
+E:\RetroCollect\retrocollect\Caching\bin\Debug\netcoreapp2.2\Caching.MemoryCache.deps.json
+E:\RetroCollect\retrocollect\Caching\bin\Debug\netcoreapp2.2\Caching.MemoryCache.dll
+E:\RetroCollect\retrocollect\Caching\bin\Debug\netcoreapp2.2\Caching.MemoryCache.pdb
+E:\RetroCollect\retrocollect\Caching\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Caching.Abstractions.dll
+E:\RetroCollect\retrocollect\Caching\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Caching.Abstractions.xml
+E:\RetroCollect\retrocollect\Caching\obj\Debug\netcoreapp2.2\Caching.MemoryCache.csprojResolveAssemblyReference.cache
+E:\RetroCollect\retrocollect\Caching\obj\Debug\netcoreapp2.2\Caching.MemoryCache.csproj.CoreCompileInputs.cache
+E:\RetroCollect\retrocollect\Caching\obj\Debug\netcoreapp2.2\Caching.MemoryCache.AssemblyInfoInputs.cache
+E:\RetroCollect\retrocollect\Caching\obj\Debug\netcoreapp2.2\Caching.MemoryCache.AssemblyInfo.cs
+E:\RetroCollect\retrocollect\Caching\obj\Debug\netcoreapp2.2\Caching.MemoryCache.dll
+E:\RetroCollect\retrocollect\Caching\obj\Debug\netcoreapp2.2\Caching.MemoryCache.pdb

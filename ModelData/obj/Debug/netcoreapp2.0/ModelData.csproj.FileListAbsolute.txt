@@ -68,3 +68,14 @@ C:\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfoInputs.c
 C:\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
 C:\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
 C:\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb
+E:\retroCollectLatest\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.deps.json
+E:\retroCollectLatest\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.dll
+E:\retroCollectLatest\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\ModelData.pdb
+E:\retroCollectLatest\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\Common.dll
+E:\retroCollectLatest\RetroCollect\ModelData\bin\Debug\netcoreapp2.0\Common.pdb
+E:\retroCollectLatest\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.csprojResolveAssemblyReference.cache
+E:\retroCollectLatest\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.csproj.CoreCompileInputs.cache
+E:\retroCollectLatest\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfoInputs.cache
+E:\retroCollectLatest\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.AssemblyInfo.cs
+E:\retroCollectLatest\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.dll
+E:\retroCollectLatest\RetroCollect\ModelData\obj\Debug\netcoreapp2.0\ModelData.pdb

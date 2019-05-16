@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -49,6 +50,7 @@ namespace ModelData
         public long Rating { get; set; }
 
         [NotMapped]
+        [DisplayName("First Release Date")]
         public string First_release_date { get; set; }
 
         [NotMapped]

@@ -673,11 +673,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\retrocollect\\Common\\Common.csproj",
+      "projectUniqueName": "C:\\RetroCollect\\Common\\Common.csproj",
       "projectName": "Common",
-      "projectPath": "C:\\retrocollect\\Common\\Common.csproj",
+      "projectPath": "C:\\RetroCollect\\Common\\Common.csproj",
       "packagesPath": "C:\\Users\\NerdHouse\\.nuget\\packages\\",
-      "outputPath": "C:\\retrocollect\\Common\\obj\\",
+      "outputPath": "C:\\RetroCollect\\Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

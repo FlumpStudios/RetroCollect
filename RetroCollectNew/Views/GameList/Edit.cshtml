@@ -77,7 +77,7 @@
                             <button type="submit" class="close thumbnail-delete" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            <a href="\@X"><img class="img-thumbnail" src="\@X" /></a>
+                            <a href="\@X.Replace("t_thumb", "screenshot_med")><img class="img-thumbnail" src="\@X" /></a>
                             @Html.Hidden("fileLocation", "\\" + @X)
                             @Html.Hidden("id", Model.Id)
                         </div>

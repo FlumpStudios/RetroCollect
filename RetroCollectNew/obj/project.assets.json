@@ -13201,11 +13201,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\retrocollect\\RetroCollectNew\\ApplicationLayer.csproj",
+      "projectUniqueName": "C:\\RetroCollect\\RetroCollectNew\\ApplicationLayer.csproj",
       "projectName": "ApplicationLayer",
-      "projectPath": "C:\\retrocollect\\RetroCollectNew\\ApplicationLayer.csproj",
+      "projectPath": "C:\\RetroCollect\\RetroCollectNew\\ApplicationLayer.csproj",
       "packagesPath": "C:\\Users\\NerdHouse\\.nuget\\packages\\",
-      "outputPath": "C:\\retrocollect\\RetroCollectNew\\obj\\",
+      "outputPath": "C:\\RetroCollect\\RetroCollectNew\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13224,17 +13224,17 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj": {
-              "projectPath": "C:\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj"
+            "C:\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj": {
+              "projectPath": "C:\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj"
             },
-            "C:\\retrocollect\\DataLayer\\DataAccess.csproj": {
-              "projectPath": "C:\\retrocollect\\DataLayer\\DataAccess.csproj"
+            "C:\\RetroCollect\\DataLayer\\DataAccess.csproj": {
+              "projectPath": "C:\\RetroCollect\\DataLayer\\DataAccess.csproj"
             },
-            "C:\\retrocollect\\Common\\Common.csproj": {
-              "projectPath": "C:\\retrocollect\\Common\\Common.csproj"
+            "C:\\RetroCollect\\Common\\Common.csproj": {
+              "projectPath": "C:\\RetroCollect\\Common\\Common.csproj"
             },
-            "C:\\retrocollect\\HttpAccess\\HttpAccess.csproj": {
-              "projectPath": "C:\\retrocollect\\HttpAccess\\HttpAccess.csproj"
+            "C:\\RetroCollect\\HttpAccess\\HttpAccess.csproj": {
+              "projectPath": "C:\\RetroCollect\\HttpAccess\\HttpAccess.csproj"
             }
           }
         }

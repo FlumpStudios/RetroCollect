@@ -51,14 +51,6 @@ E:\RetroCollect\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyI
 E:\RetroCollect\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.dll
 E:\RetroCollect\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.pdb
 E:\RetroCollect\retrocollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csprojResolveAssemblyReference.cache
-C:\RetroCollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.deps.json
-C:\RetroCollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.dll
-C:\RetroCollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.pdb
-C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csproj.CoreCompileInputs.cache
-C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfoInputs.cache
-C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfo.cs
-C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.dll
-C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.pdb
 E:\retroCollectLatest\RetroCollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.deps.json
 E:\retroCollectLatest\RetroCollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.dll
 E:\retroCollectLatest\RetroCollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.pdb
@@ -67,3 +59,12 @@ E:\retroCollectLatest\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.Ass
 E:\retroCollectLatest\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfo.cs
 E:\retroCollectLatest\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.dll
 E:\retroCollectLatest\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.pdb
+C:\RetroCollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.deps.json
+C:\RetroCollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.dll
+C:\RetroCollect\UI_Layer\bin\Debug\netcoreapp2.0\UI_Layer.pdb
+C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csprojResolveAssemblyReference.cache
+C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.csproj.CoreCompileInputs.cache
+C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfoInputs.cache
+C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.AssemblyInfo.cs
+C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.dll
+C:\RetroCollect\UI_Layer\obj\Debug\netcoreapp2.0\UI_Layer.pdb

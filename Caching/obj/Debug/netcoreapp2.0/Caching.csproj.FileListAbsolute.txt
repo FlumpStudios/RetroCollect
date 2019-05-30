@@ -9,3 +9,14 @@ E:\retroCollectLatest\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.Assem
 E:\retroCollectLatest\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.AssemblyInfo.cs
 E:\retroCollectLatest\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.dll
 E:\retroCollectLatest\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.pdb
+C:\RetroCollect\Caching\bin\Debug\netcoreapp2.0\Caching.deps.json
+C:\RetroCollect\Caching\bin\Debug\netcoreapp2.0\Caching.dll
+C:\RetroCollect\Caching\bin\Debug\netcoreapp2.0\Caching.pdb
+C:\RetroCollect\Caching\bin\Debug\netcoreapp2.0\CachingConfig.dll
+C:\RetroCollect\Caching\bin\Debug\netcoreapp2.0\CachingConfig.pdb
+C:\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.csprojResolveAssemblyReference.cache
+C:\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.csproj.CoreCompileInputs.cache
+C:\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.AssemblyInfoInputs.cache
+C:\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.AssemblyInfo.cs
+C:\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.dll
+C:\RetroCollect\Caching\obj\Debug\netcoreapp2.0\Caching.pdb

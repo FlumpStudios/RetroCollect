@@ -15,14 +15,6 @@ E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.
 E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.dll
 E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.pdb
 E:\RetroCollect\retrocollect\Common\obj\Debug\netcoreapp2.0\Common.csprojResolveAssemblyReference.cache
-C:\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.deps.json
-C:\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.dll
-C:\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.pdb
-C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.csproj.CoreCompileInputs.cache
-C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
-C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
-C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.dll
-C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.pdb
 E:\retroCollectLatest\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.deps.json
 E:\retroCollectLatest\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.dll
 E:\retroCollectLatest\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.pdb
@@ -31,3 +23,12 @@ E:\retroCollectLatest\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.Assembl
 E:\retroCollectLatest\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
 E:\retroCollectLatest\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.dll
 E:\retroCollectLatest\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.pdb
+C:\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.deps.json
+C:\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.dll
+C:\RetroCollect\Common\bin\Debug\netcoreapp2.0\Common.pdb
+C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.csprojResolveAssemblyReference.cache
+C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.csproj.CoreCompileInputs.cache
+C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
+C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
+C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.dll
+C:\RetroCollect\Common\obj\Debug\netcoreapp2.0\Common.pdb

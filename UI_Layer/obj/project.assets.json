@@ -1447,12 +1447,10 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "CCf4NjmDOoise7FAij2VPuHIgKKsu696vkTwhOkPVQfLsTmB2WLFfQ4yeO5Udtk8FD636UBMx6Y9eovzJKT76A==",
+      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
@@ -2112,12 +2110,10 @@
       ]
     },
     "System.Interactive.Async/3.1.1": {
-      "sha512": "x9y2omkjEudKbIVuhUzeWw7ZlouEzpk4W98woCEq1lq9gJxERBKRKDTHF5JPEws9E0f4/Uei/2vLxEy1IrfmMg==",
+      "sha512": "hZccYiIE5RS1/J9Tb/BNtosAGVggdlsJm4Ojdu+gDV0p4AIi+LUfUogMKkRacljQEJd2AG6vYzvcjhQFkqoZmw==",
       "type": "package",
       "path": "system.interactive.async/3.1.1",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "lib/net45/System.Interactive.Async.dll",
         "lib/net45/System.Interactive.Async.xml",
         "lib/net46/System.Interactive.Async.dll",
@@ -3398,7 +3394,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FlumpStudios\\.nuget\\packages\\": {},
+    "C:\\Users\\NerdHouse\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3407,17 +3403,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\retroCollectLatest\\RetroCollect\\UI_Layer\\UI_Layer.csproj",
+      "projectUniqueName": "C:\\RetroCollect\\UI_Layer\\UI_Layer.csproj",
       "projectName": "UI_Layer",
-      "projectPath": "E:\\retroCollectLatest\\RetroCollect\\UI_Layer\\UI_Layer.csproj",
-      "packagesPath": "C:\\Users\\FlumpStudios\\.nuget\\packages\\",
-      "outputPath": "E:\\retroCollectLatest\\RetroCollect\\UI_Layer\\obj\\",
+      "projectPath": "C:\\RetroCollect\\UI_Layer\\UI_Layer.csproj",
+      "packagesPath": "C:\\Users\\NerdHouse\\.nuget\\packages\\",
+      "outputPath": "C:\\RetroCollect\\UI_Layer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\FlumpStudios\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NerdHouse\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

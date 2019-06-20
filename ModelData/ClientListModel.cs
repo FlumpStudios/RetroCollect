@@ -8,13 +8,43 @@ namespace ModelData
 {
     public class ClientListModel
     {
+        public ClientListModel()
+        {
+            ClientGame = new HashSet<ClientGame>();
+        }
+      
         [Key]
-        public int Id { get; set; }
+        public int ClientId { get; set; }
 
         [MaxLength(50)]
         public string UserId { get; set; }
+        
+        public ICollection<ClientGame> ClientGame { get; set; }
+    }
+
+    public class ClientGame
+    {
+        public ClientGame()
+        {
+            GameFormat = new HashSet<GameFormat>();
+        }
+
+        [Key]
+        public int ClientGameId { get; set; }
 
         [MaxLength(50)]
         public string GameId { get; set; }
+
+        public ICollection<GameFormat> GameFormat { get; set; }
+    }
+
+    public class GameFormat
+    {
+        [Key]
+        public int GameFomatId { get; set; }
+
+        public int ClientGameId { get; set; }
+
+        public string IgdbKey { get; set; }
     }
 }

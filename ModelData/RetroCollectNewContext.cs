@@ -17,7 +17,6 @@ namespace ModelData
         public RetroCollectNewContext()            {
         }
 
-        public DbSet<GameListModel> GameListModel { get; set; }
 
         public DbSet<ClientListModel> ClientListModel { get; set; }
     }

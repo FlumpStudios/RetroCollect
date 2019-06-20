@@ -1,13 +1,48 @@
 ﻿/*********************
  **  Event Methods  **
  *********************/
+var _currenGameId = null;
+
+var _formatList = [];
 
 $(document).ready(function () {
+   
+    $(".format-list").click(function () {
+        var format = this.dataset["formatid"];
+
+        var isChecked = $("#gamelistItem-" + format).is(':checked');
+
+        if (isChecked && format.length > 0) _formatList.push({ IgdbKey: format });      
+    });
+
 
     $('.add-new-game').click(function () {
-        alert(this.id);
-        handleAddNewGame(this.id);
+
+        
+        $("#myModal").modal();
+
+        //console.log(this.dataset["formatlist"]);
+        var formatList = this.dataset["formatlist"].split(",");
+        
+        for (var i = 0; i < formatList.length; i++) {
+            $('#format-container-' + formatList[i]).show();
+        };
+
+        _currenGameId = this.id;
     });
+
+    $('#add-game-accept').click(function () {
+        console.log("Adding game");
+        handleAddNewGame(_currenGameId);
+        $(".format-list").hide();
+
+    });
+
+    $('#add-game-cancel').click(function () {
+        $(".format-list").hide();
+    });
+
+
     $('.delete-game').click(function () {
         handleDeleteGame(this.id);
     });
@@ -72,9 +107,12 @@ $(document).ready(function () {
 
 function handleAddNewGame(id) {
     var clientListModel = {
-        gameId: id
+        gameId: id,
+        gameFormat: _formatList
     };
+    console.log(clientListModel);
 
+   
     $.ajax({
         url: '/ClientGamesList/Create',
         type: 'POST',

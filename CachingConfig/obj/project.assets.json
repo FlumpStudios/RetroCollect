@@ -962,11 +962,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\RetroCollect\\CachingConfig\\CachingConfig.csproj",
+      "projectUniqueName": "C:\\retrocollect\\CachingConfig\\CachingConfig.csproj",
       "projectName": "CachingConfig",
-      "projectPath": "C:\\RetroCollect\\CachingConfig\\CachingConfig.csproj",
+      "projectPath": "C:\\retrocollect\\CachingConfig\\CachingConfig.csproj",
       "packagesPath": "C:\\Users\\NerdHouse\\.nuget\\packages\\",
-      "outputPath": "C:\\RetroCollect\\CachingConfig\\obj\\",
+      "outputPath": "C:\\retrocollect\\CachingConfig\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -3403,11 +3403,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\RetroCollect\\UI_Layer\\UI_Layer.csproj",
+      "projectUniqueName": "C:\\retrocollect\\UI_Layer\\UI_Layer.csproj",
       "projectName": "UI_Layer",
-      "projectPath": "C:\\RetroCollect\\UI_Layer\\UI_Layer.csproj",
+      "projectPath": "C:\\retrocollect\\UI_Layer\\UI_Layer.csproj",
       "packagesPath": "C:\\Users\\NerdHouse\\.nuget\\packages\\",
-      "outputPath": "C:\\RetroCollect\\UI_Layer\\obj\\",
+      "outputPath": "C:\\retrocollect\\UI_Layer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

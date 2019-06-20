@@ -31,47 +31,33 @@ namespace ModelData
         [Required]
         public string Publisher { get; set; }
 
-        [MaxLength(70)]
         public string ReleaseDateNA { get; set; }
 
-        [MaxLength(70)]
         public string ReleaseDateEU { get; set; }
 
-        [MaxLength(70)]
         public string ReleaseDateJP { get; set; }
 
-        [NotMapped]
         public  IEnumerable<IFormFile> ScreenShot { get; set; }
 
-        [NotMapped]
         public IEnumerable<string> ScreenShotURL { get; set; }
 
-        [NotMapped]
         public long Rating { get; set; }
 
-        [NotMapped]
         [DisplayName("First Release Date")]
         public string First_release_date { get; set; }
 
-        [NotMapped]
         public Cover Cover { get; set; }
 
-        [NotMapped]
         public long Popularity { get; set; }
 
-        [NotMapped]
         public IEnumerable<string> Platforms { get; set; }
 
-        [NotMapped]
         public string Summary { get; set; }
 
-        [NotMapped]
         public IEnumerable<Screenshots> Screenshots { get; set; }
 
-        [NotMapped]
         public IEnumerable<Videos> Videos { get; set; }
 
-        [NotMapped]
         public IEnumerable<Artworks> Artworks { get; set; }
 
       

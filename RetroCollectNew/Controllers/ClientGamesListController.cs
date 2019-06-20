@@ -26,7 +26,7 @@ namespace ApplicationLayer.Controllers
         /// <param name="ClientListModel"></param>
         /// <returns></returns>
         [HttpPost]       
-        public ActionResult Create([Bind("GameId")] ClientListModel ClientListModel)
+        public ActionResult Create([Bind("GameId","GameFormat")] ClientListModel ClientListModel)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace ApplicationLayer.Controllers
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            int recordId = _unitOFWork.ClientRepo.Get(filter: x => x.GameId == id.ToString() && x.UserId == userId).FirstOrDefault().Id;
+            int recordId = _unitOFWork.ClientRepo.Get(filter: x => x.GameId == id.ToString() && x.UserId == userId).FirstOrDefault().ClientId;
 
             try
             {

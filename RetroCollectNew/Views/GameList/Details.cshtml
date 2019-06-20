@@ -49,19 +49,24 @@
     <div class="row">
         <div id="myCarousel" class="carousel slide center" data-ride="carousel" >
             <!-- Indicators -->
-            <ol class="carousel-indicators">
-      @for (int i = 0; i < Model.Screenshots.Count(); i++)
-      {
-          if (i == 0)
-          {
-             <li data-target="#myCarousel" data-slide-to="@i" class="active"></li>
-          }
-          else {
-                <li data-target="#myCarousel" data-slide-to="@i"></li>         
-          }
-      }
-            </ol>
+            
+    @if (Model.Screenshots != null)
+    {
+        <ol class="carousel-indicators">
+            @for (int i = 0; i < Model.Screenshots.Count(); i++)
+            {
+                if (i == 0)
+                {
+                    <li data-target="#myCarousel" data-slide-to="@i" class="active"></li>
+                }
+                else
+                {
+                    <li data-target="#myCarousel" data-slide-to="@i"></li>
+                }
+            }
 
+        </ol>
+    
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 @if (Model.Screenshots != null)
@@ -84,7 +89,7 @@
                     }
                 }
             </div>
-
+            
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -94,6 +99,7 @@
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
             </a>
+            }
         </div>
     </div>
  </div>
@@ -135,4 +141,8 @@
         color:white;
         font-family:roboto;
         }
+    .video-section {
+        border:thin;
+        margin:5px;
+    }
 </style>

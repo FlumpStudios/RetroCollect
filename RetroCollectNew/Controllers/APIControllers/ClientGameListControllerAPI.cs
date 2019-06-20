@@ -37,7 +37,7 @@ namespace ApplicationLayer.APIcontrollers.Controllers
                 return BadRequest(ModelState);
             }
 
-            var clientListModel = await _context.ClientListModel.SingleOrDefaultAsync(m => m.Id == id);
+            var clientListModel = await _context.ClientListModel.SingleOrDefaultAsync(m => m.ClientId == id);
 
             if (clientListModel == null)
             {
@@ -56,7 +56,7 @@ namespace ApplicationLayer.APIcontrollers.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != clientListModel.Id)
+            if (id != clientListModel.ClientId)
             {
                 return BadRequest();
             }
@@ -95,7 +95,7 @@ namespace ApplicationLayer.APIcontrollers.Controllers
             _context.ClientListModel.Add(clientListModel);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetClientListModel", new { id = clientListModel.Id }, clientListModel);
+            return CreatedAtAction("GetClientListModel", new { id = clientListModel.ClientId }, clientListModel);
         }
 
         // DELETE: api/ClientGameList/5
@@ -107,7 +107,7 @@ namespace ApplicationLayer.APIcontrollers.Controllers
                 return BadRequest(ModelState);
             }
 
-            var clientListModel = await _context.ClientListModel.SingleOrDefaultAsync(m => m.Id == id);
+            var clientListModel = await _context.ClientListModel.SingleOrDefaultAsync(m => m.ClientId == id);
             if (clientListModel == null)
             {
                 return NotFound();
@@ -121,7 +121,7 @@ namespace ApplicationLayer.APIcontrollers.Controllers
 
         private bool ClientListModelExists(int id)
         {
-            return _context.ClientListModel.Any(e => e.Id == id);
+            return _context.ClientListModel.Any(e => e.ClientId == id);
         }
     }
 }

@@ -13289,11 +13289,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\RetroCollect\\RetroCollectNew\\ApplicationLayer.csproj",
+      "projectUniqueName": "C:\\retrocollect\\RetroCollectNew\\ApplicationLayer.csproj",
       "projectName": "ApplicationLayer",
-      "projectPath": "C:\\RetroCollect\\RetroCollectNew\\ApplicationLayer.csproj",
+      "projectPath": "C:\\retrocollect\\RetroCollectNew\\ApplicationLayer.csproj",
       "packagesPath": "C:\\Users\\NerdHouse\\.nuget\\packages\\",
-      "outputPath": "C:\\RetroCollect\\RetroCollectNew\\obj\\",
+      "outputPath": "C:\\retrocollect\\RetroCollectNew\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13312,23 +13312,23 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj": {
-              "projectPath": "C:\\RetroCollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj"
+            "C:\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj": {
+              "projectPath": "C:\\retrocollect\\DataAccess.EntityFramework\\DataAccess.EntityFramework.csproj"
             },
-            "C:\\RetroCollect\\DataLayer\\DataAccess.csproj": {
-              "projectPath": "C:\\RetroCollect\\DataLayer\\DataAccess.csproj"
+            "C:\\retrocollect\\DataLayer\\DataAccess.csproj": {
+              "projectPath": "C:\\retrocollect\\DataLayer\\DataAccess.csproj"
             },
-            "C:\\RetroCollect\\Common\\Common.csproj": {
-              "projectPath": "C:\\RetroCollect\\Common\\Common.csproj"
+            "C:\\retrocollect\\Common\\Common.csproj": {
+              "projectPath": "C:\\retrocollect\\Common\\Common.csproj"
             },
-            "C:\\RetroCollect\\CachingConfig\\CachingConfig.csproj": {
-              "projectPath": "C:\\RetroCollect\\CachingConfig\\CachingConfig.csproj"
+            "C:\\retrocollect\\CachingConfig\\CachingConfig.csproj": {
+              "projectPath": "C:\\retrocollect\\CachingConfig\\CachingConfig.csproj"
             },
-            "C:\\RetroCollect\\Caching\\Caching.csproj": {
-              "projectPath": "C:\\RetroCollect\\Caching\\Caching.csproj"
+            "C:\\retrocollect\\Caching\\Caching.csproj": {
+              "projectPath": "C:\\retrocollect\\Caching\\Caching.csproj"
             },
-            "C:\\RetroCollect\\HttpAccess\\HttpAccess.csproj": {
-              "projectPath": "C:\\RetroCollect\\HttpAccess\\HttpAccess.csproj"
+            "C:\\retrocollect\\HttpAccess\\HttpAccess.csproj": {
+              "projectPath": "C:\\retrocollect\\HttpAccess\\HttpAccess.csproj"
             }
           }
         }

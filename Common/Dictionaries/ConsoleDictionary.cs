@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Common.Dictionaries
 {
@@ -53,7 +51,8 @@ namespace Common.Dictionaries
             { "38","PSP"},
             { "21","Gamecube"},
             { "19","Snes"},
-            { "32","Saturn"}
+            { "32","Saturn"},
+            {  "10000", "Other"}
         };
     }
 }

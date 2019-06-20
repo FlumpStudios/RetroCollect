@@ -17,7 +17,7 @@ namespace DataAccess.EntityFramework.Repositories
         }
 
         public IEnumerable<ClientListModel> GetClients() => _clientContext.ClientListModel.ToList();
-        public ClientListModel GetClientByID(int? gameId) => _clientContext.ClientListModel.SingleOrDefault(m => m.Id == gameId);
+        public ClientListModel GetClientByID(int? gameId) => _clientContext.ClientListModel.SingleOrDefault(m => m.ClientId == gameId);
         public void InsertClient(ClientListModel game) => _clientContext.Add(game);
         public void UpdateClient(ClientListModel game) => _clientContext.Update(game);
         public void DeleteClient(ClientListModel game) => _clientContext.ClientListModel.Remove(game);

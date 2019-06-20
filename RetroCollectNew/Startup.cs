@@ -62,7 +62,6 @@ namespace ApplicationLayer
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<IClientRepository, ClientRepository>();
-            services.AddTransient<IGameRepository, GameRepository>();
             services.AddTransient<IClientRepository, ClientRepository>();
             services.AddTransient<IUnitOFWork, UnitOFWork>();
             services.AddTransient<ISortingManager, SortingManager>();
@@ -105,7 +104,7 @@ namespace ApplicationLayer
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            CreateRoles(serviceProvider).Wait();
+           CreateRoles(serviceProvider).Wait();
         }
 
         private async Task CreateRoles(IServiceProvider serviceProvider)

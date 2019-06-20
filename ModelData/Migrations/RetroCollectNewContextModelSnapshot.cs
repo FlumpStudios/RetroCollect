@@ -22,57 +22,43 @@ namespace ModelData.Migrations
 
             modelBuilder.Entity("ModelData.ClientListModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ClientId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("GameId");
+                    b.Property<string>("GameId")
+                        .HasMaxLength(50);
 
                     b.Property<string>("UserId")
                         .HasMaxLength(50);
 
-                    b.HasKey("Id");
+                    b.HasKey("ClientId");
 
                     b.ToTable("ClientListModel");
                 });
 
-            modelBuilder.Entity("ModelData.GameListModel", b =>
+            modelBuilder.Entity("ModelData.GameFormat", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("GameFomatId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Developer")
-                        .IsRequired()
-                        .HasMaxLength(70);
+                    b.Property<int?>("ClientListModelClientId");
 
-                    b.Property<string>("Platform")
-                        .HasMaxLength(70);
+                    b.Property<int>("GameId");
 
-                    b.Property<string>("FirstReleaseDate")
-                        .IsRequired()
-                        .HasMaxLength(70);
+                    b.Property<string>("IgdbKey");
 
-                    b.Property<string>("Cover")
-                        .HasMaxLength(70);
+                    b.HasKey("GameFomatId");
 
-                    b.Property<string>("Publisher")
-                        .IsRequired()
-                        .HasMaxLength(70);
+                    b.HasIndex("ClientListModelClientId");
 
-                    b.Property<string>("ReleaseDateEU")
-                        .HasMaxLength(70);
+                    b.ToTable("GameFormat");
+                });
 
-                    b.Property<string>("ReleaseDateJP")
-                        .HasMaxLength(70);
-
-                    b.Property<string>("ReleaseDateNA")
-                        .HasMaxLength(70);
-
-                    b.Property<string>("ScreenShotURL")
-                        .HasMaxLength(100);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GameListModel");
+            modelBuilder.Entity("ModelData.GameFormat", b =>
+                {
+                    b.HasOne("ModelData.ClientListModel")
+                        .WithMany("GameFormat")
+                        .HasForeignKey("ClientListModelClientId");
                 });
 #pragma warning restore 612, 618
         }

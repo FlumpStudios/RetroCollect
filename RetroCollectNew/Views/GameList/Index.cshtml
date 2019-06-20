@@ -190,8 +190,8 @@
                                                         else
                                                         {
                                                             <text>
-                                                                <i id="@item.Id" class="fa fa-plus add-remove-icon add-new-game"></i>
-                                                            </text>
+                                                                <i id="@item.Id" class="fa fa-plus add-remove-icon add-new-game" data-formatList="@string.Join(",",@item.Platforms)"></i>
+                                                           </text>
                                                         }
                                                     </td>
                                                 }
@@ -241,6 +241,43 @@
             </div>
         </main>
 </div>
+    <!-- Trigger the modal with a button -->
+   
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        
+                        @foreach (var items in Model.ConsoleList)
+                        {
+                            <div class="col-xs-12 col-md-6 col-lg-4 format-list" id="format-container-@items.Key" data-formatid="@items.Key" >
+                                <label for="gamelistItem-@items.Key"><input name="formtCheckBoxes" type="checkbox" id="gamelistItem-@items.Key"/>  @items.Value  </label>
+                            </div>                            
+                        }
+                        <div class="col-xs-12 col-md-6 col-lg-4 format-list-other" id="format-container-10000">
+                            <label for="gamelistItem-10000"><input type="checkbox" id="gamelistItem-10000" data-format-id="10000" />  Other  </label>
+                         </div>
+                       
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="add-game-cancel" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="add-game-accept" class="btn btn-primary" data-dismiss="modal">Add Game</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
 
@@ -248,3 +285,9 @@
     $('.input-group.date').datepicker({ format: "dd/mm/yyyy" });
     $.fn.datepicker.defaults.startDate = "-3y";
 </script>
+
+<style>
+    .format-list {
+        display:none;
+    }
+</style>

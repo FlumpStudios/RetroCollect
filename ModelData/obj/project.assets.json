@@ -3662,11 +3662,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\RetroCollect\\ModelData\\ModelData.csproj",
+      "projectUniqueName": "C:\\retrocollect\\ModelData\\ModelData.csproj",
       "projectName": "ModelData",
-      "projectPath": "C:\\RetroCollect\\ModelData\\ModelData.csproj",
+      "projectPath": "C:\\retrocollect\\ModelData\\ModelData.csproj",
       "packagesPath": "C:\\Users\\NerdHouse\\.nuget\\packages\\",
-      "outputPath": "C:\\RetroCollect\\ModelData\\obj\\",
+      "outputPath": "C:\\retrocollect\\ModelData\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3685,8 +3685,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\RetroCollect\\Common\\Common.csproj": {
-              "projectPath": "C:\\RetroCollect\\Common\\Common.csproj"
+            "C:\\retrocollect\\Common\\Common.csproj": {
+              "projectPath": "C:\\retrocollect\\Common\\Common.csproj"
             }
           }
         }

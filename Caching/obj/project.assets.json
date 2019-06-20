@@ -980,11 +980,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\RetroCollect\\Caching\\Caching.csproj",
+      "projectUniqueName": "C:\\retrocollect\\Caching\\Caching.csproj",
       "projectName": "Caching",
-      "projectPath": "C:\\RetroCollect\\Caching\\Caching.csproj",
+      "projectPath": "C:\\retrocollect\\Caching\\Caching.csproj",
       "packagesPath": "C:\\Users\\NerdHouse\\.nuget\\packages\\",
-      "outputPath": "C:\\RetroCollect\\Caching\\obj\\",
+      "outputPath": "C:\\retrocollect\\Caching\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1003,8 +1003,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\RetroCollect\\CachingConfig\\CachingConfig.csproj": {
-              "projectPath": "C:\\RetroCollect\\CachingConfig\\CachingConfig.csproj"
+            "C:\\retrocollect\\CachingConfig\\CachingConfig.csproj": {
+              "projectPath": "C:\\retrocollect\\CachingConfig\\CachingConfig.csproj"
             }
           }
         }
